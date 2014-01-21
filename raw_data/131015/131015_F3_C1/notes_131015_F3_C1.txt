@@ -1,0 +1,969 @@
+131015 - 16:39:13 - GH86-Gal4:pJFRC7; F3_C1
+RigName: ContinuousOutRig
+	amplifier: MultiClamp700B
+For list of equipement run: equipmentSetupStruct('131015')
+131015 - 16:39:21 - GH86-Gal4:pJFRC7; F3_C1
+RigName: BasicEPhysRig
+	amplifier: MultiClamp700B
+For list of equipement run: equipmentSetupStruct('131015')
+
+	****************
+	2013-10-15 16:39:21
+	Seal; 
+	****************
+
+	SealAndLeak - 16:39:23 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 1 - Tagged as {'Seal; '}
+ 	VClamp, durSweep=0.668, gain=50, mode=[VClamp], protocol=[SealAndLeak], pulses=20, sampratein=100000, samprateout=100000, secondary_gain=20, stepamp=5, stepdur=0.0167, Vm_id=0
+		1, SealAndLeak trial 1, 16:39:24
+
+	Sweep - 16:40:54 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 2 - Tagged as {''}
+ 	IClamp, durSweep=5, gain=50, mode=[VClamp], protocol=[Sweep], sampratein=50000, samprateout=50000, secondary_gain=20, Vm_id=0
+		2, Sweep trial 1, 16:40:59
+		3, Sweep trial 2, 16:41:05
+		4, Sweep trial 3, 16:41:11
+		5, Sweep trial 4, 16:41:16
+		6, Sweep trial 5, 16:41:22
+131015 - 16:41:55 - GH86-Gal4:pJFRC7; F3_C1
+RigName: PiezoRig
+	amplifier: MultiClamp700B
+	piezo: Piezo
+	speaker: Speaker
+For list of equipement run: equipmentSetupStruct('131015')
+			PiezoStep has a problem: UncalibratedStimulus
+
+	PiezoStep - 16:41:57 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 3 - Tagged as {''}
+ 	IClamp, displacement=1, displacementOffset=5, displacements=[-1        -0.3        -0.1         0.1         0.3           1], durSweep=0.5, gain=5, mode=[IClamp], postDurInSec=0.1, preDurInSec=0.2, protocol=[PiezoStep], sampratein=50000, samprateout=50000, secondary_gain=50, stimDurInSec=0.2, Vm_id=0
+			PiezoStep has a problem: UncalibratedStimulus
+		7, PiezoStep trial 1, displacement=-1.00, 16:41:57
+			PiezoStep has a problem: UncalibratedStimulus
+		8, PiezoStep trial 2, displacement=-0.30, 16:41:58
+			PiezoStep has a problem: UncalibratedStimulus
+		9, PiezoStep trial 3, displacement=-0.10, 16:41:59
+		10, PiezoStep trial 4, displacement=0.10, 16:42:00
+			PiezoStep has a problem: UncalibratedStimulus
+		11, PiezoStep trial 5, displacement=0.30, 16:42:01
+			PiezoStep has a problem: UncalibratedStimulus
+		12, PiezoStep trial 6, displacement=1.00, 16:42:02
+			PiezoStep has a problem: UncalibratedStimulus
+		13, PiezoStep trial 7, displacement=-1.00, 16:42:02
+			PiezoStep has a problem: UncalibratedStimulus
+		14, PiezoStep trial 8, displacement=-0.30, 16:42:03
+			PiezoStep has a problem: UncalibratedStimulus
+		15, PiezoStep trial 9, displacement=-0.10, 16:42:04
+		16, PiezoStep trial 10, displacement=0.10, 16:42:05
+			PiezoStep has a problem: UncalibratedStimulus
+		17, PiezoStep trial 11, displacement=0.30, 16:42:06
+			PiezoStep has a problem: UncalibratedStimulus
+		18, PiezoStep trial 12, displacement=1.00, 16:42:06
+			PiezoStep has a problem: UncalibratedStimulus
+		19, PiezoStep trial 13, displacement=-1.00, 16:42:07
+			PiezoStep has a problem: UncalibratedStimulus
+		20, PiezoStep trial 14, displacement=-0.30, 16:42:08
+			PiezoStep has a problem: UncalibratedStimulus
+		21, PiezoStep trial 15, displacement=-0.10, 16:42:09
+		22, PiezoStep trial 16, displacement=0.10, 16:42:10
+			PiezoStep has a problem: UncalibratedStimulus
+		23, PiezoStep trial 17, displacement=0.30, 16:42:10
+			PiezoStep has a problem: UncalibratedStimulus
+		24, PiezoStep trial 18, displacement=1.00, 16:42:11
+			PiezoStep has a problem: UncalibratedStimulus
+		25, PiezoStep trial 19, displacement=-1.00, 16:42:12
+			PiezoStep has a problem: UncalibratedStimulus
+		26, PiezoStep trial 20, displacement=-0.30, 16:42:13
+			PiezoStep has a problem: UncalibratedStimulus
+		27, PiezoStep trial 21, displacement=-0.10, 16:42:14
+		28, PiezoStep trial 22, displacement=0.10, 16:42:15
+			PiezoStep has a problem: UncalibratedStimulus
+		29, PiezoStep trial 23, displacement=0.30, 16:42:15
+			PiezoStep has a problem: UncalibratedStimulus
+		30, PiezoStep trial 24, displacement=1.00, 16:42:16
+			PiezoStep has a problem: UncalibratedStimulus
+		31, PiezoStep trial 25, displacement=-1.00, 16:42:17
+			PiezoStep has a problem: UncalibratedStimulus
+		32, PiezoStep trial 26, displacement=-0.30, 16:42:18
+			PiezoStep has a problem: UncalibratedStimulus
+		33, PiezoStep trial 27, displacement=-0.10, 16:42:19
+		34, PiezoStep trial 28, displacement=0.10, 16:42:19
+			PiezoStep has a problem: UncalibratedStimulus
+		35, PiezoStep trial 29, displacement=0.30, 16:42:20
+			PiezoStep has a problem: UncalibratedStimulus
+		36, PiezoStep trial 30, displacement=1.00, 16:42:21
+			PiezoStep has a problem: UncalibratedStimulus
+
+	PiezoStep - 16:42:31 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 4 - Tagged as {''}
+ 	IClamp, displacement=1, displacementOffset=5, displacements=[-1        -0.3        -0.1         0.1         0.3           1], durSweep=0.5, gain=5, mode=[IClamp], postDurInSec=0.1, preDurInSec=0.2, protocol=[PiezoStep], sampratein=50000, samprateout=50000, secondary_gain=50, stimDurInSec=0.2, Vm_id=0
+			PiezoStep has a problem: UncalibratedStimulus
+		37, PiezoStep trial 31, displacement=-1.00, 16:42:31
+			PiezoStep has a problem: UncalibratedStimulus
+		38, PiezoStep trial 32, displacement=-0.30, 16:42:32
+			PiezoStep has a problem: UncalibratedStimulus
+		39, PiezoStep trial 33, displacement=-0.10, 16:42:33
+		40, PiezoStep trial 34, displacement=0.10, 16:42:34
+			PiezoStep has a problem: UncalibratedStimulus
+		41, PiezoStep trial 35, displacement=0.30, 16:42:35
+			PiezoStep has a problem: UncalibratedStimulus
+		42, PiezoStep trial 36, displacement=1.00, 16:42:36
+			PiezoStep has a problem: UncalibratedStimulus
+		43, PiezoStep trial 37, displacement=-1.00, 16:42:36
+			PiezoStep has a problem: UncalibratedStimulus
+		44, PiezoStep trial 38, displacement=-0.30, 16:42:37
+			PiezoStep has a problem: UncalibratedStimulus
+		45, PiezoStep trial 39, displacement=-0.10, 16:42:38
+		46, PiezoStep trial 40, displacement=0.10, 16:42:39
+			PiezoStep has a problem: UncalibratedStimulus
+		47, PiezoStep trial 41, displacement=0.30, 16:42:40
+			PiezoStep has a problem: UncalibratedStimulus
+		48, PiezoStep trial 42, displacement=1.00, 16:42:40
+			PiezoStep has a problem: UncalibratedStimulus
+		49, PiezoStep trial 43, displacement=-1.00, 16:42:41
+			PiezoStep has a problem: UncalibratedStimulus
+		50, PiezoStep trial 44, displacement=-0.30, 16:42:42
+			PiezoStep has a problem: UncalibratedStimulus
+		51, PiezoStep trial 45, displacement=-0.10, 16:42:43
+		52, PiezoStep trial 46, displacement=0.10, 16:42:44
+			PiezoStep has a problem: UncalibratedStimulus
+		53, PiezoStep trial 47, displacement=0.30, 16:42:44
+			PiezoStep has a problem: UncalibratedStimulus
+		54, PiezoStep trial 48, displacement=1.00, 16:42:45
+			PiezoStep has a problem: UncalibratedStimulus
+		55, PiezoStep trial 49, displacement=-1.00, 16:42:46
+			PiezoStep has a problem: UncalibratedStimulus
+		56, PiezoStep trial 50, displacement=-0.30, 16:42:47
+			PiezoStep has a problem: UncalibratedStimulus
+		57, PiezoStep trial 51, displacement=-0.10, 16:42:48
+		58, PiezoStep trial 52, displacement=0.10, 16:42:48
+			PiezoStep has a problem: UncalibratedStimulus
+		59, PiezoStep trial 53, displacement=0.30, 16:42:49
+			PiezoStep has a problem: UncalibratedStimulus
+		60, PiezoStep trial 54, displacement=1.00, 16:42:50
+			PiezoStep has a problem: UncalibratedStimulus
+		61, PiezoStep trial 55, displacement=-1.00, 16:42:51
+			PiezoStep has a problem: UncalibratedStimulus
+		62, PiezoStep trial 56, displacement=-0.30, 16:42:52
+			PiezoStep has a problem: UncalibratedStimulus
+		63, PiezoStep trial 57, displacement=-0.10, 16:42:52
+		64, PiezoStep trial 58, displacement=0.10, 16:42:53
+			PiezoStep has a problem: UncalibratedStimulus
+		65, PiezoStep trial 59, displacement=0.30, 16:42:54
+			PiezoStep has a problem: UncalibratedStimulus
+		66, PiezoStep trial 60, displacement=1.00, 16:42:55
+			PiezoSquareWave has a problem: UncalibratedStimulus
+
+	PiezoSquareWave - 16:43:12 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 5 - Tagged as {''}
+ 	IClamp, cycleDurInSec=0.1, cycles=3, displacement=1, displacementOffset=5, displacements=3, durSweep=0.6, gain=5, mode=[IClamp], postDurInSec=0.1, preDurInSec=0.2, protocol=[PiezoSquareWave], sampratein=50000, samprateout=50000, secondary_gain=50, stimDurInSec=0.3, Vm_id=0
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		67, PiezoSquareWave trial 1, 16:43:13
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		68, PiezoSquareWave trial 2, 16:43:14
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		69, PiezoSquareWave trial 3, 16:43:15
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		70, PiezoSquareWave trial 4, 16:43:16
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		71, PiezoSquareWave trial 5, 16:43:16
+			PiezoSquareWave has a problem: UncalibratedStimulus
+
+	PiezoSquareWave - 16:43:35 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 6 - Tagged as {''}
+ 	IClamp, cycleDurInSec=0.1, cycles=3, displacement=1, displacementOffset=5, displacements=3, durSweep=0.6, gain=5, mode=[IClamp], postDurInSec=0.1, preDurInSec=0.2, protocol=[PiezoSquareWave], sampratein=50000, samprateout=50000, secondary_gain=50, stimDurInSec=0.3, Vm_id=0
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		72, PiezoSquareWave trial 6, 16:43:36
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		73, PiezoSquareWave trial 7, 16:43:37
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		74, PiezoSquareWave trial 8, 16:43:38
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		75, PiezoSquareWave trial 9, 16:43:39
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		76, PiezoSquareWave trial 10, 16:43:40
+
+	PiezoSine - 16:43:49 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 7 - Tagged as {''}
+ 	IClamp, displacement=0.05, displacementOffset=5, displacements=[0.1         0.2         0.4], durSweep=1.7, freq=25, freqs=[25   50  100  200  400], gain=5, mode=[IClamp], postDurInSec=1, preDurInSec=0.4, protocol=[PiezoSine], ramptime=0.04, sampratein=50000, samprateout=50000, secondary_gain=50, stimDurInSec=0.3, Vm_id=0
+		77, PiezoSine trial 1, displacement=0.10, freq=25.00, 16:43:51
+		78, PiezoSine trial 2, displacement=0.20, freq=25.00, 16:43:53
+		79, PiezoSine trial 3, displacement=0.40, freq=25.00, 16:43:55
+		80, PiezoSine trial 4, displacement=0.10, freq=50.00, 16:43:57
+		81, PiezoSine trial 5, displacement=0.20, freq=50.00, 16:43:59
+		82, PiezoSine trial 6, displacement=0.40, freq=50.00, 16:44:01
+		83, PiezoSine trial 7, displacement=0.10, freq=100.00, 16:44:03
+		84, PiezoSine trial 8, displacement=0.20, freq=100.00, 16:44:05
+		85, PiezoSine trial 9, displacement=0.40, freq=100.00, 16:44:07
+		86, PiezoSine trial 10, displacement=0.10, freq=200.00, 16:44:09
+		87, PiezoSine trial 11, displacement=0.20, freq=200.00, 16:44:11
+		88, PiezoSine trial 12, displacement=0.40, freq=200.00, 16:44:13
+		89, PiezoSine trial 13, displacement=0.10, freq=400.00, 16:44:15
+		90, PiezoSine trial 14, displacement=0.20, freq=400.00, 16:44:18
+		91, PiezoSine trial 15, displacement=0.40, freq=400.00, 16:44:20
+		92, PiezoSine trial 16, displacement=0.10, freq=25.00, 16:44:22
+		93, PiezoSine trial 17, displacement=0.20, freq=25.00, 16:44:24
+		94, PiezoSine trial 18, displacement=0.40, freq=25.00, 16:44:26
+		95, PiezoSine trial 19, displacement=0.10, freq=50.00, 16:44:28
+		96, PiezoSine trial 20, displacement=0.20, freq=50.00, 16:44:30
+		97, PiezoSine trial 21, displacement=0.40, freq=50.00, 16:44:32
+		98, PiezoSine trial 22, displacement=0.10, freq=100.00, 16:44:34
+		99, PiezoSine trial 23, displacement=0.20, freq=100.00, 16:44:36
+		100, PiezoSine trial 24, displacement=0.40, freq=100.00, 16:44:38
+		101, PiezoSine trial 25, displacement=0.10, freq=200.00, 16:44:40
+		102, PiezoSine trial 26, displacement=0.20, freq=200.00, 16:44:42
+		103, PiezoSine trial 27, displacement=0.40, freq=200.00, 16:44:44
+		104, PiezoSine trial 28, displacement=0.10, freq=400.00, 16:44:47
+		105, PiezoSine trial 29, displacement=0.20, freq=400.00, 16:44:49
+		106, PiezoSine trial 30, displacement=0.40, freq=400.00, 16:44:51
+		107, PiezoSine trial 31, displacement=0.10, freq=25.00, 16:44:53
+		108, PiezoSine trial 32, displacement=0.20, freq=25.00, 16:44:55
+		109, PiezoSine trial 33, displacement=0.40, freq=25.00, 16:44:57
+		110, PiezoSine trial 34, displacement=0.10, freq=50.00, 16:44:59
+		111, PiezoSine trial 35, displacement=0.20, freq=50.00, 16:45:01
+		112, PiezoSine trial 36, displacement=0.40, freq=50.00, 16:45:03
+		113, PiezoSine trial 37, displacement=0.10, freq=100.00, 16:45:05
+		114, PiezoSine trial 38, displacement=0.20, freq=100.00, 16:45:07
+		115, PiezoSine trial 39, displacement=0.40, freq=100.00, 16:45:09
+		116, PiezoSine trial 40, displacement=0.10, freq=200.00, 16:45:11
+		117, PiezoSine trial 41, displacement=0.20, freq=200.00, 16:45:14
+		118, PiezoSine trial 42, displacement=0.40, freq=200.00, 16:45:15
+		119, PiezoSine trial 43, displacement=0.10, freq=400.00, 16:45:18
+		120, PiezoSine trial 44, displacement=0.20, freq=400.00, 16:45:20
+		121, PiezoSine trial 45, displacement=0.40, freq=400.00, 16:45:22
+
+	****************
+	2013-10-15 16:45:29
+	Ringing; 
+	****************
+
+	PiezoSine - 16:45:31 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 8 - Tagged as {'Ringing; '}
+ 	IClamp, displacement=0.4, displacementOffset=5, displacements=0.4, durSweep=2.1, freq=50, freqs=[50  100  200], gain=5, mode=[IClamp], postDurInSec=1.5, preDurInSec=0.4, protocol=[PiezoSine], ramptime=0.02, sampratein=50000, samprateout=50000, secondary_gain=50, stimDurInSec=0.2, Vm_id=0
+		122, PiezoSine trial 46, freq=50.00, 16:45:33
+		123, PiezoSine trial 47, freq=100.00, 16:45:36
+		124, PiezoSine trial 48, freq=200.00, 16:45:38
+		125, PiezoSine trial 49, freq=50.00, 16:45:41
+		126, PiezoSine trial 50, freq=100.00, 16:45:43
+		127, PiezoSine trial 51, freq=200.00, 16:45:46
+		128, PiezoSine trial 52, freq=50.00, 16:45:48
+		129, PiezoSine trial 53, freq=100.00, 16:45:51
+		130, PiezoSine trial 54, freq=200.00, 16:45:53
+
+	PiezoBWCourtshipSong - 16:46:01 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 9 - Tagged as {''}
+ 	IClamp, displacement=0.1, displacementOffset=5, displacements=[0.2         0.4], durSweep=2.3115, gain=5, mode=[IClamp], postDurInSec=1, preDurInSec=0.4, protocol=[PiezoBWCourtshipSong], ramptime=0.04, sampratein=40000, samprateout=40000, secondary_gain=50, stimDurInSec=0.91153, Vm_id=0
+		131, PiezoBWCourtshipSong trial 1, displacement=0.20, 16:46:04
+		132, PiezoBWCourtshipSong trial 2, displacement=0.40, 16:46:07
+		133, PiezoBWCourtshipSong trial 3, displacement=0.20, 16:46:09
+		134, PiezoBWCourtshipSong trial 4, displacement=0.40, 16:46:12
+		135, PiezoBWCourtshipSong trial 5, displacement=0.20, 16:46:15
+		136, PiezoBWCourtshipSong trial 6, displacement=0.40, 16:46:17
+
+	PiezoCourtshipSong - 16:46:24 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 10 - Tagged as {''}
+ 	IClamp, displacement=0.1, displacementOffset=5, displacements=[0.2         0.4], durSweep=2.3115, gain=5, mode=[IClamp], postDurInSec=1, preDurInSec=0.4, protocol=[PiezoCourtshipSong], ramptime=0.04, sampratein=40000, samprateout=40000, secondary_gain=50, stimDurInSec=0.91153, Vm_id=0
+		137, PiezoCourtshipSong trial 1, displacement=0.20, 16:46:26
+		138, PiezoCourtshipSong trial 2, displacement=0.40, 16:46:29
+		139, PiezoCourtshipSong trial 3, displacement=0.20, 16:46:32
+		140, PiezoCourtshipSong trial 4, displacement=0.40, 16:46:34
+		141, PiezoCourtshipSong trial 5, displacement=0.20, 16:46:37
+		142, PiezoCourtshipSong trial 6, displacement=0.40, 16:46:40
+
+	****************
+	2013-10-15 16:47:01
+	50 mM Sodium; 
+	****************
+131015 - 16:48:39 - GH86-Gal4:pJFRC7; F3_C1
+RigName: BasicEPhysRig
+	amplifier: MultiClamp700B
+For list of equipement run: equipmentSetupStruct('131015')
+
+	Sweep - 16:48:41 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 11 - Tagged as {'50 mM Sodium; '}
+ 	IClamp, durSweep=5, gain=5, mode=[IClamp], protocol=[Sweep], sampratein=50000, samprateout=50000, secondary_gain=50, Vm_id=0
+		143, Sweep trial 6, 16:48:47
+		144, Sweep trial 7, 16:48:52
+		145, Sweep trial 8, 16:48:58
+		146, Sweep trial 9, 16:49:04
+		147, Sweep trial 10, 16:49:09
+
+	Sweep - 16:50:00 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 12 - Tagged as {'50 mM Sodium; '}
+ 	IClamp, durSweep=5, gain=5, mode=[IClamp], protocol=[Sweep], sampratein=50000, samprateout=50000, secondary_gain=50, Vm_id=0
+		148, Sweep trial 11, 16:50:06
+		149, Sweep trial 12, 16:50:11
+		150, Sweep trial 13, 16:50:17
+		151, Sweep trial 14, 16:50:22
+		152, Sweep trial 15, 16:50:28
+131015 - 16:50:36 - GH86-Gal4:pJFRC7; F3_C1
+RigName: PiezoRig
+	amplifier: MultiClamp700B
+	piezo: Piezo
+	speaker: Speaker
+For list of equipement run: equipmentSetupStruct('131015')
+			PiezoStep has a problem: UncalibratedStimulus
+
+	PiezoStep - 16:50:38 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 13 - Tagged as {'50 mM Sodium; '}
+ 	IClamp, displacement=1, displacementOffset=5, displacements=[-1        -0.3        -0.1         0.1         0.3           1], durSweep=0.5, gain=5, mode=[IClamp], postDurInSec=0.1, preDurInSec=0.2, protocol=[PiezoStep], sampratein=50000, samprateout=50000, secondary_gain=50, stimDurInSec=0.2, Vm_id=0
+			PiezoStep has a problem: UncalibratedStimulus
+		153, PiezoStep trial 61, displacement=-1.00, 16:50:39
+			PiezoStep has a problem: UncalibratedStimulus
+		154, PiezoStep trial 62, displacement=-0.30, 16:50:40
+			PiezoStep has a problem: UncalibratedStimulus
+		155, PiezoStep trial 63, displacement=-0.10, 16:50:41
+		156, PiezoStep trial 64, displacement=0.10, 16:50:42
+			PiezoStep has a problem: UncalibratedStimulus
+		157, PiezoStep trial 65, displacement=0.30, 16:50:42
+			PiezoStep has a problem: UncalibratedStimulus
+		158, PiezoStep trial 66, displacement=1.00, 16:50:43
+			PiezoStep has a problem: UncalibratedStimulus
+		159, PiezoStep trial 67, displacement=-1.00, 16:50:44
+			PiezoStep has a problem: UncalibratedStimulus
+		160, PiezoStep trial 68, displacement=-0.30, 16:50:45
+			PiezoStep has a problem: UncalibratedStimulus
+		161, PiezoStep trial 69, displacement=-0.10, 16:50:46
+		162, PiezoStep trial 70, displacement=0.10, 16:50:47
+			PiezoStep has a problem: UncalibratedStimulus
+		163, PiezoStep trial 71, displacement=0.30, 16:50:47
+			PiezoStep has a problem: UncalibratedStimulus
+		164, PiezoStep trial 72, displacement=1.00, 16:50:48
+			PiezoStep has a problem: UncalibratedStimulus
+		165, PiezoStep trial 73, displacement=-1.00, 16:50:49
+			PiezoStep has a problem: UncalibratedStimulus
+		166, PiezoStep trial 74, displacement=-0.30, 16:50:50
+			PiezoStep has a problem: UncalibratedStimulus
+		167, PiezoStep trial 75, displacement=-0.10, 16:50:51
+		168, PiezoStep trial 76, displacement=0.10, 16:50:51
+			PiezoStep has a problem: UncalibratedStimulus
+		169, PiezoStep trial 77, displacement=0.30, 16:50:52
+			PiezoStep has a problem: UncalibratedStimulus
+		170, PiezoStep trial 78, displacement=1.00, 16:50:53
+			PiezoStep has a problem: UncalibratedStimulus
+		171, PiezoStep trial 79, displacement=-1.00, 16:50:54
+			PiezoStep has a problem: UncalibratedStimulus
+		172, PiezoStep trial 80, displacement=-0.30, 16:50:55
+			PiezoStep has a problem: UncalibratedStimulus
+		173, PiezoStep trial 81, displacement=-0.10, 16:50:56
+		174, PiezoStep trial 82, displacement=0.10, 16:50:56
+			PiezoStep has a problem: UncalibratedStimulus
+		175, PiezoStep trial 83, displacement=0.30, 16:50:57
+			PiezoStep has a problem: UncalibratedStimulus
+		176, PiezoStep trial 84, displacement=1.00, 16:50:58
+			PiezoStep has a problem: UncalibratedStimulus
+		177, PiezoStep trial 85, displacement=-1.00, 16:50:59
+			PiezoStep has a problem: UncalibratedStimulus
+		178, PiezoStep trial 86, displacement=-0.30, 16:50:59
+			PiezoStep has a problem: UncalibratedStimulus
+		179, PiezoStep trial 87, displacement=-0.10, 16:51:00
+		180, PiezoStep trial 88, displacement=0.10, 16:51:01
+			PiezoStep has a problem: UncalibratedStimulus
+		181, PiezoStep trial 89, displacement=0.30, 16:51:02
+			PiezoStep has a problem: UncalibratedStimulus
+		182, PiezoStep trial 90, displacement=1.00, 16:51:03
+			PiezoSquareWave has a problem: UncalibratedStimulus
+
+	PiezoSquareWave - 16:51:14 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 14 - Tagged as {'50 mM Sodium; '}
+ 	IClamp, cycleDurInSec=0.1, cycles=3, displacement=1, displacementOffset=5, displacements=3, durSweep=0.6, gain=5, mode=[IClamp], postDurInSec=0.1, preDurInSec=0.2, protocol=[PiezoSquareWave], sampratein=50000, samprateout=50000, secondary_gain=50, stimDurInSec=0.3, Vm_id=0
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		183, PiezoSquareWave trial 11, 16:51:15
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		184, PiezoSquareWave trial 12, 16:51:16
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		185, PiezoSquareWave trial 13, 16:51:16
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		186, PiezoSquareWave trial 14, 16:51:17
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		187, PiezoSquareWave trial 15, 16:51:18
+
+	PiezoSquareWave - 16:52:05 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 15 - Tagged as {'50 mM Sodium; '}
+ 	IClamp, cycleDurInSec=0.1, cycles=10, displacement=0.2, displacementOffset=5, displacements=3, durSweep=1.3, gain=5, mode=[IClamp], postDurInSec=0.1, preDurInSec=0.2, protocol=[PiezoSquareWave], sampratein=50000, samprateout=50000, secondary_gain=50, stimDurInSec=1, Vm_id=0
+		188, PiezoSquareWave trial 16, 16:52:06
+		189, PiezoSquareWave trial 17, 16:52:08
+		190, PiezoSquareWave trial 18, 16:52:10
+		191, PiezoSquareWave trial 19, 16:52:11
+		192, PiezoSquareWave trial 20, 16:52:13
+			PiezoSine has a problem: UncalibratedStimulus
+
+	PiezoSine - 16:52:19 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 16 - Tagged as {'50 mM Sodium; '}
+ 	IClamp, displacement=0.05, displacementOffset=5, displacements=[0.1         0.2         0.4], durSweep=1.7, freq=12.5, freqs=[12.5            25            50           100           200           400], gain=5, mode=[IClamp], postDurInSec=1, preDurInSec=0.4, protocol=[PiezoSine], ramptime=0.04, sampratein=50000, samprateout=50000, secondary_gain=50, stimDurInSec=0.3, Vm_id=0
+			PiezoSine has a problem: UncalibratedStimulus
+		193, PiezoSine trial 55, displacement=0.10, freq=12.50, 16:52:21
+			PiezoSine has a problem: UncalibratedStimulus
+		194, PiezoSine trial 56, displacement=0.20, freq=12.50, 16:52:24
+			PiezoSine has a problem: UncalibratedStimulus
+		195, PiezoSine trial 57, displacement=0.40, freq=12.50, 16:52:26
+		196, PiezoSine trial 58, displacement=0.10, freq=25.00, 16:52:28
+		197, PiezoSine trial 59, displacement=0.20, freq=25.00, 16:52:30
+		198, PiezoSine trial 60, displacement=0.40, freq=25.00, 16:52:32
+		199, PiezoSine trial 61, displacement=0.10, freq=50.00, 16:52:34
+		200, PiezoSine trial 62, displacement=0.20, freq=50.00, 16:52:36
+		201, PiezoSine trial 63, displacement=0.40, freq=50.00, 16:52:38
+		202, PiezoSine trial 64, displacement=0.10, freq=100.00, 16:52:40
+		203, PiezoSine trial 65, displacement=0.20, freq=100.00, 16:52:42
+		204, PiezoSine trial 66, displacement=0.40, freq=100.00, 16:52:44
+		205, PiezoSine trial 67, displacement=0.10, freq=200.00, 16:52:46
+		206, PiezoSine trial 68, displacement=0.20, freq=200.00, 16:52:48
+		207, PiezoSine trial 69, displacement=0.40, freq=200.00, 16:52:50
+		208, PiezoSine trial 70, displacement=0.10, freq=400.00, 16:52:52
+		209, PiezoSine trial 71, displacement=0.20, freq=400.00, 16:52:54
+		210, PiezoSine trial 72, displacement=0.40, freq=400.00, 16:52:57
+			PiezoSine has a problem: UncalibratedStimulus
+		211, PiezoSine trial 73, displacement=0.10, freq=12.50, 16:52:59
+			PiezoSine has a problem: UncalibratedStimulus
+		212, PiezoSine trial 74, displacement=0.20, freq=12.50, 16:53:01
+			PiezoSine has a problem: UncalibratedStimulus
+		213, PiezoSine trial 75, displacement=0.40, freq=12.50, 16:53:03
+		214, PiezoSine trial 76, displacement=0.10, freq=25.00, 16:53:05
+		215, PiezoSine trial 77, displacement=0.20, freq=25.00, 16:53:07
+		216, PiezoSine trial 78, displacement=0.40, freq=25.00, 16:53:09
+		217, PiezoSine trial 79, displacement=0.10, freq=50.00, 16:53:11
+		218, PiezoSine trial 80, displacement=0.20, freq=50.00, 16:53:13
+		219, PiezoSine trial 81, displacement=0.40, freq=50.00, 16:53:15
+		220, PiezoSine trial 82, displacement=0.10, freq=100.00, 16:53:17
+		221, PiezoSine trial 83, displacement=0.20, freq=100.00, 16:53:19
+		222, PiezoSine trial 84, displacement=0.40, freq=100.00, 16:53:22
+		223, PiezoSine trial 85, displacement=0.10, freq=200.00, 16:53:23
+		224, PiezoSine trial 86, displacement=0.20, freq=200.00, 16:53:26
+		225, PiezoSine trial 87, displacement=0.40, freq=200.00, 16:53:28
+		226, PiezoSine trial 88, displacement=0.10, freq=400.00, 16:53:30
+		227, PiezoSine trial 89, displacement=0.20, freq=400.00, 16:53:32
+		228, PiezoSine trial 90, displacement=0.40, freq=400.00, 16:53:34
+			PiezoSine has a problem: UncalibratedStimulus
+		229, PiezoSine trial 91, displacement=0.10, freq=12.50, 16:53:36
+			PiezoSine has a problem: UncalibratedStimulus
+		230, PiezoSine trial 92, displacement=0.20, freq=12.50, 16:53:38
+			PiezoSine has a problem: UncalibratedStimulus
+		231, PiezoSine trial 93, displacement=0.40, freq=12.50, 16:53:40
+		232, PiezoSine trial 94, displacement=0.10, freq=25.00, 16:53:42
+		233, PiezoSine trial 95, displacement=0.20, freq=25.00, 16:53:44
+		234, PiezoSine trial 96, displacement=0.40, freq=25.00, 16:53:46
+		235, PiezoSine trial 97, displacement=0.10, freq=50.00, 16:53:48
+		236, PiezoSine trial 98, displacement=0.20, freq=50.00, 16:53:50
+		237, PiezoSine trial 99, displacement=0.40, freq=50.00, 16:53:52
+		238, PiezoSine trial 100, displacement=0.10, freq=100.00, 16:53:55
+		239, PiezoSine trial 101, displacement=0.20, freq=100.00, 16:53:57
+		240, PiezoSine trial 102, displacement=0.40, freq=100.00, 16:53:59
+		241, PiezoSine trial 103, displacement=0.10, freq=200.00, 16:54:01
+		242, PiezoSine trial 104, displacement=0.20, freq=200.00, 16:54:03
+		243, PiezoSine trial 105, displacement=0.40, freq=200.00, 16:54:05
+		244, PiezoSine trial 106, displacement=0.10, freq=400.00, 16:54:07
+		245, PiezoSine trial 107, displacement=0.20, freq=400.00, 16:54:09
+		246, PiezoSine trial 108, displacement=0.40, freq=400.00, 16:54:11
+
+	****************
+	2013-10-15 16:54:55
+	90 mM Sodium; 
+	****************
+131015 - 16:55:50 - GH86-Gal4:pJFRC7; F3_C1
+RigName: BasicEPhysRig
+	amplifier: MultiClamp700B
+For list of equipement run: equipmentSetupStruct('131015')
+
+	Sweep - 16:55:52 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 17 - Tagged as {'90 mM Sodium; '}
+ 	IClamp, durSweep=5, gain=5, mode=[IClamp], protocol=[Sweep], sampratein=50000, samprateout=50000, secondary_gain=50, Vm_id=0
+		247, Sweep trial 16, 16:55:57
+		248, Sweep trial 17, 16:56:03
+		249, Sweep trial 18, 16:56:09
+		250, Sweep trial 19, 16:56:14
+		251, Sweep trial 20, 16:56:20
+
+	Sweep - 16:56:28 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 18 - Tagged as {'90 mM Sodium; '}
+ 	IClamp, durSweep=5, gain=5, mode=[IClamp], protocol=[Sweep], sampratein=50000, samprateout=50000, secondary_gain=50, Vm_id=0
+		252, Sweep trial 21, 16:56:33
+		253, Sweep trial 22, 16:56:39
+		254, Sweep trial 23, 16:56:44
+		255, Sweep trial 24, 16:56:50
+		256, Sweep trial 25, 16:56:55
+
+	****************
+	2013-10-15 16:57:22
+	90 mM Sodium; Hyperpolarized; 
+	****************
+
+	Sweep - 16:57:24 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 19 - Tagged as {'90 mM Sodium; Hyperpolarized; '}
+ 	IClamp, durSweep=5, gain=5, mode=[IClamp], protocol=[Sweep], sampratein=50000, samprateout=50000, secondary_gain=50, Vm_id=0
+		257, Sweep trial 26, 16:57:30
+		258, Sweep trial 27, 16:57:35
+		259, Sweep trial 28, 16:57:41
+		260, Sweep trial 29, 16:57:46
+		261, Sweep trial 30, 16:57:52
+131015 - 16:58:23 - GH86-Gal4:pJFRC7; F3_C1
+RigName: PiezoRig
+	amplifier: MultiClamp700B
+	piezo: Piezo
+	speaker: Speaker
+For list of equipement run: equipmentSetupStruct('131015')
+			PiezoStep has a problem: UncalibratedStimulus
+
+	PiezoStep - 16:58:25 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 20 - Tagged as {'90 mM Sodium; '}
+ 	IClamp, displacement=1, displacementOffset=5, displacements=[-1        -0.3        -0.1         0.1         0.3           1], durSweep=0.5, gain=5, mode=[IClamp], postDurInSec=0.1, preDurInSec=0.2, protocol=[PiezoStep], sampratein=50000, samprateout=50000, secondary_gain=50, stimDurInSec=0.2, Vm_id=0
+			PiezoStep has a problem: UncalibratedStimulus
+		262, PiezoStep trial 91, displacement=-1.00, 16:58:26
+			PiezoStep has a problem: UncalibratedStimulus
+		263, PiezoStep trial 92, displacement=-0.30, 16:58:27
+			PiezoStep has a problem: UncalibratedStimulus
+		264, PiezoStep trial 93, displacement=-0.10, 16:58:27
+		265, PiezoStep trial 94, displacement=0.10, 16:58:28
+			PiezoStep has a problem: UncalibratedStimulus
+		266, PiezoStep trial 95, displacement=0.30, 16:58:29
+			PiezoStep has a problem: UncalibratedStimulus
+		267, PiezoStep trial 96, displacement=1.00, 16:58:30
+			PiezoStep has a problem: UncalibratedStimulus
+		268, PiezoStep trial 97, displacement=-1.00, 16:58:31
+			PiezoStep has a problem: UncalibratedStimulus
+		269, PiezoStep trial 98, displacement=-0.30, 16:58:31
+			PiezoStep has a problem: UncalibratedStimulus
+		270, PiezoStep trial 99, displacement=-0.10, 16:58:32
+		271, PiezoStep trial 100, displacement=0.10, 16:58:33
+			PiezoStep has a problem: UncalibratedStimulus
+		272, PiezoStep trial 101, displacement=0.30, 16:58:34
+			PiezoStep has a problem: UncalibratedStimulus
+		273, PiezoStep trial 102, displacement=1.00, 16:58:35
+			PiezoStep has a problem: UncalibratedStimulus
+		274, PiezoStep trial 103, displacement=-1.00, 16:58:35
+			PiezoStep has a problem: UncalibratedStimulus
+		275, PiezoStep trial 104, displacement=-0.30, 16:58:36
+			PiezoStep has a problem: UncalibratedStimulus
+		276, PiezoStep trial 105, displacement=-0.10, 16:58:37
+		277, PiezoStep trial 106, displacement=0.10, 16:58:38
+			PiezoStep has a problem: UncalibratedStimulus
+		278, PiezoStep trial 107, displacement=0.30, 16:58:39
+			PiezoStep has a problem: UncalibratedStimulus
+		279, PiezoStep trial 108, displacement=1.00, 16:58:39
+			PiezoStep has a problem: UncalibratedStimulus
+		280, PiezoStep trial 109, displacement=-1.00, 16:58:40
+			PiezoStep has a problem: UncalibratedStimulus
+		281, PiezoStep trial 110, displacement=-0.30, 16:58:41
+			PiezoStep has a problem: UncalibratedStimulus
+		282, PiezoStep trial 111, displacement=-0.10, 16:58:42
+		283, PiezoStep trial 112, displacement=0.10, 16:58:43
+			PiezoStep has a problem: UncalibratedStimulus
+		284, PiezoStep trial 113, displacement=0.30, 16:58:43
+			PiezoStep has a problem: UncalibratedStimulus
+		285, PiezoStep trial 114, displacement=1.00, 16:58:44
+			PiezoStep has a problem: UncalibratedStimulus
+		286, PiezoStep trial 115, displacement=-1.00, 16:58:45
+			PiezoStep has a problem: UncalibratedStimulus
+		287, PiezoStep trial 116, displacement=-0.30, 16:58:46
+			PiezoStep has a problem: UncalibratedStimulus
+		288, PiezoStep trial 117, displacement=-0.10, 16:58:47
+		289, PiezoStep trial 118, displacement=0.10, 16:58:48
+			PiezoStep has a problem: UncalibratedStimulus
+		290, PiezoStep trial 119, displacement=0.30, 16:58:48
+			PiezoStep has a problem: UncalibratedStimulus
+		291, PiezoStep trial 120, displacement=1.00, 16:58:49
+
+	PiezoSquareWave - 16:58:59 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 21 - Tagged as {'90 mM Sodium; '}
+ 	IClamp, cycleDurInSec=0.1, cycles=10, displacement=0.2, displacementOffset=5, displacements=3, durSweep=1.3, gain=5, mode=[IClamp], postDurInSec=0.1, preDurInSec=0.2, protocol=[PiezoSquareWave], sampratein=50000, samprateout=50000, secondary_gain=50, stimDurInSec=1, Vm_id=0
+		292, PiezoSquareWave trial 21, 16:59:01
+		293, PiezoSquareWave trial 22, 16:59:03
+		294, PiezoSquareWave trial 23, 16:59:04
+		295, PiezoSquareWave trial 24, 16:59:06
+		296, PiezoSquareWave trial 25, 16:59:08
+			PiezoSine has a problem: UncalibratedStimulus
+
+	PiezoSine - 16:59:14 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 22 - Tagged as {'90 mM Sodium; '}
+ 	IClamp, displacement=0.05, displacementOffset=5, displacements=[0.1         0.2         0.4], durSweep=1.7, freq=12.5, freqs=[12.5            25            50           100           200           400], gain=5, mode=[IClamp], postDurInSec=1, preDurInSec=0.4, protocol=[PiezoSine], ramptime=0.04, sampratein=50000, samprateout=50000, secondary_gain=50, stimDurInSec=0.3, Vm_id=0
+			PiezoSine has a problem: UncalibratedStimulus
+		297, PiezoSine trial 109, displacement=0.10, freq=12.50, 16:59:16
+			PiezoSine has a problem: UncalibratedStimulus
+		298, PiezoSine trial 110, displacement=0.20, freq=12.50, 16:59:18
+			PiezoSine has a problem: UncalibratedStimulus
+		299, PiezoSine trial 111, displacement=0.40, freq=12.50, 16:59:20
+		300, PiezoSine trial 112, displacement=0.10, freq=25.00, 16:59:22
+		301, PiezoSine trial 113, displacement=0.20, freq=25.00, 16:59:24
+		302, PiezoSine trial 114, displacement=0.40, freq=25.00, 16:59:26
+		303, PiezoSine trial 115, displacement=0.10, freq=50.00, 16:59:29
+		304, PiezoSine trial 116, displacement=0.20, freq=50.00, 16:59:31
+		305, PiezoSine trial 117, displacement=0.40, freq=50.00, 16:59:33
+		306, PiezoSine trial 118, displacement=0.10, freq=100.00, 16:59:35
+		307, PiezoSine trial 119, displacement=0.20, freq=100.00, 16:59:37
+		308, PiezoSine trial 120, displacement=0.40, freq=100.00, 16:59:39
+		309, PiezoSine trial 121, displacement=0.10, freq=200.00, 16:59:41
+		310, PiezoSine trial 122, displacement=0.20, freq=200.00, 16:59:43
+		311, PiezoSine trial 123, displacement=0.40, freq=200.00, 16:59:45
+		312, PiezoSine trial 124, displacement=0.10, freq=400.00, 16:59:47
+		313, PiezoSine trial 125, displacement=0.20, freq=400.00, 16:59:49
+		314, PiezoSine trial 126, displacement=0.40, freq=400.00, 16:59:51
+			PiezoSine has a problem: UncalibratedStimulus
+		315, PiezoSine trial 127, displacement=0.10, freq=12.50, 16:59:53
+			PiezoSine has a problem: UncalibratedStimulus
+		316, PiezoSine trial 128, displacement=0.20, freq=12.50, 16:59:56
+			PiezoSine has a problem: UncalibratedStimulus
+		317, PiezoSine trial 129, displacement=0.40, freq=12.50, 16:59:58
+		318, PiezoSine trial 130, displacement=0.10, freq=25.00, 17:00:00
+		319, PiezoSine trial 131, displacement=0.20, freq=25.00, 17:00:02
+		320, PiezoSine trial 132, displacement=0.40, freq=25.00, 17:00:04
+		321, PiezoSine trial 133, displacement=0.10, freq=50.00, 17:00:06
+		322, PiezoSine trial 134, displacement=0.20, freq=50.00, 17:00:08
+		323, PiezoSine trial 135, displacement=0.40, freq=50.00, 17:00:10
+		324, PiezoSine trial 136, displacement=0.10, freq=100.00, 17:00:12
+		325, PiezoSine trial 137, displacement=0.20, freq=100.00, 17:00:14
+		326, PiezoSine trial 138, displacement=0.40, freq=100.00, 17:00:16
+		327, PiezoSine trial 139, displacement=0.10, freq=200.00, 17:00:18
+		328, PiezoSine trial 140, displacement=0.20, freq=200.00, 17:00:20
+		329, PiezoSine trial 141, displacement=0.40, freq=200.00, 17:00:22
+		330, PiezoSine trial 142, displacement=0.10, freq=400.00, 17:00:24
+		331, PiezoSine trial 143, displacement=0.20, freq=400.00, 17:00:26
+		332, PiezoSine trial 144, displacement=0.40, freq=400.00, 17:00:28
+			PiezoSine has a problem: UncalibratedStimulus
+		333, PiezoSine trial 145, displacement=0.10, freq=12.50, 17:00:30
+			PiezoSine has a problem: UncalibratedStimulus
+		334, PiezoSine trial 146, displacement=0.20, freq=12.50, 17:00:33
+			PiezoSine has a problem: UncalibratedStimulus
+		335, PiezoSine trial 147, displacement=0.40, freq=12.50, 17:00:34
+		336, PiezoSine trial 148, displacement=0.10, freq=25.00, 17:00:37
+		337, PiezoSine trial 149, displacement=0.20, freq=25.00, 17:00:39
+		338, PiezoSine trial 150, displacement=0.40, freq=25.00, 17:00:41
+		339, PiezoSine trial 151, displacement=0.10, freq=50.00, 17:00:43
+		340, PiezoSine trial 152, displacement=0.20, freq=50.00, 17:00:45
+		341, PiezoSine trial 153, displacement=0.40, freq=50.00, 17:00:47
+		342, PiezoSine trial 154, displacement=0.10, freq=100.00, 17:00:49
+		343, PiezoSine trial 155, displacement=0.20, freq=100.00, 17:00:51
+		344, PiezoSine trial 156, displacement=0.40, freq=100.00, 17:00:53
+		345, PiezoSine trial 157, displacement=0.10, freq=200.00, 17:00:55
+		346, PiezoSine trial 158, displacement=0.20, freq=200.00, 17:00:57
+		347, PiezoSine trial 159, displacement=0.40, freq=200.00, 17:00:59
+		348, PiezoSine trial 160, displacement=0.10, freq=400.00, 17:01:01
+		349, PiezoSine trial 161, displacement=0.20, freq=400.00, 17:01:03
+		350, PiezoSine trial 162, displacement=0.40, freq=400.00, 17:01:06
+
+	PiezoCourtshipSong - 17:01:12 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 23 - Tagged as {'90 mM Sodium; '}
+ 	IClamp, displacement=0.1, displacementOffset=5, displacements=[0.2         0.4], durSweep=2.3115, gain=5, mode=[IClamp], postDurInSec=1, preDurInSec=0.4, protocol=[PiezoCourtshipSong], ramptime=0.04, sampratein=40000, samprateout=40000, secondary_gain=50, stimDurInSec=0.91153, Vm_id=0
+		351, PiezoCourtshipSong trial 7, displacement=0.20, 17:01:14
+		352, PiezoCourtshipSong trial 8, displacement=0.40, 17:01:17
+		353, PiezoCourtshipSong trial 9, displacement=0.20, 17:01:19
+		354, PiezoCourtshipSong trial 10, displacement=0.40, 17:01:22
+		355, PiezoCourtshipSong trial 11, displacement=0.20, 17:01:25
+		356, PiezoCourtshipSong trial 12, displacement=0.40, 17:01:27
+
+	PiezoBWCourtshipSong - 17:01:32 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 24 - Tagged as {'90 mM Sodium; '}
+ 	IClamp, displacement=0.1, displacementOffset=5, displacements=[0.2         0.4], durSweep=2.3115, gain=5, mode=[IClamp], postDurInSec=1, preDurInSec=0.4, protocol=[PiezoBWCourtshipSong], ramptime=0.04, sampratein=40000, samprateout=40000, secondary_gain=50, stimDurInSec=0.91153, Vm_id=0
+		357, PiezoBWCourtshipSong trial 7, displacement=0.20, 17:01:34
+		358, PiezoBWCourtshipSong trial 8, displacement=0.40, 17:01:37
+		359, PiezoBWCourtshipSong trial 9, displacement=0.20, 17:01:40
+		360, PiezoBWCourtshipSong trial 10, displacement=0.40, 17:01:42
+		361, PiezoBWCourtshipSong trial 11, displacement=0.20, 17:01:45
+		362, PiezoBWCourtshipSong trial 12, displacement=0.40, 17:01:48
+
+	****************
+	2013-10-15 17:02:28
+	TTX; 
+	****************
+131015 - 17:03:04 - GH86-Gal4:pJFRC7; F3_C1
+RigName: BasicEPhysRig
+	amplifier: MultiClamp700B
+For list of equipement run: equipmentSetupStruct('131015')
+
+	Sweep - 17:03:06 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 25 - Tagged as {'TTX; '}
+ 	IClamp, durSweep=5, gain=5, mode=[IClamp], protocol=[Sweep], sampratein=50000, samprateout=50000, secondary_gain=50, Vm_id=0
+		363, Sweep trial 31, 17:03:11
+		364, Sweep trial 32, 17:03:17
+		365, Sweep trial 33, 17:03:22
+		366, Sweep trial 34, 17:03:28
+		367, Sweep trial 35, 17:03:34
+
+	Sweep - 17:03:42 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 26 - Tagged as {'TTX; '}
+ 	IClamp, durSweep=5, gain=5, mode=[IClamp], protocol=[Sweep], sampratein=50000, samprateout=50000, secondary_gain=50, Vm_id=0
+		368, Sweep trial 36, 17:03:48
+		369, Sweep trial 37, 17:03:53
+		370, Sweep trial 38, 17:03:58
+		371, Sweep trial 39, 17:04:04
+		372, Sweep trial 40, 17:04:09
+
+	Sweep - 17:04:28 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 27 - Tagged as {'TTX; '}
+ 	IClamp, durSweep=5, gain=5, mode=[IClamp], protocol=[Sweep], sampratein=50000, samprateout=50000, secondary_gain=50, Vm_id=0
+		373, Sweep trial 41, 17:04:33
+		374, Sweep trial 42, 17:04:39
+		375, Sweep trial 43, 17:04:45
+		376, Sweep trial 44, 17:04:51
+		377, Sweep trial 45, 17:04:57
+
+	Sweep - 17:05:18 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 28 - Tagged as {'TTX; '}
+ 	IClamp, durSweep=5, gain=5, mode=[IClamp], protocol=[Sweep], sampratein=50000, samprateout=50000, secondary_gain=50, Vm_id=0
+		378, Sweep trial 46, 17:05:23
+		379, Sweep trial 47, 17:05:29
+		380, Sweep trial 48, 17:05:34
+		381, Sweep trial 49, 17:05:40
+		382, Sweep trial 50, 17:05:46
+131015 - 17:06:03 - GH86-Gal4:pJFRC7; F3_C1
+RigName: PiezoRig
+	amplifier: MultiClamp700B
+	piezo: Piezo
+	speaker: Speaker
+For list of equipement run: equipmentSetupStruct('131015')
+			PiezoStep has a problem: UncalibratedStimulus
+
+	PiezoStep - 17:06:05 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 29 - Tagged as {'TTX; '}
+ 	IClamp, displacement=1, displacementOffset=5, displacements=[-1        -0.3        -0.1         0.1         0.3           1], durSweep=0.5, gain=5, mode=[IClamp], postDurInSec=0.1, preDurInSec=0.2, protocol=[PiezoStep], sampratein=50000, samprateout=50000, secondary_gain=50, stimDurInSec=0.2, Vm_id=0
+			PiezoStep has a problem: UncalibratedStimulus
+		383, PiezoStep trial 121, displacement=-1.00, 17:06:06
+			PiezoStep has a problem: UncalibratedStimulus
+		384, PiezoStep trial 122, displacement=-0.30, 17:06:07
+			PiezoStep has a problem: UncalibratedStimulus
+		385, PiezoStep trial 123, displacement=-0.10, 17:06:07
+		386, PiezoStep trial 124, displacement=0.10, 17:06:08
+			PiezoStep has a problem: UncalibratedStimulus
+		387, PiezoStep trial 125, displacement=0.30, 17:06:09
+			PiezoStep has a problem: UncalibratedStimulus
+		388, PiezoStep trial 126, displacement=1.00, 17:06:10
+			PiezoStep has a problem: UncalibratedStimulus
+		389, PiezoStep trial 127, displacement=-1.00, 17:06:10
+			PiezoStep has a problem: UncalibratedStimulus
+		390, PiezoStep trial 128, displacement=-0.30, 17:06:11
+			PiezoStep has a problem: UncalibratedStimulus
+		391, PiezoStep trial 129, displacement=-0.10, 17:06:12
+		392, PiezoStep trial 130, displacement=0.10, 17:06:13
+			PiezoStep has a problem: UncalibratedStimulus
+		393, PiezoStep trial 131, displacement=0.30, 17:06:14
+			PiezoStep has a problem: UncalibratedStimulus
+		394, PiezoStep trial 132, displacement=1.00, 17:06:15
+			PiezoStep has a problem: UncalibratedStimulus
+		395, PiezoStep trial 133, displacement=-1.00, 17:06:15
+			PiezoStep has a problem: UncalibratedStimulus
+		396, PiezoStep trial 134, displacement=-0.30, 17:06:16
+			PiezoStep has a problem: UncalibratedStimulus
+		397, PiezoStep trial 135, displacement=-0.10, 17:06:17
+		398, PiezoStep trial 136, displacement=0.10, 17:06:18
+			PiezoStep has a problem: UncalibratedStimulus
+		399, PiezoStep trial 137, displacement=0.30, 17:06:19
+			PiezoStep has a problem: UncalibratedStimulus
+		400, PiezoStep trial 138, displacement=1.00, 17:06:19
+			PiezoStep has a problem: UncalibratedStimulus
+		401, PiezoStep trial 139, displacement=-1.00, 17:06:20
+			PiezoStep has a problem: UncalibratedStimulus
+		402, PiezoStep trial 140, displacement=-0.30, 17:06:21
+			PiezoStep has a problem: UncalibratedStimulus
+		403, PiezoStep trial 141, displacement=-0.10, 17:06:22
+		404, PiezoStep trial 142, displacement=0.10, 17:06:23
+			PiezoStep has a problem: UncalibratedStimulus
+		405, PiezoStep trial 143, displacement=0.30, 17:06:23
+			PiezoStep has a problem: UncalibratedStimulus
+		406, PiezoStep trial 144, displacement=1.00, 17:06:24
+			PiezoStep has a problem: UncalibratedStimulus
+		407, PiezoStep trial 145, displacement=-1.00, 17:06:25
+			PiezoStep has a problem: UncalibratedStimulus
+		408, PiezoStep trial 146, displacement=-0.30, 17:06:26
+			PiezoStep has a problem: UncalibratedStimulus
+		409, PiezoStep trial 147, displacement=-0.10, 17:06:27
+		410, PiezoStep trial 148, displacement=0.10, 17:06:27
+			PiezoStep has a problem: UncalibratedStimulus
+		411, PiezoStep trial 149, displacement=0.30, 17:06:28
+			PiezoStep has a problem: UncalibratedStimulus
+		412, PiezoStep trial 150, displacement=1.00, 17:06:29
+			PiezoStep has a problem: UncalibratedStimulus
+
+	PiezoStep - 17:07:56 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 30 - Tagged as {'TTX; '}
+ 	IClamp, displacement=1, displacementOffset=5, displacements=[-1        -0.3        -0.1         0.1         0.3           1], durSweep=0.5, gain=5, mode=[IClamp], postDurInSec=0.1, preDurInSec=0.2, protocol=[PiezoStep], sampratein=50000, samprateout=50000, secondary_gain=50, stimDurInSec=0.2, Vm_id=0
+			PiezoStep has a problem: UncalibratedStimulus
+		413, PiezoStep trial 151, displacement=-1.00, 17:07:56
+			PiezoStep has a problem: UncalibratedStimulus
+		414, PiezoStep trial 152, displacement=-0.30, 17:07:57
+			PiezoStep has a problem: UncalibratedStimulus
+		415, PiezoStep trial 153, displacement=-0.10, 17:07:58
+		416, PiezoStep trial 154, displacement=0.10, 17:07:59
+			PiezoStep has a problem: UncalibratedStimulus
+		417, PiezoStep trial 155, displacement=0.30, 17:08:00
+			PiezoStep has a problem: UncalibratedStimulus
+		418, PiezoStep trial 156, displacement=1.00, 17:08:01
+			PiezoStep has a problem: UncalibratedStimulus
+		419, PiezoStep trial 157, displacement=-1.00, 17:08:01
+			PiezoStep has a problem: UncalibratedStimulus
+		420, PiezoStep trial 158, displacement=-0.30, 17:08:02
+			PiezoStep has a problem: UncalibratedStimulus
+		421, PiezoStep trial 159, displacement=-0.10, 17:08:03
+		422, PiezoStep trial 160, displacement=0.10, 17:08:04
+			PiezoStep has a problem: UncalibratedStimulus
+		423, PiezoStep trial 161, displacement=0.30, 17:08:05
+			PiezoStep has a problem: UncalibratedStimulus
+		424, PiezoStep trial 162, displacement=1.00, 17:08:05
+			PiezoStep has a problem: UncalibratedStimulus
+		425, PiezoStep trial 163, displacement=-1.00, 17:08:06
+			PiezoStep has a problem: UncalibratedStimulus
+		426, PiezoStep trial 164, displacement=-0.30, 17:08:07
+			PiezoStep has a problem: UncalibratedStimulus
+		427, PiezoStep trial 165, displacement=-0.10, 17:08:08
+		428, PiezoStep trial 166, displacement=0.10, 17:08:09
+			PiezoStep has a problem: UncalibratedStimulus
+		429, PiezoStep trial 167, displacement=0.30, 17:08:09
+			PiezoStep has a problem: UncalibratedStimulus
+		430, PiezoStep trial 168, displacement=1.00, 17:08:10
+			PiezoStep has a problem: UncalibratedStimulus
+		431, PiezoStep trial 169, displacement=-1.00, 17:08:11
+			PiezoStep has a problem: UncalibratedStimulus
+		432, PiezoStep trial 170, displacement=-0.30, 17:08:12
+			PiezoStep has a problem: UncalibratedStimulus
+		433, PiezoStep trial 171, displacement=-0.10, 17:08:13
+		434, PiezoStep trial 172, displacement=0.10, 17:08:13
+			PiezoStep has a problem: UncalibratedStimulus
+		435, PiezoStep trial 173, displacement=0.30, 17:08:14
+			PiezoStep has a problem: UncalibratedStimulus
+		436, PiezoStep trial 174, displacement=1.00, 17:08:15
+			PiezoStep has a problem: UncalibratedStimulus
+		437, PiezoStep trial 175, displacement=-1.00, 17:08:16
+			PiezoStep has a problem: UncalibratedStimulus
+		438, PiezoStep trial 176, displacement=-0.30, 17:08:17
+			PiezoStep has a problem: UncalibratedStimulus
+		439, PiezoStep trial 177, displacement=-0.10, 17:08:17
+		440, PiezoStep trial 178, displacement=0.10, 17:08:18
+			PiezoStep has a problem: UncalibratedStimulus
+		441, PiezoStep trial 179, displacement=0.30, 17:08:19
+			PiezoStep has a problem: UncalibratedStimulus
+		442, PiezoStep trial 180, displacement=1.00, 17:08:20
+
+	PiezoSquareWave - 17:08:41 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 31 - Tagged as {'TTX; '}
+ 	IClamp, cycleDurInSec=0.1, cycles=10, displacement=0.2, displacementOffset=5, displacements=3, durSweep=1.3, gain=5, mode=[IClamp], postDurInSec=0.1, preDurInSec=0.2, protocol=[PiezoSquareWave], sampratein=50000, samprateout=50000, secondary_gain=50, stimDurInSec=1, Vm_id=0
+		443, PiezoSquareWave trial 26, 17:08:43
+		444, PiezoSquareWave trial 27, 17:08:45
+		445, PiezoSquareWave trial 28, 17:08:46
+		446, PiezoSquareWave trial 29, 17:08:48
+		447, PiezoSquareWave trial 30, 17:08:49
+			PiezoSine has a problem: UncalibratedStimulus
+
+	PiezoSine - 17:09:00 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 32 - Tagged as {'TTX; '}
+ 	IClamp, displacement=0.05, displacementOffset=5, displacements=[0.1         0.2         0.4], durSweep=1.7, freq=12.5, freqs=[12.5            25            50           100           200           400], gain=5, mode=[IClamp], postDurInSec=1, preDurInSec=0.4, protocol=[PiezoSine], ramptime=0.04, sampratein=50000, samprateout=50000, secondary_gain=50, stimDurInSec=0.3, Vm_id=0
+			PiezoSine has a problem: UncalibratedStimulus
+		448, PiezoSine trial 163, displacement=0.10, freq=12.50, 17:09:02
+			PiezoSine has a problem: UncalibratedStimulus
+		449, PiezoSine trial 164, displacement=0.20, freq=12.50, 17:09:04
+			PiezoSine has a problem: UncalibratedStimulus
+		450, PiezoSine trial 165, displacement=0.40, freq=12.50, 17:09:06
+		451, PiezoSine trial 166, displacement=0.10, freq=25.00, 17:09:08
+		452, PiezoSine trial 167, displacement=0.20, freq=25.00, 17:09:10
+		453, PiezoSine trial 168, displacement=0.40, freq=25.00, 17:09:12
+		454, PiezoSine trial 169, displacement=0.10, freq=50.00, 17:09:14
+		455, PiezoSine trial 170, displacement=0.20, freq=50.00, 17:09:16
+		456, PiezoSine trial 171, displacement=0.40, freq=50.00, 17:09:18
+		457, PiezoSine trial 172, displacement=0.10, freq=100.00, 17:09:20
+		458, PiezoSine trial 173, displacement=0.20, freq=100.00, 17:09:22
+		459, PiezoSine trial 174, displacement=0.40, freq=100.00, 17:09:24
+		460, PiezoSine trial 175, displacement=0.10, freq=200.00, 17:09:26
+		461, PiezoSine trial 176, displacement=0.20, freq=200.00, 17:09:28
+		462, PiezoSine trial 177, displacement=0.40, freq=200.00, 17:09:30
+		463, PiezoSine trial 178, displacement=0.10, freq=400.00, 17:09:33
+		464, PiezoSine trial 179, displacement=0.20, freq=400.00, 17:09:34
+		465, PiezoSine trial 180, displacement=0.40, freq=400.00, 17:09:36
+			PiezoSine has a problem: UncalibratedStimulus
+		466, PiezoSine trial 181, displacement=0.10, freq=12.50, 17:09:39
+			PiezoSine has a problem: UncalibratedStimulus
+		467, PiezoSine trial 182, displacement=0.20, freq=12.50, 17:09:41
+			PiezoSine has a problem: UncalibratedStimulus
+		468, PiezoSine trial 183, displacement=0.40, freq=12.50, 17:09:43
+		469, PiezoSine trial 184, displacement=0.10, freq=25.00, 17:09:45
+		470, PiezoSine trial 185, displacement=0.20, freq=25.00, 17:09:47
+		471, PiezoSine trial 186, displacement=0.40, freq=25.00, 17:09:49
+		472, PiezoSine trial 187, displacement=0.10, freq=50.00, 17:09:51
+		473, PiezoSine trial 188, displacement=0.20, freq=50.00, 17:09:53
+		474, PiezoSine trial 189, displacement=0.40, freq=50.00, 17:09:55
+		475, PiezoSine trial 190, displacement=0.10, freq=100.00, 17:09:57
+		476, PiezoSine trial 191, displacement=0.20, freq=100.00, 17:09:59
+		477, PiezoSine trial 192, displacement=0.40, freq=100.00, 17:10:01
+		478, PiezoSine trial 193, displacement=0.10, freq=200.00, 17:10:03
+		479, PiezoSine trial 194, displacement=0.20, freq=200.00, 17:10:05
+		480, PiezoSine trial 195, displacement=0.40, freq=200.00, 17:10:08
+		481, PiezoSine trial 196, displacement=0.10, freq=400.00, 17:10:10
+		482, PiezoSine trial 197, displacement=0.20, freq=400.00, 17:10:11
+		483, PiezoSine trial 198, displacement=0.40, freq=400.00, 17:10:14
+			PiezoSine has a problem: UncalibratedStimulus
+		484, PiezoSine trial 199, displacement=0.10, freq=12.50, 17:10:16
+			PiezoSine has a problem: UncalibratedStimulus
+		485, PiezoSine trial 200, displacement=0.20, freq=12.50, 17:10:18
+			PiezoSine has a problem: UncalibratedStimulus
+		486, PiezoSine trial 201, displacement=0.40, freq=12.50, 17:10:20
+		487, PiezoSine trial 202, displacement=0.10, freq=25.00, 17:10:22
+		488, PiezoSine trial 203, displacement=0.20, freq=25.00, 17:10:24
+		489, PiezoSine trial 204, displacement=0.40, freq=25.00, 17:10:26
+		490, PiezoSine trial 205, displacement=0.10, freq=50.00, 17:10:28
+		491, PiezoSine trial 206, displacement=0.20, freq=50.00, 17:10:30
+		492, PiezoSine trial 207, displacement=0.40, freq=50.00, 17:10:32
+		493, PiezoSine trial 208, displacement=0.10, freq=100.00, 17:10:34
+		494, PiezoSine trial 209, displacement=0.20, freq=100.00, 17:10:36
+		495, PiezoSine trial 210, displacement=0.40, freq=100.00, 17:10:38
+		496, PiezoSine trial 211, displacement=0.10, freq=200.00, 17:10:40
+		497, PiezoSine trial 212, displacement=0.20, freq=200.00, 17:10:42
+		498, PiezoSine trial 213, displacement=0.40, freq=200.00, 17:10:45
+		499, PiezoSine trial 214, displacement=0.10, freq=400.00, 17:10:47
+		500, PiezoSine trial 215, displacement=0.20, freq=400.00, 17:10:49
+		501, PiezoSine trial 216, displacement=0.40, freq=400.00, 17:10:50
+
+	PiezoCourtshipSong - 17:11:05 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 33 - Tagged as {'TTX; '}
+ 	IClamp, displacement=0.1, displacementOffset=5, displacements=[0.2         0.4], durSweep=2.3115, gain=5, mode=[IClamp], postDurInSec=1, preDurInSec=0.4, protocol=[PiezoCourtshipSong], ramptime=0.04, sampratein=40000, samprateout=40000, secondary_gain=50, stimDurInSec=0.91153, Vm_id=0
+		502, PiezoCourtshipSong trial 13, displacement=0.20, 17:11:07
+		503, PiezoCourtshipSong trial 14, displacement=0.40, 17:11:10
+		504, PiezoCourtshipSong trial 15, displacement=0.20, 17:11:13
+		505, PiezoCourtshipSong trial 16, displacement=0.40, 17:11:15
+		506, PiezoCourtshipSong trial 17, displacement=0.20, 17:11:18
+		507, PiezoCourtshipSong trial 18, displacement=0.40, 17:11:21
+
+	PiezoBWCourtshipSong - 17:11:25 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 34 - Tagged as {'TTX; '}
+ 	IClamp, displacement=0.1, displacementOffset=5, displacements=[0.2         0.4], durSweep=2.3115, gain=5, mode=[IClamp], postDurInSec=1, preDurInSec=0.4, protocol=[PiezoBWCourtshipSong], ramptime=0.04, sampratein=40000, samprateout=40000, secondary_gain=50, stimDurInSec=0.91153, Vm_id=0
+		508, PiezoBWCourtshipSong trial 13, displacement=0.20, 17:11:27
+		509, PiezoBWCourtshipSong trial 14, displacement=0.40, 17:11:30
+		510, PiezoBWCourtshipSong trial 15, displacement=0.20, 17:11:33
+		511, PiezoBWCourtshipSong trial 16, displacement=0.40, 17:11:35
+		512, PiezoBWCourtshipSong trial 17, displacement=0.20, 17:11:38
+		513, PiezoBWCourtshipSong trial 18, displacement=0.40, 17:11:41
+
+	PiezoSquareWave - 17:11:46 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 35 - Tagged as {'TTX; '}
+ 	IClamp, cycleDurInSec=0.1, cycles=10, displacement=0.2, displacementOffset=5, displacements=3, durSweep=1.3, gain=5, mode=[IClamp], postDurInSec=0.1, preDurInSec=0.2, protocol=[PiezoSquareWave], sampratein=50000, samprateout=50000, secondary_gain=50, stimDurInSec=1, Vm_id=0
+		514, PiezoSquareWave trial 31, 17:11:48
+		515, PiezoSquareWave trial 32, 17:11:50
+		516, PiezoSquareWave trial 33, 17:11:51
+		517, PiezoSquareWave trial 34, 17:11:53
+		518, PiezoSquareWave trial 35, 17:11:54
+
+	PiezoSquareWave - 17:12:11 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 36 - Tagged as {'TTX; '}
+ 	IClamp, cycleDurInSec=0.1, cycles=10, displacement=0.2, displacementOffset=5, displacements=3, durSweep=1.3, gain=5, mode=[IClamp], postDurInSec=0.1, preDurInSec=0.2, protocol=[PiezoSquareWave], sampratein=50000, samprateout=50000, secondary_gain=50, stimDurInSec=1, Vm_id=0
+		519, PiezoSquareWave trial 36, 17:12:12
+		520, PiezoSquareWave trial 37, 17:12:14
+		521, PiezoSquareWave trial 38, 17:12:15
+		522, PiezoSquareWave trial 39, 17:12:17
+		523, PiezoSquareWave trial 40, 17:12:19
+
+	PiezoSquareWave - 17:13:08 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 37 - Tagged as {'TTX; '}
+ 	IClamp, cycleDurInSec=0.1, cycles=10, displacement=0.2, displacementOffset=5, displacements=3, durSweep=1.3, gain=5, mode=[IClamp], postDurInSec=0.1, preDurInSec=0.2, protocol=[PiezoSquareWave], sampratein=50000, samprateout=50000, secondary_gain=50, stimDurInSec=1, Vm_id=0
+		524, PiezoSquareWave trial 41, 17:13:09
+		525, PiezoSquareWave trial 42, 17:13:11
+		526, PiezoSquareWave trial 43, 17:13:13
+		527, PiezoSquareWave trial 44, 17:13:14
+		528, PiezoSquareWave trial 45, 17:13:16
+			PiezoSquareWave has a problem: UncalibratedStimulus
+
+	PiezoSquareWave - 17:13:23 - GH86-Gal4:pJFRC7; F3_C1
+	Trial Block 38 - Tagged as {'TTX; '}
+ 	IClamp, cycleDurInSec=0.1, cycles=10, displacement=1, displacementOffset=5, displacements=3, durSweep=1.3, gain=5, mode=[IClamp], postDurInSec=0.1, preDurInSec=0.2, protocol=[PiezoSquareWave], sampratein=50000, samprateout=50000, secondary_gain=50, stimDurInSec=1, Vm_id=0
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		529, PiezoSquareWave trial 46, 17:13:24
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		530, PiezoSquareWave trial 47, 17:13:26
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		531, PiezoSquareWave trial 48, 17:13:27
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		532, PiezoSquareWave trial 49, 17:13:29
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		533, PiezoSquareWave trial 50, 17:13:31

@@ -30,7 +30,7 @@
 
 clear % clears the "workspace"
 raw_data_directory = fullfile('~','Code','Modern-Data-Management','raw_data'); 
-% raw_data_directory = fullfile('C:\Users\Anthony Azevedo','Code','Modern-Data-Management','raw_data'); 
+raw_data_directory = fullfile('C:\Users\Anthony Azevedo','Code','Modern-Data-Management','raw_data'); 
 cd(raw_data_directory)
 pwd
 
@@ -58,8 +58,8 @@ pwd
 % didn't.  
 
 % Look at the contents of the cell directory 131126_F2_C1
-experimentdate = '131126';
-flynumber = '2';
+experimentdate = '131015';
+flynumber = '3';
 cellnumber = '1';
 
 cellIdentifier = [experimentdate '_F' flynumber '_C' cellnumber]
@@ -78,7 +78,7 @@ ls
 
 %% Inspect data from a single trial
 
-load('PiezoSine_Raw_131126_F2_C1_3.mat')
+load('PiezoSine_Raw_131015_F3_C1_3.mat')
 
 %%
 % The naming conventions of the .mat files gives information about how
@@ -474,7 +474,7 @@ trials_25Hz_0_1 = [1 16 31]; % matlab doesn't take variable names with periods
 % For each trial number in my set, I will create the file name for that
 % trial and load it into a new variable, called trial. For example
 trial_file_name = ...
-    ['PiezoSine_Raw_131126_F2_C1_',...
+    ['PiezoSine_Raw_131015_F3_C1_',...
     num2str(trials_25Hz_0_1(3)),...
     '.mat']
 
@@ -508,7 +508,7 @@ for trial_index = 1:length(trials_25Hz_0_1)
     
     % make the trial filename
     trial_file_name = ...
-        ['PiezoSine_Raw_131126_F2_C1_',...
+        ['PiezoSine_Raw_131015_F3_C1_',...
         num2str(trials_25Hz_0_1(trial_index)),... % trial_index changes on each loop
         '.mat']
     
@@ -642,7 +642,7 @@ for ii = 1:length(trial.params.freqs)
             
             % make the trial filename
             trial_file_name = ...
-                ['PiezoSine_Raw_131126_F2_C1_',...
+                ['PiezoSine_Raw_131015_F3_C1_',...
                 num2str(trialnumbers(trial_index)),... % trial_index changes on each loop
                 '.mat'];
             
@@ -780,7 +780,7 @@ for ii = 1:length(trial.params.freqs)
         for trial_index = 1:length(trialnumbers)
             
             trial_file_name = ...
-                ['PiezoSine_Raw_131126_F2_C1_',...
+                ['PiezoSine_Raw_131015_F3_C1_',...
                 num2str(trialnumbers(trial_index)),... 
                 '.mat']; 
             trial = load(trial_file_name);
@@ -919,7 +919,7 @@ for trial_index = 1:length(trialnumbers)
     
     % make the trial filename
     trial_file_name = ...
-        ['PiezoSine_Raw_131126_F2_C1_',...
+        ['PiezoSine_Raw_131015_F3_C1_',...
         num2str(trialnumbers(trial_index)),... % trial_index changes on each loop
         '.mat'];
     
