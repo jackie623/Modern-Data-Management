@@ -1,0 +1,1 @@
+This folder contains data to be used with CCB4_MATLAB_Analysis_Script.m

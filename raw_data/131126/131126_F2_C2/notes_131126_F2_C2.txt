@@ -1,0 +1,322 @@
+131126 - 16:34:49 - pJFRC7;VT30609; F2_C2
+RigName: BasicEPhysRig
+	amplifier: MultiClamp700B
+For list of equipement run: equipmentSetupStruct('131126')
+
+	****************
+	2013-11-26 16:34:53
+	Seal; 
+	****************
+
+	SealAndLeak - 16:34:55 - pJFRC7;VT30609; F2_C2
+	Trial Block 1 - Tagged as {'Seal; '}
+ 	VClamp, durSweep=0.668, gain=100, mode=[VClamp], protocol=[SealAndLeak], pulses=20, sampratein=100000, samprateout=100000, secondary_gain=20, stepamp=5, stepdur=0.0167, Vm_id=0
+		1, SealAndLeak trial 1, 16:34:56
+
+	****************
+	2013-11-26 16:35:23
+	R_input; 
+	****************
+
+	SealAndLeak - 16:35:25 - pJFRC7;VT30609; F2_C2
+	Trial Block 2 - Tagged as {'R_input; '}
+ 	VClamp, durSweep=0.668, gain=100, mode=[VClamp], protocol=[SealAndLeak], pulses=20, sampratein=100000, samprateout=100000, secondary_gain=20, stepamp=5, stepdur=0.0167, Vm_id=0
+		2, SealAndLeak trial 2, 16:35:26
+
+	Sweep - 16:35:57 - pJFRC7;VT30609; F2_C2
+	Trial Block 3 - Tagged as {''}
+ 	IClamp, durSweep=5, gain=50, mode=[VClamp], protocol=[Sweep], sampratein=50000, samprateout=50000, secondary_gain=20, Vm_id=0
+		3, Sweep trial 1, 16:36:03
+		4, Sweep trial 2, 16:36:08
+		5, Sweep trial 3, 16:36:14
+		6, Sweep trial 4, 16:36:20
+		7, Sweep trial 5, 16:36:26
+
+	****************
+	2013-11-26 16:37:20
+	Hyperpolarized; 
+	****************
+
+	Sweep - 16:37:22 - pJFRC7;VT30609; F2_C2
+	Trial Block 4 - Tagged as {'Hyperpolarized; '}
+ 	IClamp, durSweep=5, gain=5, mode=[IClamp], protocol=[Sweep], sampratein=50000, samprateout=50000, secondary_gain=5, Vm_id=0
+		8, Sweep trial 6, 16:37:27
+		9, Sweep trial 7, 16:37:33
+		10, Sweep trial 8, 16:37:39
+
+	****************
+	2013-11-26 16:39:53
+	Spiking; 
+	****************
+
+	Sweep - 16:39:55 - pJFRC7;VT30609; F2_C2
+	Trial Block 5 - Tagged as {'Spiking; '}
+ 	IClamp, durSweep=5, gain=5, mode=[IClamp], protocol=[Sweep], sampratein=50000, samprateout=50000, secondary_gain=5, Vm_id=0
+		11, Sweep trial 9, 16:40:01
+		12, Sweep trial 10, 16:40:06
+		13, Sweep trial 11, 16:40:12
+		14, Sweep trial 12, 16:40:17
+		15, Sweep trial 13, 16:40:23
+131126 - 16:41:22 - pJFRC7;VT30609; F2_C2
+RigName: PiezoRig
+	amplifier: MultiClamp700B
+	piezo: Piezo
+	speaker: Speaker
+For list of equipement run: equipmentSetupStruct('131126')
+			PiezoStep has a problem: UncalibratedStimulus
+
+	PiezoStep - 16:41:24 - pJFRC7;VT30609; F2_C2
+	Trial Block 6 - Tagged as {''}
+ 	IClamp, displacement=-1, displacementOffset=5, displacements=[-1        -0.3        -0.1         0.1         0.3           1], durSweep=0.5, gain=5, mode=[IClamp], postDurInSec=0.1, preDurInSec=0.2, protocol=[PiezoStep], sampratein=50000, samprateout=50000, secondary_gain=5, stimDurInSec=0.2, Vm_id=0
+			PiezoStep has a problem: UncalibratedStimulus
+		16, PiezoStep trial 1, displacement=-1.00, 16:41:25
+			PiezoStep has a problem: UncalibratedStimulus
+		17, PiezoStep trial 2, displacement=-0.30, 16:41:26
+			PiezoStep has a problem: UncalibratedStimulus
+		18, PiezoStep trial 3, displacement=-0.10, 16:41:27
+		19, PiezoStep trial 4, displacement=0.10, 16:41:28
+			PiezoStep has a problem: UncalibratedStimulus
+		20, PiezoStep trial 5, displacement=0.30, 16:41:28
+			PiezoStep has a problem: UncalibratedStimulus
+		21, PiezoStep trial 6, displacement=1.00, 16:41:29
+			PiezoStep has a problem: UncalibratedStimulus
+		22, PiezoStep trial 7, displacement=-1.00, 16:41:30
+			PiezoStep has a problem: UncalibratedStimulus
+		23, PiezoStep trial 8, displacement=-0.30, 16:41:31
+			PiezoStep has a problem: UncalibratedStimulus
+		24, PiezoStep trial 9, displacement=-0.10, 16:41:32
+		25, PiezoStep trial 10, displacement=0.10, 16:41:32
+			PiezoStep has a problem: UncalibratedStimulus
+		26, PiezoStep trial 11, displacement=0.30, 16:41:33
+			PiezoStep has a problem: UncalibratedStimulus
+		27, PiezoStep trial 12, displacement=1.00, 16:41:34
+			PiezoStep has a problem: UncalibratedStimulus
+		28, PiezoStep trial 13, displacement=-1.00, 16:41:35
+			PiezoStep has a problem: UncalibratedStimulus
+		29, PiezoStep trial 14, displacement=-0.30, 16:41:36
+			PiezoStep has a problem: UncalibratedStimulus
+		30, PiezoStep trial 15, displacement=-0.10, 16:41:37
+		31, PiezoStep trial 16, displacement=0.10, 16:41:37
+			PiezoStep has a problem: UncalibratedStimulus
+		32, PiezoStep trial 17, displacement=0.30, 16:41:38
+			PiezoStep has a problem: UncalibratedStimulus
+		33, PiezoStep trial 18, displacement=1.00, 16:41:39
+			PiezoStep has a problem: UncalibratedStimulus
+		34, PiezoStep trial 19, displacement=-1.00, 16:41:40
+			PiezoStep has a problem: UncalibratedStimulus
+		35, PiezoStep trial 20, displacement=-0.30, 16:41:41
+			PiezoStep has a problem: UncalibratedStimulus
+		36, PiezoStep trial 21, displacement=-0.10, 16:41:41
+		37, PiezoStep trial 22, displacement=0.10, 16:41:42
+			PiezoStep has a problem: UncalibratedStimulus
+		38, PiezoStep trial 23, displacement=0.30, 16:41:43
+			PiezoStep has a problem: UncalibratedStimulus
+		39, PiezoStep trial 24, displacement=1.00, 16:41:44
+			PiezoStep has a problem: UncalibratedStimulus
+		40, PiezoStep trial 25, displacement=-1.00, 16:41:45
+			PiezoStep has a problem: UncalibratedStimulus
+		41, PiezoStep trial 26, displacement=-0.30, 16:41:45
+			PiezoStep has a problem: UncalibratedStimulus
+		42, PiezoStep trial 27, displacement=-0.10, 16:41:46
+		43, PiezoStep trial 28, displacement=0.10, 16:41:47
+			PiezoStep has a problem: UncalibratedStimulus
+		44, PiezoStep trial 29, displacement=0.30, 16:41:48
+			PiezoStep has a problem: UncalibratedStimulus
+		45, PiezoStep trial 30, displacement=1.00, 16:41:49
+			PiezoSquareWave has a problem: UncalibratedStimulus
+
+	PiezoSquareWave - 16:41:56 - pJFRC7;VT30609; F2_C2
+	Trial Block 7 - Tagged as {''}
+ 	IClamp, cycleDurInSec=0.1, cycles=10, displacement=1, displacementOffset=5, displacements=3, durSweep=1.3, gain=5, mode=[IClamp], postDurInSec=0.1, preDurInSec=0.2, protocol=[PiezoSquareWave], sampratein=50000, samprateout=50000, secondary_gain=5, stimDurInSec=1, Vm_id=0
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		46, PiezoSquareWave trial 1, 16:41:58
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		47, PiezoSquareWave trial 2, 16:42:00
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		48, PiezoSquareWave trial 3, 16:42:01
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		49, PiezoSquareWave trial 4, 16:42:03
+			PiezoSquareWave has a problem: UncalibratedStimulus
+		50, PiezoSquareWave trial 5, 16:42:05
+
+	PiezoSine - 16:42:10 - pJFRC7;VT30609; F2_C2
+	Trial Block 8 - Tagged as {''}
+ 	IClamp, displacement=0.1, displacementOffset=5, displacements=[0.1         0.2         0.4], durSweep=1.7, freq=25, freqs=[25   50  100  200  400], gain=5, mode=[IClamp], postDurInSec=1, preDurInSec=0.4, protocol=[PiezoSine], ramptime=0.04, sampratein=50000, samprateout=50000, secondary_gain=5, stimDurInSec=0.3, Vm_id=0
+		51, PiezoSine trial 1, displacement=0.10, freq=25.00, 16:42:12
+		52, PiezoSine trial 2, displacement=0.20, freq=25.00, 16:42:14
+		53, PiezoSine trial 3, displacement=0.40, freq=25.00, 16:42:17
+		54, PiezoSine trial 4, displacement=0.10, freq=50.00, 16:42:19
+		55, PiezoSine trial 5, displacement=0.20, freq=50.00, 16:42:21
+		56, PiezoSine trial 6, displacement=0.40, freq=50.00, 16:42:23
+		57, PiezoSine trial 7, displacement=0.10, freq=100.00, 16:42:25
+		58, PiezoSine trial 8, displacement=0.20, freq=100.00, 16:42:27
+		59, PiezoSine trial 9, displacement=0.40, freq=100.00, 16:42:29
+		60, PiezoSine trial 10, displacement=0.10, freq=200.00, 16:42:32
+		61, PiezoSine trial 11, displacement=0.20, freq=200.00, 16:42:34
+		62, PiezoSine trial 12, displacement=0.40, freq=200.00, 16:42:36
+		63, PiezoSine trial 13, displacement=0.10, freq=400.00, 16:42:38
+		64, PiezoSine trial 14, displacement=0.20, freq=400.00, 16:42:40
+		65, PiezoSine trial 15, displacement=0.40, freq=400.00, 16:42:42
+		66, PiezoSine trial 16, displacement=0.10, freq=25.00, 16:42:45
+		67, PiezoSine trial 17, displacement=0.20, freq=25.00, 16:42:47
+		68, PiezoSine trial 18, displacement=0.40, freq=25.00, 16:42:49
+		69, PiezoSine trial 19, displacement=0.10, freq=50.00, 16:42:51
+		70, PiezoSine trial 20, displacement=0.20, freq=50.00, 16:42:53
+		71, PiezoSine trial 21, displacement=0.40, freq=50.00, 16:42:55
+		72, PiezoSine trial 22, displacement=0.10, freq=100.00, 16:42:57
+		73, PiezoSine trial 23, displacement=0.20, freq=100.00, 16:43:00
+		74, PiezoSine trial 24, displacement=0.40, freq=100.00, 16:43:02
+		75, PiezoSine trial 25, displacement=0.10, freq=200.00, 16:43:05
+		76, PiezoSine trial 26, displacement=0.20, freq=200.00, 16:43:07
+		77, PiezoSine trial 27, displacement=0.40, freq=200.00, 16:43:09
+		78, PiezoSine trial 28, displacement=0.10, freq=400.00, 16:43:11
+		79, PiezoSine trial 29, displacement=0.20, freq=400.00, 16:43:14
+		80, PiezoSine trial 30, displacement=0.40, freq=400.00, 16:43:16
+		81, PiezoSine trial 31, displacement=0.10, freq=25.00, 16:43:18
+		82, PiezoSine trial 32, displacement=0.20, freq=25.00, 16:43:20
+		83, PiezoSine trial 33, displacement=0.40, freq=25.00, 16:43:22
+		84, PiezoSine trial 34, displacement=0.10, freq=50.00, 16:43:25
+		85, PiezoSine trial 35, displacement=0.20, freq=50.00, 16:43:27
+		86, PiezoSine trial 36, displacement=0.40, freq=50.00, 16:43:29
+		87, PiezoSine trial 37, displacement=0.10, freq=100.00, 16:43:32
+		88, PiezoSine trial 38, displacement=0.20, freq=100.00, 16:43:34
+		89, PiezoSine trial 39, displacement=0.40, freq=100.00, 16:43:36
+		90, PiezoSine trial 40, displacement=0.10, freq=200.00, 16:43:38
+		91, PiezoSine trial 41, displacement=0.20, freq=200.00, 16:43:41
+		92, PiezoSine trial 42, displacement=0.40, freq=200.00, 16:43:44
+		93, PiezoSine trial 43, displacement=0.10, freq=400.00, 16:43:46
+		94, PiezoSine trial 44, displacement=0.20, freq=400.00, 16:43:48
+		95, PiezoSine trial 45, displacement=0.40, freq=400.00, 16:43:50
+131126 - 16:44:34 - pJFRC7;VT30609; F2_C2
+RigName: BasicEPhysRig
+	amplifier: MultiClamp700B
+For list of equipement run: equipmentSetupStruct('131126')
+
+	CurrentStep - 16:44:36 - pJFRC7;VT30609; F2_C2
+	Trial Block 9 - Tagged as {''}
+ 	IClamp, durSweep=0.72, gain=5, mode=[IClamp], postDurInSec=0.5, preDurInSec=0.2, protocol=[CurrentStep], sampratein=50000, samprateout=50000, secondary_gain=5, step=-80, steps=-80, stimDurInSec=0.02, Vm_id=0
+		96, CurrentStep trial 1, 16:44:37
+		97, CurrentStep trial 2, 16:44:38
+		98, CurrentStep trial 3, 16:44:39
+		99, CurrentStep trial 4, 16:44:40
+		100, CurrentStep trial 5, 16:44:41
+
+	CurrentStep - 16:45:11 - pJFRC7;VT30609; F2_C2
+	Trial Block 10 - Tagged as {''}
+ 	IClamp, durSweep=0.72, gain=5, mode=[IClamp], postDurInSec=0.5, preDurInSec=0.2, protocol=[CurrentStep], sampratein=50000, samprateout=50000, secondary_gain=5, step=-40, steps=[-40  -80 -120], stimDurInSec=0.02, Vm_id=0
+		101, CurrentStep trial 6, step=-40.00, 16:45:11
+		102, CurrentStep trial 7, step=-80.00, 16:45:12
+		103, CurrentStep trial 8, step=-120.00, 16:45:14
+		104, CurrentStep trial 9, step=-40.00, 16:45:15
+		105, CurrentStep trial 10, step=-80.00, 16:45:16
+		106, CurrentStep trial 11, step=-120.00, 16:45:17
+		107, CurrentStep trial 12, step=-40.00, 16:45:18
+		108, CurrentStep trial 13, step=-80.00, 16:45:19
+		109, CurrentStep trial 14, step=-120.00, 16:45:20
+		110, CurrentStep trial 15, step=-40.00, 16:45:21
+		111, CurrentStep trial 16, step=-80.00, 16:45:22
+		112, CurrentStep trial 17, step=-120.00, 16:45:23
+		113, CurrentStep trial 18, step=-40.00, 16:45:24
+		114, CurrentStep trial 19, step=-80.00, 16:45:25
+		115, CurrentStep trial 20, step=-120.00, 16:45:26
+
+	CurrentStep - 16:46:06 - pJFRC7;VT30609; F2_C2
+	Trial Block 11 - Tagged as {''}
+ 	IClamp, durSweep=0.72, gain=5, mode=[IClamp], postDurInSec=0.5, preDurInSec=0.2, protocol=[CurrentStep], sampratein=50000, samprateout=50000, secondary_gain=5, step=10, steps=[10  20  40], stimDurInSec=0.02, Vm_id=0
+		116, CurrentStep trial 21, step=10.00, 16:46:06
+		117, CurrentStep trial 22, step=20.00, 16:46:07
+		118, CurrentStep trial 23, step=40.00, 16:46:08
+		119, CurrentStep trial 24, step=10.00, 16:46:09
+		120, CurrentStep trial 25, step=20.00, 16:46:10
+		121, CurrentStep trial 26, step=40.00, 16:46:12
+		122, CurrentStep trial 27, step=10.00, 16:46:13
+		123, CurrentStep trial 28, step=20.00, 16:46:14
+		124, CurrentStep trial 29, step=40.00, 16:46:15
+		125, CurrentStep trial 30, step=10.00, 16:46:16
+		126, CurrentStep trial 31, step=20.00, 16:46:17
+		127, CurrentStep trial 32, step=40.00, 16:46:18
+		128, CurrentStep trial 33, step=10.00, 16:46:19
+		129, CurrentStep trial 34, step=20.00, 16:46:20
+		130, CurrentStep trial 35, step=40.00, 16:46:21
+
+	CurrentStep - 16:46:32 - pJFRC7;VT30609; F2_C2
+	Trial Block 12 - Tagged as {''}
+ 	IClamp, durSweep=0.72, gain=5, mode=[IClamp], postDurInSec=0.5, preDurInSec=0.2, protocol=[CurrentStep], sampratein=50000, samprateout=50000, secondary_gain=5, step=10, steps=[10  20  30  40], stimDurInSec=0.02, Vm_id=0
+		131, CurrentStep trial 36, step=10.00, 16:46:33
+		132, CurrentStep trial 37, step=20.00, 16:46:34
+		133, CurrentStep trial 38, step=30.00, 16:46:35
+		134, CurrentStep trial 39, step=40.00, 16:46:36
+		135, CurrentStep trial 40, step=10.00, 16:46:37
+		136, CurrentStep trial 41, step=20.00, 16:46:38
+		137, CurrentStep trial 42, step=30.00, 16:46:39
+		138, CurrentStep trial 43, step=40.00, 16:46:40
+		139, CurrentStep trial 44, step=10.00, 16:46:41
+		140, CurrentStep trial 45, step=20.00, 16:46:42
+		141, CurrentStep trial 46, step=30.00, 16:46:43
+		142, CurrentStep trial 47, step=40.00, 16:46:44
+		143, CurrentStep trial 48, step=10.00, 16:46:45
+		144, CurrentStep trial 49, step=20.00, 16:46:46
+		145, CurrentStep trial 50, step=30.00, 16:46:47
+		146, CurrentStep trial 51, step=40.00, 16:46:48
+		147, CurrentStep trial 52, step=10.00, 16:46:49
+		148, CurrentStep trial 53, step=20.00, 16:46:50
+		149, CurrentStep trial 54, step=30.00, 16:46:51
+		150, CurrentStep trial 55, step=40.00, 16:46:52
+
+	CurrentSine - 16:47:00 - pJFRC7;VT30609; F2_C2
+	Trial Block 13 - Tagged as {''}
+ 	IClamp, amp=20, amps=20, durSweep=1.7, freq=25, freqs=[25   50  100  200  400], gain=5, mode=[IClamp], postDurInSec=1, preDurInSec=0.5, protocol=[CurrentSine], sampratein=50000, samprateout=50000, secondary_gain=5, stimDurInSec=0.2, Vm_id=0
+		151, CurrentSine trial 1, freq=25.00, 16:47:02
+		152, CurrentSine trial 2, freq=50.00, 16:47:05
+		153, CurrentSine trial 3, freq=100.00, 16:47:07
+		154, CurrentSine trial 4, freq=200.00, 16:47:09
+		155, CurrentSine trial 5, freq=400.00, 16:47:11
+		156, CurrentSine trial 6, freq=25.00, 16:47:13
+		157, CurrentSine trial 7, freq=50.00, 16:47:15
+		158, CurrentSine trial 8, freq=100.00, 16:47:17
+		159, CurrentSine trial 9, freq=200.00, 16:47:19
+		160, CurrentSine trial 10, freq=400.00, 16:47:21
+		161, CurrentSine trial 11, freq=25.00, 16:47:24
+		162, CurrentSine trial 12, freq=50.00, 16:47:26
+		163, CurrentSine trial 13, freq=100.00, 16:47:28
+		164, CurrentSine trial 14, freq=200.00, 16:47:30
+		165, CurrentSine trial 15, freq=400.00, 16:47:32
+		166, CurrentSine trial 16, freq=25.00, 16:47:34
+		167, CurrentSine trial 17, freq=50.00, 16:47:36
+		168, CurrentSine trial 18, freq=100.00, 16:47:38
+		169, CurrentSine trial 19, freq=200.00, 16:47:41
+		170, CurrentSine trial 20, freq=400.00, 16:47:43
+		171, CurrentSine trial 21, freq=25.00, 16:47:45
+		172, CurrentSine trial 22, freq=50.00, 16:47:47
+		173, CurrentSine trial 23, freq=100.00, 16:47:49
+		174, CurrentSine trial 24, freq=200.00, 16:47:51
+		175, CurrentSine trial 25, freq=400.00, 16:47:54
+
+	CurrentSine - 16:48:22 - pJFRC7;VT30609; F2_C2
+	Trial Block 14 - Tagged as {''}
+ 	IClamp, amp=20, amps=20, durSweep=1.7, freq=25, freqs=[25   50  100  200  400], gain=5, mode=[IClamp], postDurInSec=1, preDurInSec=0.5, protocol=[CurrentSine], sampratein=50000, samprateout=50000, secondary_gain=5, stimDurInSec=0.2, Vm_id=0
+		176, CurrentSine trial 26, freq=25.00, 16:48:24
+		177, CurrentSine trial 27, freq=50.00, 16:48:26
+		178, CurrentSine trial 28, freq=100.00, 16:48:28
+		179, CurrentSine trial 29, freq=200.00, 16:48:30
+		180, CurrentSine trial 30, freq=400.00, 16:48:32
+		181, CurrentSine trial 31, freq=25.00, 16:48:35
+		182, CurrentSine trial 32, freq=50.00, 16:48:37
+		183, CurrentSine trial 33, freq=100.00, 16:48:40
+		184, CurrentSine trial 34, freq=200.00, 16:48:42
+		185, CurrentSine trial 35, freq=400.00, 16:48:44
+		186, CurrentSine trial 36, freq=25.00, 16:48:46
+		187, CurrentSine trial 37, freq=50.00, 16:48:48
+		188, CurrentSine trial 38, freq=100.00, 16:48:50
+		189, CurrentSine trial 39, freq=200.00, 16:48:52
+		190, CurrentSine trial 40, freq=400.00, 16:48:54
+		191, CurrentSine trial 41, freq=25.00, 16:48:56
+		192, CurrentSine trial 42, freq=50.00, 16:48:59
+		193, CurrentSine trial 43, freq=100.00, 16:49:01
+		194, CurrentSine trial 44, freq=200.00, 16:49:03
+		195, CurrentSine trial 45, freq=400.00, 16:49:05
+		196, CurrentSine trial 46, freq=25.00, 16:49:07
+		197, CurrentSine trial 47, freq=50.00, 16:49:09
+		198, CurrentSine trial 48, freq=100.00, 16:49:12
+		199, CurrentSine trial 49, freq=200.00, 16:49:14
+		200, CurrentSine trial 50, freq=400.00, 16:49:16
