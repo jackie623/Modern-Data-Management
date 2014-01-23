@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>Data Management in MATLAB</title><meta name="generator" content="MATLAB 8.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2014-01-20"><meta name="DC.source" content="CCB4_MATLAB_Analysis_Script.m"><style type="text/css">
+      --><title>Data Management in MATLAB</title><meta name="generator" content="MATLAB 8.2"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2014-01-23"><meta name="DC.source" content="CCB4_MATLAB_Analysis_Script.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -65,14 +65,17 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>Data Management in MATLAB</h1><!--introduction--><p>copyright: Anthony Azevedo, 2014</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Introduction</a></li><li><a href="#2">Naming conventions and data management</a></li><li><a href="#4">Inspect data from a single trial</a></li><li><a href="#13">The original stimulus</a></li><li><a href="#28">Look at the Response</a></li><li><a href="#33">Analysis example</a></li><li><a href="#36">Aside about data structures</a></li><li><a href="#38">Finding relevant trials</a></li><li><a href="#41">Loading Data</a></li><li><a href="#47">Operating on the data</a></li><li><a href="#51">Broadening the analysis</a></li><li><a href="#58">Displaying Data</a></li><li><a href="#72">Wrap up and future challenges</a></li></ul></div><h2>Introduction<a name="1"></a></h2><p>This script will explore electrophyiological recordings of cells in the auditory pathway of "the fly", Drosophila melanogaster.  Such recordings will involve a stimulus - mechanical or electrical - and an electrical response of the cell.  The responses are measured using a glass pipette filled with a saline solution that is connected by a silver chloride wire to a sensitive patch clamp amplifier.  Mechanical stimuli are delivered using a piezoelectric actuator that will push on the fly's antenna.</p><p>First, we will inspect the data managment scheme, how the raw_data is stored and organized when it is recorded.</p><p>Then we will inspect some of these data individually.</p><p>Finally, we will pose an anlysis question and follow a routine to answer the question according to the following steps:  (1) find data that are relevant to the question (2) import the data (3) perform operations on the data (4) display the results.</p><h2>Naming conventions and data management<a name="2"></a></h2><p>Raw data is stored in this repository on my machine at   /Users/tony/Code/Modern-Data-Management/raw_data. The fullfile function creates a string for the path to a directory.</p><pre class="codeinput">clear <span class="comment">% clears the "workspace"</span>
-raw_data_directory = fullfile(<span class="string">'~'</span>,<span class="string">'Code'</span>,<span class="string">'Modern-Data-Management'</span>,<span class="string">'raw_data'</span>);
+  </style></head><body><div class="content"><h1>Data Management in MATLAB</h1><!--introduction--><p>copyright: Anthony Azevedo, 2014</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Introduction</a></li><li><a href="#2">Naming conventions and data management</a></li><li><a href="#4">Inspect data from a single trial</a></li><li><a href="#13">The original stimulus</a></li><li><a href="#28">Look at the response</a></li><li><a href="#33">Analysis example</a></li><li><a href="#36">Aside about data structures</a></li><li><a href="#38">Finding relevant trials</a></li><li><a href="#41">Loading data</a></li><li><a href="#47">Operating on the data</a></li><li><a href="#51">Broadening the analysis</a></li><li><a href="#58">Displaying data</a></li><li><a href="#72">Wrap up and future challenges</a></li></ul></div><h2>Introduction<a name="1"></a></h2><p>This script will explore electrophysiological recordings of cells in the auditory pathway of "the fly", Drosophila melanogaster.  Such recordings usually involve a stimulus - mechanical or electrical - and an electrical response of the cell.  The responses are measured using a glass pipette filled with a saline solution that is connected by a silver chloride wire to a sensitive patch clamp amplifier.  Mechanical stimuli are delivered using a piezoelectric actuator that will push on the fly's antenna.</p><p>First, we will inspect the data managment scheme, how the raw data is stored and organized when it is recorded.</p><p>Then we will inspect some of these data individually.</p><p>Finally, we will pose an anlysis question and follow a routine to answer the question according to the following steps:  (1) find data that are relevant to the question (2) import the data (3) perform operations on the data (4) display the results.</p><h2>Naming conventions and data management<a name="2"></a></h2><p>Raw data is stored in this repository on my mac machine at  /Users/tony/Code/Modern-Data-Management/raw_data. and on my pc workstation at  C:\Users\Anthony Azevedo\Code\Modern-Data-Management The fullfile function creates a string for the path to a directory.</p><pre class="codeinput">clear <span class="comment">% clears the "workspace"</span>
+raw_data_directory = <span class="keyword">...</span>
+    fullfile(<span class="string">'~'</span>,<span class="string">'Code'</span>,<span class="string">'Modern-Data-Management'</span>,<span class="string">'raw_data'</span>);
+raw_data_directory = <span class="keyword">...</span>
+    fullfile(<span class="string">'C:\Users\Anthony Azevedo'</span>,<span class="string">'Code'</span>,<span class="string">'Modern-Data-Management'</span>,<span class="string">'raw_data'</span>);
 cd(raw_data_directory)
 pwd
 </pre><pre class="codeoutput">
 ans =
 
-/Users/tony/Code/Modern-Data-Management/raw_data
+C:\Users\Anthony Azevedo\Code\Modern-Data-Management\raw_data
 
 </pre><p>A typical experiment procedes as follows: (1) "mount" a fly in a holder, i.e. put the fly into a piece of aluminum foil that will hold it in position on the microscope, and glue it in place. (2) Dissect the fly's cuticle (head) to expose the brain, place the holder on the microscope. (3) Visualize the cell and patch the neuron of interest. (4) Deliver stimuli of various sorts. (5) If the preparation (prep) is still ok after the first cell, go on to another cell in the same prep.</p><p>Accordingly, I have decided to store raw data in the following way: (A) Within the top level raw_data directory (B) Within a direcotory that refers to the day (YYMMDD) on which I performed the recordings (B) In a directory for Each cell that I record with the naming convention YYMMDD_FX_CY. This choice was influenced by conventions already in place in the lab.  I could have chosen to store each cell in the raw_data folder, but I didn't.</p><pre class="codeinput"><span class="comment">% Look at the contents of the cell directory 131126_F2_C1</span>
 experimentdate = <span class="string">'131126'</span>;
@@ -100,210 +103,214 @@ cellIdentifier =
 
 celldirectory =
 
-~/Code/Modern-Data-Management/raw_data/131126/131126_F2_C1
+C:\Users\Anthony Azevedo\Code\Modern-Data-Management\raw_data\131126\131126_F2_C1
 
-Acquisition_131126_F2_C1.mat
-BasicEPhysRig_131126_F2_C1.mat
-CurrentSine_Raw_131126_F2_C1_1.mat
-CurrentSine_Raw_131126_F2_C1_10.mat
-CurrentSine_Raw_131126_F2_C1_11.mat
-CurrentSine_Raw_131126_F2_C1_12.mat
-CurrentSine_Raw_131126_F2_C1_13.mat
-CurrentSine_Raw_131126_F2_C1_14.mat
-CurrentSine_Raw_131126_F2_C1_15.mat
-CurrentSine_Raw_131126_F2_C1_16.mat
-CurrentSine_Raw_131126_F2_C1_17.mat
-CurrentSine_Raw_131126_F2_C1_18.mat
-CurrentSine_Raw_131126_F2_C1_19.mat
-CurrentSine_Raw_131126_F2_C1_2.mat
-CurrentSine_Raw_131126_F2_C1_20.mat
-CurrentSine_Raw_131126_F2_C1_21.mat
-CurrentSine_Raw_131126_F2_C1_22.mat
-CurrentSine_Raw_131126_F2_C1_23.mat
-CurrentSine_Raw_131126_F2_C1_24.mat
-CurrentSine_Raw_131126_F2_C1_25.mat
-CurrentSine_Raw_131126_F2_C1_3.mat
-CurrentSine_Raw_131126_F2_C1_4.mat
-CurrentSine_Raw_131126_F2_C1_5.mat
-CurrentSine_Raw_131126_F2_C1_6.mat
-CurrentSine_Raw_131126_F2_C1_7.mat
-CurrentSine_Raw_131126_F2_C1_8.mat
-CurrentSine_Raw_131126_F2_C1_9.mat
-CurrentStep_Raw_131126_F2_C1_1.mat
-CurrentStep_Raw_131126_F2_C1_2.mat
-CurrentStep_Raw_131126_F2_C1_3.mat
-CurrentStep_Raw_131126_F2_C1_4.mat
-CurrentStep_Raw_131126_F2_C1_5.mat
-PiezoCourtshipSong_Raw_131126_F2_C1_1.mat
-PiezoCourtshipSong_Raw_131126_F2_C1_2.mat
-PiezoCourtshipSong_Raw_131126_F2_C1_3.mat
-PiezoCourtshipSong_Raw_131126_F2_C1_4.mat
-PiezoCourtshipSong_Raw_131126_F2_C1_5.mat
-PiezoCourtshipSong_Raw_131126_F2_C1_6.mat
-PiezoRig_131126_F2_C1.mat
-PiezoSine_Raw_131126_F2_C1_1.mat
-PiezoSine_Raw_131126_F2_C1_10.mat
-PiezoSine_Raw_131126_F2_C1_11.mat
-PiezoSine_Raw_131126_F2_C1_12.mat
-PiezoSine_Raw_131126_F2_C1_13.mat
-PiezoSine_Raw_131126_F2_C1_14.mat
-PiezoSine_Raw_131126_F2_C1_15.mat
-PiezoSine_Raw_131126_F2_C1_16.mat
-PiezoSine_Raw_131126_F2_C1_17.mat
-PiezoSine_Raw_131126_F2_C1_18.mat
-PiezoSine_Raw_131126_F2_C1_19.mat
-PiezoSine_Raw_131126_F2_C1_2.mat
-PiezoSine_Raw_131126_F2_C1_20.mat
-PiezoSine_Raw_131126_F2_C1_21.mat
-PiezoSine_Raw_131126_F2_C1_22.mat
-PiezoSine_Raw_131126_F2_C1_23.mat
-PiezoSine_Raw_131126_F2_C1_24.mat
-PiezoSine_Raw_131126_F2_C1_25.mat
-PiezoSine_Raw_131126_F2_C1_26.mat
-PiezoSine_Raw_131126_F2_C1_27.mat
-PiezoSine_Raw_131126_F2_C1_28.mat
-PiezoSine_Raw_131126_F2_C1_29.mat
-PiezoSine_Raw_131126_F2_C1_3.mat
-PiezoSine_Raw_131126_F2_C1_30.mat
-PiezoSine_Raw_131126_F2_C1_31.mat
-PiezoSine_Raw_131126_F2_C1_32.mat
-PiezoSine_Raw_131126_F2_C1_33.mat
-PiezoSine_Raw_131126_F2_C1_34.mat
-PiezoSine_Raw_131126_F2_C1_35.mat
-PiezoSine_Raw_131126_F2_C1_36.mat
-PiezoSine_Raw_131126_F2_C1_37.mat
-PiezoSine_Raw_131126_F2_C1_38.mat
-PiezoSine_Raw_131126_F2_C1_39.mat
-PiezoSine_Raw_131126_F2_C1_4.mat
-PiezoSine_Raw_131126_F2_C1_40.mat
-PiezoSine_Raw_131126_F2_C1_41.mat
-PiezoSine_Raw_131126_F2_C1_42.mat
-PiezoSine_Raw_131126_F2_C1_43.mat
-PiezoSine_Raw_131126_F2_C1_44.mat
-PiezoSine_Raw_131126_F2_C1_45.mat
-PiezoSine_Raw_131126_F2_C1_5.mat
-PiezoSine_Raw_131126_F2_C1_6.mat
-PiezoSine_Raw_131126_F2_C1_7.mat
-PiezoSine_Raw_131126_F2_C1_8.mat
-PiezoSine_Raw_131126_F2_C1_9.mat
-PiezoSquareWave_Raw_131126_F2_C1_1.mat
-PiezoSquareWave_Raw_131126_F2_C1_2.mat
-PiezoSquareWave_Raw_131126_F2_C1_3.mat
-PiezoSquareWave_Raw_131126_F2_C1_4.mat
-PiezoSquareWave_Raw_131126_F2_C1_5.mat
-PiezoStep_Raw_131126_F2_C1_1.mat
-PiezoStep_Raw_131126_F2_C1_10.mat
-PiezoStep_Raw_131126_F2_C1_11.mat
-PiezoStep_Raw_131126_F2_C1_12.mat
-PiezoStep_Raw_131126_F2_C1_13.mat
-PiezoStep_Raw_131126_F2_C1_14.mat
-PiezoStep_Raw_131126_F2_C1_15.mat
-PiezoStep_Raw_131126_F2_C1_16.mat
-PiezoStep_Raw_131126_F2_C1_17.mat
-PiezoStep_Raw_131126_F2_C1_18.mat
-PiezoStep_Raw_131126_F2_C1_19.mat
-PiezoStep_Raw_131126_F2_C1_2.mat
-PiezoStep_Raw_131126_F2_C1_20.mat
-PiezoStep_Raw_131126_F2_C1_21.mat
-PiezoStep_Raw_131126_F2_C1_22.mat
-PiezoStep_Raw_131126_F2_C1_23.mat
-PiezoStep_Raw_131126_F2_C1_24.mat
-PiezoStep_Raw_131126_F2_C1_25.mat
-PiezoStep_Raw_131126_F2_C1_26.mat
-PiezoStep_Raw_131126_F2_C1_27.mat
-PiezoStep_Raw_131126_F2_C1_28.mat
-PiezoStep_Raw_131126_F2_C1_29.mat
-PiezoStep_Raw_131126_F2_C1_3.mat
-PiezoStep_Raw_131126_F2_C1_30.mat
-PiezoStep_Raw_131126_F2_C1_31.mat
-PiezoStep_Raw_131126_F2_C1_32.mat
-PiezoStep_Raw_131126_F2_C1_33.mat
-PiezoStep_Raw_131126_F2_C1_34.mat
-PiezoStep_Raw_131126_F2_C1_35.mat
-PiezoStep_Raw_131126_F2_C1_36.mat
-PiezoStep_Raw_131126_F2_C1_37.mat
-PiezoStep_Raw_131126_F2_C1_38.mat
-PiezoStep_Raw_131126_F2_C1_39.mat
-PiezoStep_Raw_131126_F2_C1_4.mat
-PiezoStep_Raw_131126_F2_C1_40.mat
-PiezoStep_Raw_131126_F2_C1_41.mat
-PiezoStep_Raw_131126_F2_C1_42.mat
-PiezoStep_Raw_131126_F2_C1_43.mat
-PiezoStep_Raw_131126_F2_C1_44.mat
-PiezoStep_Raw_131126_F2_C1_45.mat
-PiezoStep_Raw_131126_F2_C1_46.mat
-PiezoStep_Raw_131126_F2_C1_47.mat
-PiezoStep_Raw_131126_F2_C1_48.mat
-PiezoStep_Raw_131126_F2_C1_49.mat
-PiezoStep_Raw_131126_F2_C1_5.mat
-PiezoStep_Raw_131126_F2_C1_50.mat
-PiezoStep_Raw_131126_F2_C1_51.mat
-PiezoStep_Raw_131126_F2_C1_52.mat
-PiezoStep_Raw_131126_F2_C1_53.mat
-PiezoStep_Raw_131126_F2_C1_54.mat
-PiezoStep_Raw_131126_F2_C1_55.mat
-PiezoStep_Raw_131126_F2_C1_56.mat
-PiezoStep_Raw_131126_F2_C1_57.mat
-PiezoStep_Raw_131126_F2_C1_58.mat
-PiezoStep_Raw_131126_F2_C1_59.mat
-PiezoStep_Raw_131126_F2_C1_6.mat
-PiezoStep_Raw_131126_F2_C1_60.mat
-PiezoStep_Raw_131126_F2_C1_61.mat
-PiezoStep_Raw_131126_F2_C1_62.mat
-PiezoStep_Raw_131126_F2_C1_63.mat
-PiezoStep_Raw_131126_F2_C1_64.mat
-PiezoStep_Raw_131126_F2_C1_65.mat
-PiezoStep_Raw_131126_F2_C1_66.mat
-PiezoStep_Raw_131126_F2_C1_67.mat
-PiezoStep_Raw_131126_F2_C1_68.mat
-PiezoStep_Raw_131126_F2_C1_69.mat
-PiezoStep_Raw_131126_F2_C1_7.mat
-PiezoStep_Raw_131126_F2_C1_70.mat
-PiezoStep_Raw_131126_F2_C1_71.mat
-PiezoStep_Raw_131126_F2_C1_72.mat
-PiezoStep_Raw_131126_F2_C1_73.mat
-PiezoStep_Raw_131126_F2_C1_74.mat
-PiezoStep_Raw_131126_F2_C1_75.mat
-PiezoStep_Raw_131126_F2_C1_76.mat
-PiezoStep_Raw_131126_F2_C1_77.mat
-PiezoStep_Raw_131126_F2_C1_78.mat
-PiezoStep_Raw_131126_F2_C1_79.mat
-PiezoStep_Raw_131126_F2_C1_8.mat
-PiezoStep_Raw_131126_F2_C1_80.mat
-PiezoStep_Raw_131126_F2_C1_81.mat
-PiezoStep_Raw_131126_F2_C1_82.mat
-PiezoStep_Raw_131126_F2_C1_83.mat
-PiezoStep_Raw_131126_F2_C1_84.mat
-PiezoStep_Raw_131126_F2_C1_85.mat
-PiezoStep_Raw_131126_F2_C1_86.mat
-PiezoStep_Raw_131126_F2_C1_87.mat
-PiezoStep_Raw_131126_F2_C1_9.mat
-SealAndLeak_Raw_131126_F2_C1_1.mat
-Sweep_Raw_131126_F2_C1_1.mat
-Sweep_Raw_131126_F2_C1_2.mat
-Sweep_Raw_131126_F2_C1_3.mat
-Sweep_Raw_131126_F2_C1_4.mat
-Sweep_Raw_131126_F2_C1_5.mat
-Sweep_Raw_131126_F2_C1_6.mat
-Sweep_Raw_131126_F2_C1_7.mat
-Sweep_Raw_131126_F2_C1_8.mat
-fourier_demo2.m
-notes_131126_F2_C1.txt
+
+.                                          
+..                                         
+Acquisition_131126_F2_C1.mat               
+BasicEPhysRig_131126_F2_C1.mat             
+CurrentSine_Raw_131126_F2_C1_1.mat         
+CurrentSine_Raw_131126_F2_C1_10.mat        
+CurrentSine_Raw_131126_F2_C1_11.mat        
+CurrentSine_Raw_131126_F2_C1_12.mat        
+CurrentSine_Raw_131126_F2_C1_13.mat        
+CurrentSine_Raw_131126_F2_C1_14.mat        
+CurrentSine_Raw_131126_F2_C1_15.mat        
+CurrentSine_Raw_131126_F2_C1_16.mat        
+CurrentSine_Raw_131126_F2_C1_17.mat        
+CurrentSine_Raw_131126_F2_C1_18.mat        
+CurrentSine_Raw_131126_F2_C1_19.mat        
+CurrentSine_Raw_131126_F2_C1_2.mat         
+CurrentSine_Raw_131126_F2_C1_20.mat        
+CurrentSine_Raw_131126_F2_C1_21.mat        
+CurrentSine_Raw_131126_F2_C1_22.mat        
+CurrentSine_Raw_131126_F2_C1_23.mat        
+CurrentSine_Raw_131126_F2_C1_24.mat        
+CurrentSine_Raw_131126_F2_C1_25.mat        
+CurrentSine_Raw_131126_F2_C1_3.mat         
+CurrentSine_Raw_131126_F2_C1_4.mat         
+CurrentSine_Raw_131126_F2_C1_5.mat         
+CurrentSine_Raw_131126_F2_C1_6.mat         
+CurrentSine_Raw_131126_F2_C1_7.mat         
+CurrentSine_Raw_131126_F2_C1_8.mat         
+CurrentSine_Raw_131126_F2_C1_9.mat         
+CurrentStep_Raw_131126_F2_C1_1.mat         
+CurrentStep_Raw_131126_F2_C1_2.mat         
+CurrentStep_Raw_131126_F2_C1_3.mat         
+CurrentStep_Raw_131126_F2_C1_4.mat         
+CurrentStep_Raw_131126_F2_C1_5.mat         
+PiezoCourtshipSong_Raw_131126_F2_C1_1.mat  
+PiezoCourtshipSong_Raw_131126_F2_C1_2.mat  
+PiezoCourtshipSong_Raw_131126_F2_C1_3.mat  
+PiezoCourtshipSong_Raw_131126_F2_C1_4.mat  
+PiezoCourtshipSong_Raw_131126_F2_C1_5.mat  
+PiezoCourtshipSong_Raw_131126_F2_C1_6.mat  
+PiezoRig_131126_F2_C1.mat                  
+PiezoSine_Raw_131126_F2_C1_1.mat           
+PiezoSine_Raw_131126_F2_C1_10.mat          
+PiezoSine_Raw_131126_F2_C1_11.mat          
+PiezoSine_Raw_131126_F2_C1_12.mat          
+PiezoSine_Raw_131126_F2_C1_13.mat          
+PiezoSine_Raw_131126_F2_C1_14.mat          
+PiezoSine_Raw_131126_F2_C1_15.mat          
+PiezoSine_Raw_131126_F2_C1_16.mat          
+PiezoSine_Raw_131126_F2_C1_17.mat          
+PiezoSine_Raw_131126_F2_C1_18.mat          
+PiezoSine_Raw_131126_F2_C1_19.mat          
+PiezoSine_Raw_131126_F2_C1_2.mat           
+PiezoSine_Raw_131126_F2_C1_20.mat          
+PiezoSine_Raw_131126_F2_C1_21.mat          
+PiezoSine_Raw_131126_F2_C1_22.mat          
+PiezoSine_Raw_131126_F2_C1_23.mat          
+PiezoSine_Raw_131126_F2_C1_24.mat          
+PiezoSine_Raw_131126_F2_C1_25.mat          
+PiezoSine_Raw_131126_F2_C1_26.mat          
+PiezoSine_Raw_131126_F2_C1_27.mat          
+PiezoSine_Raw_131126_F2_C1_28.mat          
+PiezoSine_Raw_131126_F2_C1_29.mat          
+PiezoSine_Raw_131126_F2_C1_3.mat           
+PiezoSine_Raw_131126_F2_C1_30.mat          
+PiezoSine_Raw_131126_F2_C1_31.mat          
+PiezoSine_Raw_131126_F2_C1_32.mat          
+PiezoSine_Raw_131126_F2_C1_33.mat          
+PiezoSine_Raw_131126_F2_C1_34.mat          
+PiezoSine_Raw_131126_F2_C1_35.mat          
+PiezoSine_Raw_131126_F2_C1_36.mat          
+PiezoSine_Raw_131126_F2_C1_37.mat          
+PiezoSine_Raw_131126_F2_C1_38.mat          
+PiezoSine_Raw_131126_F2_C1_39.mat          
+PiezoSine_Raw_131126_F2_C1_4.mat           
+PiezoSine_Raw_131126_F2_C1_40.mat          
+PiezoSine_Raw_131126_F2_C1_41.mat          
+PiezoSine_Raw_131126_F2_C1_42.mat          
+PiezoSine_Raw_131126_F2_C1_43.mat          
+PiezoSine_Raw_131126_F2_C1_44.mat          
+PiezoSine_Raw_131126_F2_C1_45.mat          
+PiezoSine_Raw_131126_F2_C1_5.mat           
+PiezoSine_Raw_131126_F2_C1_6.mat           
+PiezoSine_Raw_131126_F2_C1_7.mat           
+PiezoSine_Raw_131126_F2_C1_8.mat           
+PiezoSine_Raw_131126_F2_C1_9.mat           
+PiezoSquareWave_Raw_131126_F2_C1_1.mat     
+PiezoSquareWave_Raw_131126_F2_C1_2.mat     
+PiezoSquareWave_Raw_131126_F2_C1_3.mat     
+PiezoSquareWave_Raw_131126_F2_C1_4.mat     
+PiezoSquareWave_Raw_131126_F2_C1_5.mat     
+PiezoStep_Raw_131126_F2_C1_1.mat           
+PiezoStep_Raw_131126_F2_C1_10.mat          
+PiezoStep_Raw_131126_F2_C1_11.mat          
+PiezoStep_Raw_131126_F2_C1_12.mat          
+PiezoStep_Raw_131126_F2_C1_13.mat          
+PiezoStep_Raw_131126_F2_C1_14.mat          
+PiezoStep_Raw_131126_F2_C1_15.mat          
+PiezoStep_Raw_131126_F2_C1_16.mat          
+PiezoStep_Raw_131126_F2_C1_17.mat          
+PiezoStep_Raw_131126_F2_C1_18.mat          
+PiezoStep_Raw_131126_F2_C1_19.mat          
+PiezoStep_Raw_131126_F2_C1_2.mat           
+PiezoStep_Raw_131126_F2_C1_20.mat          
+PiezoStep_Raw_131126_F2_C1_21.mat          
+PiezoStep_Raw_131126_F2_C1_22.mat          
+PiezoStep_Raw_131126_F2_C1_23.mat          
+PiezoStep_Raw_131126_F2_C1_24.mat          
+PiezoStep_Raw_131126_F2_C1_25.mat          
+PiezoStep_Raw_131126_F2_C1_26.mat          
+PiezoStep_Raw_131126_F2_C1_27.mat          
+PiezoStep_Raw_131126_F2_C1_28.mat          
+PiezoStep_Raw_131126_F2_C1_29.mat          
+PiezoStep_Raw_131126_F2_C1_3.mat           
+PiezoStep_Raw_131126_F2_C1_30.mat          
+PiezoStep_Raw_131126_F2_C1_31.mat          
+PiezoStep_Raw_131126_F2_C1_32.mat          
+PiezoStep_Raw_131126_F2_C1_33.mat          
+PiezoStep_Raw_131126_F2_C1_34.mat          
+PiezoStep_Raw_131126_F2_C1_35.mat          
+PiezoStep_Raw_131126_F2_C1_36.mat          
+PiezoStep_Raw_131126_F2_C1_37.mat          
+PiezoStep_Raw_131126_F2_C1_38.mat          
+PiezoStep_Raw_131126_F2_C1_39.mat          
+PiezoStep_Raw_131126_F2_C1_4.mat           
+PiezoStep_Raw_131126_F2_C1_40.mat          
+PiezoStep_Raw_131126_F2_C1_41.mat          
+PiezoStep_Raw_131126_F2_C1_42.mat          
+PiezoStep_Raw_131126_F2_C1_43.mat          
+PiezoStep_Raw_131126_F2_C1_44.mat          
+PiezoStep_Raw_131126_F2_C1_45.mat          
+PiezoStep_Raw_131126_F2_C1_46.mat          
+PiezoStep_Raw_131126_F2_C1_47.mat          
+PiezoStep_Raw_131126_F2_C1_48.mat          
+PiezoStep_Raw_131126_F2_C1_49.mat          
+PiezoStep_Raw_131126_F2_C1_5.mat           
+PiezoStep_Raw_131126_F2_C1_50.mat          
+PiezoStep_Raw_131126_F2_C1_51.mat          
+PiezoStep_Raw_131126_F2_C1_52.mat          
+PiezoStep_Raw_131126_F2_C1_53.mat          
+PiezoStep_Raw_131126_F2_C1_54.mat          
+PiezoStep_Raw_131126_F2_C1_55.mat          
+PiezoStep_Raw_131126_F2_C1_56.mat          
+PiezoStep_Raw_131126_F2_C1_57.mat          
+PiezoStep_Raw_131126_F2_C1_58.mat          
+PiezoStep_Raw_131126_F2_C1_59.mat          
+PiezoStep_Raw_131126_F2_C1_6.mat           
+PiezoStep_Raw_131126_F2_C1_60.mat          
+PiezoStep_Raw_131126_F2_C1_61.mat          
+PiezoStep_Raw_131126_F2_C1_62.mat          
+PiezoStep_Raw_131126_F2_C1_63.mat          
+PiezoStep_Raw_131126_F2_C1_64.mat          
+PiezoStep_Raw_131126_F2_C1_65.mat          
+PiezoStep_Raw_131126_F2_C1_66.mat          
+PiezoStep_Raw_131126_F2_C1_67.mat          
+PiezoStep_Raw_131126_F2_C1_68.mat          
+PiezoStep_Raw_131126_F2_C1_69.mat          
+PiezoStep_Raw_131126_F2_C1_7.mat           
+PiezoStep_Raw_131126_F2_C1_70.mat          
+PiezoStep_Raw_131126_F2_C1_71.mat          
+PiezoStep_Raw_131126_F2_C1_72.mat          
+PiezoStep_Raw_131126_F2_C1_73.mat          
+PiezoStep_Raw_131126_F2_C1_74.mat          
+PiezoStep_Raw_131126_F2_C1_75.mat          
+PiezoStep_Raw_131126_F2_C1_76.mat          
+PiezoStep_Raw_131126_F2_C1_77.mat          
+PiezoStep_Raw_131126_F2_C1_78.mat          
+PiezoStep_Raw_131126_F2_C1_79.mat          
+PiezoStep_Raw_131126_F2_C1_8.mat           
+PiezoStep_Raw_131126_F2_C1_80.mat          
+PiezoStep_Raw_131126_F2_C1_81.mat          
+PiezoStep_Raw_131126_F2_C1_82.mat          
+PiezoStep_Raw_131126_F2_C1_83.mat          
+PiezoStep_Raw_131126_F2_C1_84.mat          
+PiezoStep_Raw_131126_F2_C1_85.mat          
+PiezoStep_Raw_131126_F2_C1_86.mat          
+PiezoStep_Raw_131126_F2_C1_87.mat          
+PiezoStep_Raw_131126_F2_C1_9.mat           
+SealAndLeak_Raw_131126_F2_C1_1.mat         
+Sweep_Raw_131126_F2_C1_1.mat               
+Sweep_Raw_131126_F2_C1_2.mat               
+Sweep_Raw_131126_F2_C1_3.mat               
+Sweep_Raw_131126_F2_C1_4.mat               
+Sweep_Raw_131126_F2_C1_5.mat               
+Sweep_Raw_131126_F2_C1_6.mat               
+Sweep_Raw_131126_F2_C1_7.mat               
+Sweep_Raw_131126_F2_C1_8.mat               
+fourier_demo2.m                            
+notes_131126_F2_C1.txt                     
+
 
 </pre><h2>Inspect data from a single trial<a name="4"></a></h2><pre class="codeinput">load(<span class="string">'PiezoSine_Raw_131126_F2_C1_3.mat'</span>)
-</pre><p>The naming conventions of the .mat files gives information about how these data were collected.</p><p>The first part is the name of the stimulus protocol that was used to produce a stimulus, in this case "PiezoSine", or a sine wave mechanical stimulus delivered through the piezo electric actuator. I define a protocol as a collection of parameters used to construct the stimulus in the first place (at acquisition), and to reconstruct it post-hoc (during analysis).</p><p>The "Raw" signifier indicates this is a single trial.  Trials are the units of acquired data and represent a single presentation of a particular stimulus.</p><p>Next comes the cell identifier</p><p>Finally, the last number is the protocol trial number (3 of 45 in this case)</p><p>When we loaded the trial, several new variables were created in the workspace</p><pre class="codeinput">whos  <span class="comment">% displays the variables in the workspace</span>
+</pre><p>The naming conventions of the .mat files gives information about how these data were collected.</p><p>The first part is the name of the stimulus protocol that was used to produce a stimulus, in this case "PiezoSine", or a sine wave mechanical stimulus delivered through the piezo electric actuator. I define a protocol as a collection of parameters used to construct the stimulus in the first place (at acquisition), and to reconstruct it post-hoc (during analysis).</p><p>The "Raw" signifier indicates this is a single trial.  Trials are the units of acquired data and represent a single presentation of a particular stimulus.</p><p>Next comes the cell identifier.</p><p>Finally, the last number is the protocol trial number (3 of 45 in this case)</p><p>When we loaded the trial, several new variables were created in the workspace</p><pre class="codeinput">whos  <span class="comment">% displays the variables in the workspace</span>
 </pre><pre class="codeoutput">  Name                        Size             Bytes  Class     Attributes
 
-  ans                         1x48                96  char                
+  ans                         1x61               122  char                
   cellIdentifier              1x12                24  char                
-  celldirectory               1x58               116  char                
+  celldirectory               1x81               162  char                
   cellnumber                  1x1                  2  char                
   current                 85001x1             680008  double              
   experimentdate              1x6                 12  char                
   flynumber                   1x1                  2  char                
   name                        1x89               178  char                
   params                      1x1               3558  struct              
-  raw_data_directory          1x38                76  char                
+  raw_data_directory          1x61               122  char                
   sgsmonitor              85001x1             680008  double              
   tags                        0x0                  0  cell                
   voltage                 85001x1             680008  double              
@@ -314,7 +321,7 @@ name =
 
 C:\Users\Anthony Azevedo\Acquisition\131126\131126_F2_C1\PiezoSine_Raw_131126_F2_C1_3.mat
 
-</pre><p>A built-in data structure called a "Matlab structure" (help struct) which has "fields" ("gain","mode", etc) and "values". You'll see how to use this below.</p><pre class="codeinput">params
+</pre><p>A built-in data structure called a "Matlab structure" ( <tt>help struct</tt> ) which has "fields" ("gain","mode", etc) and "values". You'll see how to use this below.</p><pre class="codeinput">params
 </pre><pre class="codeoutput">
 params = 
 
@@ -338,7 +345,7 @@ params =
                  trial: 3
             trialBlock: 9
 
-</pre><p>A built-in "cell array" (help cell) called tags that will hold any information about this particular trial that I may have entered while acquiring (e.g. application of drugs, washout of drugs, etc)</p><pre class="codeinput">tags
+</pre><p>A built-in "cell array" ( <tt>help cell</tt> ) called tags that will hold any information about this particular trial that I may have entered while acquiring (e.g. application of drugs, washout of drugs, etc)</p><pre class="codeinput">tags
 </pre><pre class="codeoutput">
 tags = 
 
@@ -387,25 +394,25 @@ params =
                  trial: 3
             trialBlock: 9
 
-</pre><p>The following parameters define how the stimulus evolves over time.</p><p>the sampling rate of the stimulus command.  A digitial to analog converter will produce a continuous analog signal based on a digital command from the computer</p><pre class="codeinput">params.samprateout
+</pre><p>The following parameters define how the stimulus evolves over time.</p><p>The sampling rate of the stimulus command.  A digitial to analog converter will produce a continuous analog signal based on a digital command from the computer</p><pre class="codeinput">params.samprateout
 </pre><pre class="codeoutput">
 ans =
 
        50000
 
-</pre><p>seconds before the stimulus actually starts</p><pre class="codeinput">params.preDurInSec
+</pre><p>Seconds before the stimulus actually starts</p><pre class="codeinput">params.preDurInSec
 </pre><pre class="codeoutput">
 ans =
 
     0.4000
 
-</pre><p>seconds that the stimulus will be presented</p><pre class="codeinput">params.stimDurInSec
+</pre><p>Seconds that the stimulus will be presented</p><pre class="codeinput">params.stimDurInSec
 </pre><pre class="codeoutput">
 ans =
 
     0.3000
 
-</pre><p>seconds after the stimulus before the trial ends</p><pre class="codeinput">params.postDurInSec
+</pre><p>Seconds after the stimulus before the trial ends</p><pre class="codeinput">params.postDurInSec
 </pre><pre class="codeoutput">
 ans =
 
@@ -425,9 +432,11 @@ time_stim = (0:number_of_samples);
 time_stim = time_stim/params.samprateout;
 <span class="comment">% a time vector beginning at 0, ending at 1.7 sec.</span>
 time_stim(1)
-time_stim(end)  <span class="comment">% Careful: end has two meanings, as you'll see below.</span>
+time_stim(end)
+<span class="comment">% Careful: end has two meanings, as you'll see below (help end).</span>
 
-diff(time_stim(1:2)) <span class="comment">% "diff" finds the difference between entries in a vector</span>
+diff(time_stim(1:2))
+<span class="comment">% "diff" finds the difference between entries in a vector</span>
 <span class="comment">% each entry is 2e-5 seconds apart, which would give you 50k samples per</span>
 <span class="comment">% second</span>
 </pre><pre class="codeoutput">
@@ -445,8 +454,8 @@ ans =
 
    2.0000e-05
 
-</pre><p>Subtract off the pre period so the stimulus starts at time = 0</p><pre class="codeinput">time_stim = time_stim - params.preDurInSec;
-</pre><p>Use logical operations to learn about the vector</p><pre class="codeinput">sum(time_stim &lt; 0)
+</pre><p>Subtract off the pre period so the stimulus starts at time = 0.</p><pre class="codeinput">time_stim = time_stim - params.preDurInSec;
+</pre><p>Use logical operations to learn about the vector.</p><pre class="codeinput">sum(time_stim &lt; 0)
 <span class="comment">% 2000 samples before the stimulus starts</span>
 sum(time_stim &gt;= 0 &amp; time_stim &lt; params.stimDurInSec)
 <span class="comment">% 15001 stimulus samples</span>
@@ -468,7 +477,7 @@ ans =
 
        50000
 
-</pre><p>Next I'll create the stimulus from the params structure. The PiezoSine Protocol defines a sine wave stimulus using the following parameters</p><pre class="codeinput">params.protocol
+</pre><p>Next I'll create the stimulus from the params structure. The PiezoSine Protocol defines a sine wave stimulus using the following parameters.</p><pre class="codeinput">params.protocol
 
 
 params.freq
@@ -509,11 +518,11 @@ ans =
 
     0.0400
 
-</pre><p>You can safely skim the next section. This is code from the acquisition routines and is somewhat separate. The stimulus vector is first a vector of zeros the same size as time</p><pre class="codeinput">stim = time_stim;
+</pre><p>You can safely skim the next section, down to the next 2 figures. This is code from the acquisition routines and is somewhat separate. The stimulus vector is first a vector of zeros the same size as time.</p><pre class="codeinput">stim = time_stim;
 stim(1,:) = 0;
-</pre><p>Then I Find the elements in the stim array that will contain the stimulus i.e. entries 20001, through 35000 (20001:35000)</p><pre class="codeinput">stimpnts = round(params.samprateout*params.preDurInSec+1:<span class="keyword">...</span>
+</pre><p>Then I find the elements in the stim array that will contain the stimulus i.e. entries 20001, through 35000 (20001:35000).</p><pre class="codeinput">stimpnts = round(params.samprateout*params.preDurInSec+1:<span class="keyword">...</span>
     params.samprateout*(params.preDurInSec+params.stimDurInSec));
-</pre><p>This creates a "window" that ramps at the begining and the end of the stimlus, and put the window into an array where the stimulus will be. This uses fairly advanced syntax, you can figure out what it does as an exercise. Just take a look to see what we're working with.</p><pre class="codeinput">stimwindow = stim;
+</pre><p>This creates a "window" that ramps at the begining and the end of the stimlus, and I put the window into an array where the stimulus will be. This uses fairly advanced syntax, you can figure out what it does as an exercise. Just take a look to see what we're working with.</p><pre class="codeinput">stimwindow = stim;
 w = window(@triang,2*params.ramptime*params.samprateout);
 w = [w(1:params.ramptime*params.samprateout);<span class="keyword">...</span>
     ones(length(stimpnts)-length(w),1);<span class="keyword">...</span>
@@ -532,7 +541,7 @@ figure
 plot(time_stim,stimwindow)    <span class="comment">% see the ramping on and off?.</span>
 hold <span class="string">on</span>     <span class="comment">% keep all the lines on the plot</span>
 plot(time_stim,stim,<span class="string">'r'</span>) <span class="comment">% plot in red</span>
-</pre><img vspace="5" hspace="5" src="CCB4_MATLAB_Analysis_Script_02.png" alt=""> <h2>Look at the Response<a name="28"></a></h2><p>Several other parameters in the params structure are specific to respons acquisition, some are for documentation only (gain, secondary_gain, Vm_id).</p><p>The mode indicates whether we were looking at voltage or current of the cell</p><pre class="codeinput">params.mode
+</pre><img vspace="5" hspace="5" src="CCB4_MATLAB_Analysis_Script_02.png" alt=""> <h2>Look at the response<a name="28"></a></h2><p>Several other parameters in the params structure are specific to respons acquisition, some are for documentation only (gain, secondary_gain, Vm_id).</p><p>The mode indicates whether we were looking at the voltage or current of the cell.</p><pre class="codeinput">params.mode
 </pre><pre class="codeoutput">
 ans =
 
@@ -573,7 +582,7 @@ subplot(2,1,2)
 title(<span class="string">'Response'</span>)
 ylabel(<span class="string">'Voltage (mV)'</span>);
 xlabel(<span class="string">'Time (sec)'</span>);
-</pre><img vspace="5" hspace="5" src="CCB4_MATLAB_Analysis_Script_05.png" alt=""> <h2>Analysis example<a name="33"></a></h2><p>Finally we would like to use these data to answer a question. The general question I would like to ask is whether different cells are selective for different frequencies of antennal movement. (To reframe this for an NIH fellowship: I will test the hypothesis that different cells have different frequency/response relationships) Thus, as a specific question, I would like to know how a given cell responds to a range of frequencies.</p><p>Obviously, experimental design is a critical part of being able to answer this specific question.  We will assume that I designed the experiment appropriately and gathered sufficient data to do this.</p><p>What I have done is deliver mechanical stimuli with a range of different frequencies, and with a range of amplitudes (displacements) at each frequency. For each frequency, displacement pair, I have recorded three trials to be able to get an average response.</p><p>So the first goal in the analysis is to find the three trials with the same frequency and displacement.  We can see the set of frequencies and displacemts because I keep that information in the params matlab structure.</p><pre class="codeinput">params.freqs
+</pre><img vspace="5" hspace="5" src="CCB4_MATLAB_Analysis_Script_05.png" alt=""> <h2>Analysis example<a name="33"></a></h2><p>Finally we would like to use these data to answer a question. The general question I would like to ask is whether different cells are selective for different frequencies of antennal movement. (To reframe this for an NIH fellowship: I will test the hypothesis that different cells have different frequency/response relationships) Thus, as a specific question, I would like to know how a given cell responds to a range of frequencies.</p><p>Obviously, experimental design is a critical part of being able to answer this specific question.  We will assume that I designed the experiment appropriately and gathered sufficient data to do this.</p><p>What I have done is deliver mechanical stimuli with a range of different frequencies, and with a range of amplitudes (displacements) at each frequency. For each frequency, displacement pair, I have recorded three trials to be able to get an average response.</p><p>The first goal in the analysis is to find the three trials with the same frequency and displacement.  We can see the set of frequencies and displacemts because I keep that information in the params matlab structure.</p><pre class="codeinput">params.freqs
 </pre><pre class="codeoutput">
 ans =
 
@@ -585,12 +594,12 @@ ans =
 
     0.1000    0.2000    0.4000
 
-</pre><p>Then I need to import the data from the raw data files into a data structure in matlab that will let me operate on those data easily.</p><h2>Aside about data structures<a name="36"></a></h2><p>"By data structure", I don't necessarily mean I will use matlab structure like the params structure we have above, though I could. Data structure is just the general term for how data are grouped together. Other data structures we have encountered so far-- besides "matlab" structures, an confusing name-- include vectors, aka arrays (current, voltage, time) and cell arrays (an empty one called tags).  Take a look at the variables in the workspace.  Under the class column, you can see the data structure type.</p><pre class="codeinput">whos
+</pre><p>Then I need to import the data from the raw data files into a data structure in matlab that will let me operate on those data easily.</p><h2>Aside about data structures<a name="36"></a></h2><p>By "data structure", I don't necessarily mean I will use matlab structure like the params structure we have above, though I could. Data structure is just the general term for how data are grouped together. Other data structures we have encountered so far-- besides "matlab" structures, a confusing name-- include vectors, aka arrays (current, voltage, time) and cell arrays (an empty one called tags).  Take a look at the variables in the workspace.  Under the class column, you can see the data structure type.</p><pre class="codeinput">whos
 </pre><pre class="codeoutput">  Name                                      Size                Bytes  Class     Attributes
 
   ans                                       1x3                    24  double              
   cellIdentifier                            1x12                   24  char                
-  celldirectory                             1x58                  116  char                
+  celldirectory                             1x81                  162  char                
   cellnumber                                1x1                     2  char                
   current                               85001x1                680008  double              
   displacement_in_microns_per_volt          1x1                     8  double              
@@ -599,7 +608,7 @@ ans =
   name                                      1x89                  178  char                
   number_of_samples                         1x1                     8  double              
   params                                    1x1                  3558  struct              
-  raw_data_directory                        1x38                   76  char                
+  raw_data_directory                        1x61                  122  char                
   sgsmonitor                            85001x1                680008  double              
   sinewave                                  1x85001            680008  double              
   stim                                      1x85001            680008  double              
@@ -611,16 +620,16 @@ ans =
   voltage                               85001x1                680008  double              
   w                                     15000x1                120000  double              
 
-</pre><p>The extension of the 1D array into multple dimensions is called a matrix.  A matrix is a very convenient data structure to hold multiple rows and columns of NUMERICAL data because you can then do simple mathematical operations on the matrix, along any dimension you choose.</p><p>This is how I will store the voltage responses from each trial: a 2D matrix with 3 rows, one for each trial with a given frequency and displacement, and with 85001 columns, one for each time sample. Then I will be able to take the average of all the trials easily, along the first dimension, as it happens.</p><p>As an extension, if I were analyzing movies, my matrix might consist of image frames as 2D x-y data, with a third dimension as frame number over time.  Or, if it's a color movie, I might have a 4D matrix: x,y,color,time. etc.</p><p>MATLAB (MATrix LABoratory) was designed for this.</p><p>As for the cell array: whereas the matrix can only hold numeric data, the cell array is a generic structure that can hold anything you want: numbers, strings, other cell arrays, anything.  It can also be as many dimensions as you like. So it's a flexible data structure. It's just not good for holding numeric data because you wouldn't be able to perform mathematical operations on it, it's not built for that.</p><p>For the data structure called a "MATLAB" structure, we have seen an example of its advantage while we were using   params : We can get values out by just calling the field name.  This lets you group a bunch of things under one variable, and it doens't matter whether they are strings or numeric types or even cell arrays or other structures.</p><p>So, choosing a matrix to hold my trial data is an example of the decisions I have to make when managing data.</p><p>Anyways...</p><h2>Finding relevant trials<a name="38"></a></h2><p>For illustration purposes, we will clear the workspace of all its data and also make sure we are still in the right data folder</p><pre class="codeinput">clear
+</pre><p>The extension of the 1D array into multple dimensions is called a matrix.  A matrix is a very convenient data structure to hold multiple rows and columns of NUMERICAL data because you can then do simple mathematical operations on the matrix, along any dimension you choose.</p><p>This is how I will store the voltage responses from each trial: a 2D matrix with 3 rows, one for each trial with a given frequency and displacement, and with 85001 columns, one for each time sample. Then I will be able to take the average of all the trials easily, along the first dimension, as it happens.</p><p>As an extension, if I were analyzing movies, my matrix might consist of image frames as 2D x-y data, with a third dimension as frame number over time.  Or, if it's a color movie, I might have a 4D matrix: x,y,color,time. etc.</p><p>MATLAB (MATrix LABoratory) was designed for this.</p><p>As for the cell array: whereas the matrix can only hold numeric data, the cell array is a generic structure that can hold anything you want: numbers, strings, other cell arrays, anything.  It can also be as many dimensions as you like. So it's a flexible data structure. It's just not good for holding numeric data because you wouldn't be able to perform mathematical operations on them, it's not built for that.</p><p>For the data structure called a "MATLAB" structure, we have seen an example of its advantage while we were using <tt>params</tt> : We can get values out by just calling the field name.  This lets you group a bunch of things under one variable, and it doens't matter whether they are strings or numeric types or even cell arrays or other structures.</p><p>Choosing a matrix to hold my trial data is an example of the decisions I have to make when managing data.</p><p>Anyways...</p><h2>Finding relevant trials<a name="38"></a></h2><p>For illustration purposes, we will clear the workspace of all its data and also make sure we are still in the right data folder</p><pre class="codeinput">clear
 whos <span class="comment">% this doesn't produce any output, there are no variables</span>
 pwd <span class="comment">% should be: '/Users/tony/raw_data/131126/131126_F2_C1'. If not, navigate there</span>
 </pre><pre class="codeoutput">
 ans =
 
-/Users/tony/Code/Modern-Data-Management/raw_data/131126/131126_F2_C1
+C:\Users\Anthony Azevedo\Code\Modern-Data-Management\raw_data\131126\131126_F2_C1
 
 </pre><p>From my experimental design, I know that in PiezoSine trials with numbers 1, 16, and 31, I delivered a stimulus with a displacement of .1 V and a frequency of 25 Hz. This is because I looped over all the displacements at each frequency, then changed the frequency, before repeating the whole set.</p><pre class="codeinput">trials_25Hz_0_1 = [1 16 31]; <span class="comment">% matlab doesn't take variable names with periods</span>
-</pre><p>This is the simplest way of finding data: knowing where it is.  But I hate this method, chiefly because this often involves looking back and forth from a note book or file to my computer to enter numbers that start to confuse me.  I usually try to be a little more programatic about it.  If you notice in the   params structure, a variable called trial block indicates that a trial belongs in a particular set.  I might also search through the files in this directory, using code like below, and find trials that have identical parameters (except for trial number). But you can do this however you like.</p><h2>Loading Data<a name="41"></a></h2><p>For each trial number in my set, I will create the file name for that trial and load it into a new variable, called trial. For example</p><pre class="codeinput">trial_file_name = <span class="keyword">...</span>
+</pre><p>This is the simplest way of finding data: knowing where it is.  But I'm bad at this method, chiefly because this often involves looking back and forth from a note book or file to my computer to enter numbers that are subject to typos.  I usually try to be a little more programatic about it.  If you notice in the <tt>params</tt> structure, a field called <tt>trialBlock</tt> indicates that a trial belongs in a particular set.  I might also search through the files in this directory, using code like below, and find trials that have identical parameters (except for trial number). But you can do this however you like.</p><h2>Loading data<a name="41"></a></h2><p>For each trial number in my set, I will create the file name for that trial and load it into a new variable, called trial. For example</p><pre class="codeinput">trial_file_name = <span class="keyword">...</span>
     [<span class="string">'PiezoSine_Raw_131126_F2_C1_'</span>,<span class="keyword">...</span>
     num2str(trials_25Hz_0_1(3)),<span class="keyword">...</span>
     <span class="string">'.mat'</span>]
@@ -641,14 +650,14 @@ trial =
           name: [1x90 char]
           tags: {}
 
-</pre><p>This is different than when I called "load" before. Now instead of having several variables (name, params, voltage...), this imports the trial into a new matlab structure with field names for each variable.  Same data, different structure!</p><p>I know how many trials I need to import (3). I also know how long the voltage traces will be because all the trials were run the same way and we have already played with one.  To cut down on operations and time, I will create a matrix before I start that will be the same size as the one I ultimately need. This is best practices, the technical term is to "allocate" memory, or "preallocate" an array</p><pre class="codeinput">voltage_matrix = zeros(length(trials_25Hz_0_1),length(trial.voltage));
+</pre><p>This is different than when I called "load" before. Now instead of having several variables (<tt>name</tt>, <tt>params</tt>, <tt>voltage</tt>...), this imports the trial into a new matlab structure with field names for each variable.  Same data, different structure!</p><p>I know how many trials I need to import (3). I also know how long the voltage traces will be because all the trials were run the same way and we have already played with one.  To cut down on operations and time, I will create a matrix before I start that will be the same size as the one I ultimately need. This is best practices, the technical term is to "allocate" memory, or "preallocate" an array</p><pre class="codeinput">voltage_matrix = zeros(length(trials_25Hz_0_1),length(trial.voltage));
 size(voltage_matrix)
 </pre><pre class="codeoutput">
 ans =
 
            3       85001
 
-</pre><p>Now I'll loop over the different trials we need.  I'll use a counter, trial_index, that will increase by one on each loop, from 1 to 3</p><pre class="codeinput"><span class="keyword">for</span> trial_index = 1:length(trials_25Hz_0_1)
+</pre><p>Now I'll loop over the different trials we need.  I'll use a counter, <tt>trial_index</tt>, that will increase by one on each loop, from 1 to 3</p><pre class="codeinput"><span class="keyword">for</span> trial_index = 1:length(trials_25Hz_0_1)
     disp(trial_index)
 
     <span class="comment">% make the trial filename</span>
@@ -702,10 +711,10 @@ PiezoSine_Raw_131126_F2_C1_31.mat
 
 </pre><p>I re-create the time vector, using the trial structure:</p><pre class="codeinput">time = (0:1:trial.params.durSweep*trial.params.sampratein)/trial.params.sampratein;
 time = time-trial.params.preDurInSec;
-</pre><p>And I take a look at what I have loaded.  When calling "plot", matlab assumes the same time base for each y row. Again, not entirely satisfying.</p><pre class="codeinput">figure
+</pre><p>And I take a look at what I have loaded.  When calling <tt>plot</tt>, matlab assumes the same time base for each y row. Again, not entirely satisfying.</p><pre class="codeinput">figure
 plot(time,voltage_matrix);
 </pre><img vspace="5" hspace="5" src="CCB4_MATLAB_Analysis_Script_06.png" alt=""> <h2>Operating on the data<a name="47"></a></h2><p>The real operation I want to run is the average along the 1st dimension</p><pre class="codeinput">mean_voltage_trace = mean(voltage_matrix,1);
-</pre><p>Plot what happened (using a syntax that lets me control the color of the lines)</p><pre class="codeinput">figure
+</pre><p>Plot what happened (using a syntax that lets me control the color of the lines).</p><pre class="codeinput">figure
 
 <span class="comment">% plot the individual traces in pink</span>
 plot(time,voltage_matrix,<span class="string">'color'</span>,[1, .7 .7]);
@@ -713,7 +722,7 @@ hold <span class="string">on</span>
 
 <span class="comment">% plot the average trace in red</span>
 plot(time,mean_voltage_trace,<span class="string">'color'</span>,[.7, 0 0]);
-</pre><img vspace="5" hspace="5" src="CCB4_MATLAB_Analysis_Script_07.png" alt=""> <p>What I would like to know is, for this stimulus, what is the amplitude of the response? I choose to calculate the amplitude as the maximum of the response during the stimulus period (between 0 and the stimulus duration), minus the average voltage during the base line (time &lt; 0). Note, mean_voltage_trace is a 1D vector, so I'm not specifying the dimension here</p><pre class="codeinput">baseline_average = mean(mean_voltage_trace(time &lt; 0));
+</pre><img vspace="5" hspace="5" src="CCB4_MATLAB_Analysis_Script_07.png" alt=""> <p>What I would like to know is, for this stimulus, what is the amplitude of the response? I choose to calculate the amplitude as the maximum of the response during the stimulus period (between 0 and the stimulus duration), minus the average voltage during the base line (time &lt; 0). Note, <tt>mean_voltage_trace</tt> is a 1D vector, so I'm not specifying the dimension here</p><pre class="codeinput">baseline_average = mean(mean_voltage_trace(time &lt; 0));
 baseline_average
 
 max_response = max(mean_voltage_trace(time &gt; 0 &amp; time &lt; trial.params.stimDurInSec));
@@ -736,7 +745,7 @@ amplitude_25Hz_0_1 =
 
     1.5783
 
-</pre><p>As an exercise, consider that I could instead take the average of the maximum amplitudes of each trial, but that would give me a different answer</p><h2>Broadening the analysis<a name="51"></a></h2><p>Thus far, I have looked at the lowest frequency and smallest displacement. I will repeat the same procedure with each set of frequencies and displacements.</p><p>To do this more programatically, I will loop over a collection of trial number vectors like trials_25Hz_0_1. Just as for trials_25Hz_0_1, the trials are spaced 15 trials apart for all of the other frequencies and displacements.</p><p>I can also use the following example syntax:</p><pre class="codeinput">trials_25Hz_0_1 = (1:15:45)
+</pre><p>As an exercise, consider that I could instead take the average of the maximum amplitudes of each trial, but that would give me a different answer.</p><h2>Broadening the analysis<a name="51"></a></h2><p>Thus far, I have looked at the lowest frequency and smallest displacement. I will repeat the same procedure with each set of frequencies and displacements.</p><p>To do this more programatically, I will loop over a collection of trial number vectors like trials_25Hz_0_1. Just as for trials_25Hz_0_1, the trials are spaced 15 trials apart for all of the other frequencies and displacements.</p><p>I can also use the following example syntax:</p><pre class="codeinput">trials_25Hz_0_1 = (1:15:45)
 </pre><pre class="codeoutput">
 trials_25Hz_0_1 =
 
@@ -757,7 +766,7 @@ repetitions =
 
      3
 
-</pre><p>I'm looking for the amplitude of the average response to each of these stimuli, so I want to preallocate a matrix to hold those calculated values, and for good measure, redefine   voltage_matrix.</p><pre class="codeinput">amplitudes = zeros(<span class="keyword">...</span>
+</pre><p>I'm looking for the amplitude of the average response to each of these stimuli, so I want to preallocate a matrix to hold those calculated values, and for good measure, redefine   <tt>voltage_matrix</tt>.</p><pre class="codeinput">amplitudes = zeros(<span class="keyword">...</span>
     length(trial.params.freqs),<span class="keyword">...</span>
     length(trial.params.displacements))
 
@@ -771,7 +780,7 @@ amplitudes =
      0     0     0
      0     0     0
 
-</pre><p>Now I will create a loop that will use   first_trial_number as a counter.  As this increases, it changes   trialnumbers to give the trial numbers for the same stimulus trials. I will do the same calculation as above, while moving along the rows, then columns of the amplitudes matrix to fill it in with each result.</p><pre class="codeinput">first_trial_number = 0;
+</pre><p>Now I will create a loop that will use   <tt>first_trial_number</tt> as a counter.  As this increases, it changes   <tt>trialnumbers</tt> to give the trial numbers for the same stimulus trials. I will do the same calculation as above, while moving along the rows, then columns of the amplitudes matrix to fill it in with each result.</p><pre class="codeinput">first_trial_number = 0;
 <span class="keyword">for</span> ii = 1:length(trial.params.freqs)
     <span class="keyword">for</span> jj = 1:length(trial.params.displacements)
 
@@ -783,13 +792,13 @@ amplitudes =
             number_of_stimuli*repetitions);
 
         <span class="keyword">for</span> trial_index = 1:length(trialnumbers)
-            disp(trial_index)
+            <span class="comment">% disp(trial_index)</span>
 
             <span class="comment">% make the trial filename</span>
             trial_file_name = <span class="keyword">...</span>
                 [<span class="string">'PiezoSine_Raw_131126_F2_C1_'</span>,<span class="keyword">...</span>
                 num2str(trialnumbers(trial_index)),<span class="keyword">...</span><span class="comment"> % trial_index changes on each loop</span>
-                <span class="string">'.mat'</span>];
+                <span class="string">'.mat'</span>]
 
             <span class="comment">% load the trial</span>
             trial = load(trial_file_name);
@@ -812,271 +821,406 @@ amplitudes =
 <span class="keyword">end</span>
 
 amplitudes
-</pre><pre class="codeoutput">     1
+</pre><pre class="codeoutput">
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_1.mat
 
     25
 
     0.1000
 
-     2
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_16.mat
 
     25
 
     0.1000
 
-     3
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_31.mat
 
     25
 
     0.1000
 
-     1
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_2.mat
 
     25
 
     0.2000
 
-     2
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_17.mat
 
     25
 
     0.2000
 
-     3
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_32.mat
 
     25
 
     0.2000
 
-     1
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_3.mat
 
     25
 
     0.4000
 
-     2
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_18.mat
 
     25
 
     0.4000
 
-     3
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_33.mat
 
     25
 
     0.4000
 
-     1
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_4.mat
 
     50
 
     0.1000
 
-     2
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_19.mat
 
     50
 
     0.1000
 
-     3
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_34.mat
 
     50
 
     0.1000
 
-     1
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_5.mat
 
     50
 
     0.2000
 
-     2
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_20.mat
 
     50
 
     0.2000
 
-     3
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_35.mat
 
     50
 
     0.2000
 
-     1
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_6.mat
 
     50
 
     0.4000
 
-     2
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_21.mat
 
     50
 
     0.4000
 
-     3
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_36.mat
 
     50
 
     0.4000
 
-     1
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_7.mat
 
    100
 
     0.1000
 
-     2
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_22.mat
 
    100
 
     0.1000
 
-     3
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_37.mat
 
    100
 
     0.1000
 
-     1
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_8.mat
 
    100
 
     0.2000
 
-     2
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_23.mat
 
    100
 
     0.2000
 
-     3
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_38.mat
 
    100
 
     0.2000
 
-     1
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_9.mat
 
    100
 
     0.4000
 
-     2
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_24.mat
 
    100
 
     0.4000
 
-     3
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_39.mat
 
    100
 
     0.4000
 
-     1
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_10.mat
 
    200
 
     0.1000
 
-     2
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_25.mat
 
    200
 
     0.1000
 
-     3
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_40.mat
 
    200
 
     0.1000
 
-     1
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_11.mat
 
    200
 
     0.2000
 
-     2
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_26.mat
 
    200
 
     0.2000
 
-     3
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_41.mat
 
    200
 
     0.2000
 
-     1
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_12.mat
 
    200
 
     0.4000
 
-     2
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_27.mat
 
    200
 
     0.4000
 
-     3
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_42.mat
 
    200
 
     0.4000
 
-     1
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_13.mat
 
    400
 
     0.1000
 
-     2
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_28.mat
 
    400
 
     0.1000
 
-     3
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_43.mat
 
    400
 
     0.1000
 
-     1
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_14.mat
 
    400
 
     0.2000
 
-     2
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_29.mat
 
    400
 
     0.2000
 
-     3
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_44.mat
 
    400
 
     0.2000
 
-     1
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_15.mat
 
    400
 
     0.4000
 
-     2
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_30.mat
 
    400
 
     0.4000
 
-     3
+
+trial_file_name =
+
+PiezoSine_Raw_131126_F2_C1_45.mat
 
    400
 
@@ -1091,19 +1235,19 @@ amplitudes =
     2.6880    2.0997    2.8714
     1.6793    1.6146    1.8462
 
-</pre><p>TA-DAAAH! AND WE HAVE OUR ANSWER!!</p><p>It's hard to see this.  In fact, it's hard to know that we have done it correctly.</p><p>Looking at the amplitude matrix, we see that values tend to increase across the columns.  In the loop above,   jj was the index that indicated the jj-th column in the ii-th row, and also that   jj increases as the displacements go up.  This would seem to make sense: make the stimulus larger, and the response should go up.</p><pre class="codeinput">trial.params.displacements(3)
+</pre><p>TA-DAAAH! AND WE HAVE OUR ANSWER!!</p><p>It's hard to see this.  In fact, it's hard to know that we have done it correctly.</p><p>Looking at the amplitude matrix, we see that values tend to increase across the columns.  In the loop above,   <tt>jj</tt> was the index that indicated the jj-th column in the ii-th row, and also that   <tt>jj</tt> increases as the displacements go up.  This would seem to make sense: make the stimulus larger, and the response should go up.</p><pre class="codeinput">trial.params.displacements(3)
 </pre><pre class="codeoutput">
 ans =
 
     0.4000
 
-</pre><p>The values going down the row (index    ii increases) seem to hit a peak and then decrease again.  This would seem to indicate that a particular frequency would produce the largest response. Since this is   ii = 3 , 100 Hz would seem like it should produce the largest response</p><pre class="codeinput">trial.params.freqs(3)
+</pre><p>The values going down the row (index    <tt>ii</tt> increases) seem to hit a peak and then decrease again.  This would seem to indicate that a particular frequency would produce the largest response. Since this is   <tt>ii = 3</tt> , 100 Hz would seem like it should produce the largest response</p><pre class="codeinput">trial.params.freqs(3)
 </pre><pre class="codeoutput">
 ans =
 
    100
 
-</pre><p>OK!  Seemed to work, and it appears that this cell is most sensitive to frequencies of 100 Hz, or that it's a band pass filter.</p><h2>Displaying Data<a name="58"></a></h2><p>That was kind of a let down.  It could be hocus pocus.  Or a bug. We got the answer, I think, but we would also like to <a href="show">show</a> that this is the case by seeing the goods, plotting the data.</p><p>Matlab gives you quite a bit of control over how to produce pretty plots, like controlling the color of the lines, and such. However, many of these commands can be a bit tricky, and using them is part of the art and mastery of matlab programming. Matlab does have a few simple tools to get you started that we'll make use of now.</p><p>What would we like to see?</p><p>I want to see what the averages looked like from which the amplitudes were calculated.  I would like to see whether I can detect, by eye, either of the effects we see in the   amplitudes matrix above. To do this, I'd like to also restrict our view to the stimulus time period</p><p>I might also like to see which values we used in our calulations.  That is, when we find the maximum response amplitude during the stimulus, which value did we find?  And also, did we calculate the baseline correctly?</p><p>Finally, the amplitude matrix is an unsatisfactory representation of this measurement. I would like to see the amplitudes plotted in a way that makes sense, but also that might tell us more about these frequency response functions.</p><p>To do this, I'm going to redo the calculation loop, but while I've got the trials loaded, and a matrix of response data for one stimulus, I'm going to plot the responses and their mean, show that I'm calculating the baseline correctly, and point out the value I thought was the maximum.</p><p>Once this is done, I'll plot the amplitude matrix in an intersting way</p><pre class="codeinput"><span class="comment">% preallocate again (optional)</span>
+</pre><p>OK!  Seemed to work, and it appears that this cell is most sensitive to frequencies of 100 Hz, or that it's a band pass filter.</p><h2>Displaying data<a name="58"></a></h2><p>That was kind of a let down.  It could be hocus pocus.  Or a bug. We got the answer, I think, but we would also like to <b>show</b> that this is the case by seeing the goods, plotting the data.</p><p>Matlab gives you quite a bit of control over how to produce pretty plots, like controlling the color of the lines, and such. However, many of these commands can be a bit tricky, and using them is part of the art and mastery of matlab programming. Matlab does have a few simple tools to get you started that we'll make use of now.</p><p>What would we like to see?</p><p>I want to see what the averages looked like from which the amplitudes were calculated.  I would like to see whether I can detect, by eye, either of the effects we see in the   <tt>amplitudes</tt> matrix above. To do this, I'd like to also restrict our view to the stimulus time period</p><p>I might also like to see which values we used in our calulations.  That is, when we find the maximum response amplitude during the stimulus, which value did we find?  And also, did we calculate the baseline correctly?</p><p>Finally, the amplitude matrix is an unsatisfactory representation of this measurement. I would like to see the amplitudes plotted in a way that makes sense, but also that might tell us more about these frequency response functions.</p><p>To do this, I'm going to redo the calculation loop, but while I've got the trials loaded, and a matrix of response data for one stimulus, I'm going to plot the responses and their mean, show that I'm calculating the baseline correctly, and point out the value I thought was the maximum.</p><p>Once this is done, I'll plot the amplitude matrix in an intersting way</p><pre class="codeinput"><span class="comment">% preallocate again (optional)</span>
 amplitudes = zeros(<span class="keyword">...</span>
     length(trial.params.freqs),<span class="keyword">...</span>
     length(trial.params.displacements))
@@ -1284,7 +1428,7 @@ subplot_index =
 </pre><img vspace="5" hspace="5" src="CCB4_MATLAB_Analysis_Script_08.png" alt=""> <p>For clarity, I'll put x-y labels on the bottom left most panel, the 13th panel</p><pre class="codeinput">subplot(5,3,13)
 xlabel(<span class="string">'Time (sec)'</span>)
 ylabel(<span class="string">'mV'</span>)
-</pre><img vspace="5" hspace="5" src="CCB4_MATLAB_Analysis_Script_09.png" alt=""> <p>That's more like it! The only thing that seems wierd is that the y scale is different in each subplot.  Here I use my best graphics tricks for demonstration purposes only, but I could also just uncomment the   ylim([-45 -20]) line above and run that code again</p><pre class="codeinput">fignum = gcf; <span class="comment">% the "get current figure" function</span>
+</pre><img vspace="5" hspace="5" src="CCB4_MATLAB_Analysis_Script_09.png" alt=""> <p>That's more like it! The only thing that seems wierd is that the y scale is different in each subplot.  Here I use my best figure tricks for demonstration purposes only, but I could also just uncomment the   <tt>ylim([-45 -20])</tt> line above and run that code again</p><pre class="codeinput">fignum = gcf; <span class="comment">% the "get current figure" function</span>
 axis_handles = get(fignum,<span class="string">'children'</span>);
 ylims = [Inf, -Inf];
 <span class="keyword">for</span> ah = 1:length(axis_handles)
@@ -1294,7 +1438,7 @@ ylims = [Inf, -Inf];
 <span class="keyword">for</span> ah = 1:length(axis_handles)
     set(axis_handles(ah),<span class="string">'ylim'</span>,ylims);
 <span class="keyword">end</span>
-</pre><img vspace="5" hspace="5" src="CCB4_MATLAB_Analysis_Script_10.png" alt=""> <p>So this has a zoomed out view that shows that our calculations appear to be correct: the maximum values and baseline values are right, response amplitudes increase to the right, and the 100Hz stimuli certainly drive the cell pretty hard.</p><p>It would also be nice to get a closer look at some of the data, though, so maybe we would like to plot some of the panels in their own individual figures to see what the dynamics of the response look like.</p><p>I'll take a look at largest 50 Hz stimulus.  That is panel 6, by the subplot index convention, but it's the 2nd row, 3rd column of our amplitude matrix.  Here I make use of the cell array of trialnumbers that I made while looping through the stimuli.</p><pre class="codeinput">trialnumbers_cellarray
+</pre><img vspace="5" hspace="5" src="CCB4_MATLAB_Analysis_Script_10.png" alt=""> <p>So this has a zoomed out view that shows that our calculations appear to be correct: the maximum values and baseline values are right, response amplitudes increase to the right, and the 100Hz stimuli certainly drive the cell pretty hard.</p><p>It would also be nice to get a closer look at some of the data, though, so maybe we would like to plot some of the panels in their own individual figures to see what the dynamics of the response look like.</p><p>I'll take a look at the largest 50 Hz stimulus.  That is panel 6, by the subplot index convention, but it's the 2nd row, 3rd column of our amplitude matrix.  Here I make use of the cell array of trialnumbers that I made while looping through the stimuli.</p><pre class="codeinput">trialnumbers_cellarray
 </pre><pre class="codeoutput">
 trialnumbers_cellarray = 
 
@@ -1304,7 +1448,7 @@ trialnumbers_cellarray =
     [1x3 double]    [1x3 double]    [1x3 double]
     [1x3 double]    [1x3 double]    [1x3 double]
 
-</pre><p>If I use parentheses to index into this cell array, I get another cell array, not the vector I might like</p><pre class="codeinput">sub_cell_array = trialnumbers_cellarray(2,3)
+</pre><p>If I use parentheses to index into this cell array, I get another cell array, not the vector I might like:</p><pre class="codeinput">sub_cell_array = trialnumbers_cellarray(2,3)
 whos <span class="string">sub_cell_array</span> <span class="comment">% this is still a cell array</span>
 </pre><pre class="codeoutput">
 sub_cell_array = 
@@ -1385,7 +1529,7 @@ xlim([-.15 trial.params.stimDurInSec+.15]);
 <span class="comment">% ylim([-45 -20]);</span>
 
 ylabel(<span class="string">'Response (mV)'</span>);
-</pre><img vspace="5" hspace="5" src="CCB4_MATLAB_Analysis_Script_11.png" alt=""> <p>Now make a subplot for the sgs monitor.  Since this should all be the same for every trial (you can check that as an exercise), I will just plot the vector from the trial I have left from the loop above, trial 36</p><pre class="codeinput">axes_handle = subplot(4,1,4);
+</pre><img vspace="5" hspace="5" src="CCB4_MATLAB_Analysis_Script_11.png" alt=""> <p>Now make a subplot for the sgs monitor.  Since this should all be the same for every trial (you can check that as an exercise), I will just plot the vector from the trial I have left from the loop above, trial 36.</p><pre class="codeinput">axes_handle = subplot(4,1,4);
 plot(axes_handle,time,trial.sgsmonitor,<span class="string">'color'</span>,[0 0 1]);
 
 xlim([-.15 trial.params.stimDurInSec+ .15]);
@@ -1401,25 +1545,25 @@ xlabel(<span class="string">'Stimulus Frequency (Hz)'</span>)
 
 legend(<span class="string">'0.1 V'</span>,<span class="string">'0.2 V'</span>,<span class="string">'0.4V'</span>)
 </pre><img vspace="5" hspace="5" src="CCB4_MATLAB_Analysis_Script_13.png" alt=""> <p>and one other common convention when dealing with logarithmic values. If you don't like it, just remake the figure.</p><pre class="codeinput">legend(<span class="string">'toggle'</span>)
-set(gca,<span class="string">'xscale'</span>,<span class="string">'log'</span>)
+set(gca,<span class="string">'xscale'</span>,<span class="string">'log'</span>) <span class="comment">% the get current axis function</span>
 axis <span class="string">tight</span>
 legend(<span class="string">'toggle'</span>)
-</pre><img vspace="5" hspace="5" src="CCB4_MATLAB_Analysis_Script_14.png" alt=""> <h2>Wrap up and future challenges<a name="72"></a></h2><p>This script attempts several things at once.</p><p>(1) It introduces the reader/programmer to the basic data directory structure that I have found useful for my experiments.</p><p>(2) It walks the reader through an example of the smallest data unit that I collect, which consist of simultaneous measurements over time of several quantities, usually representing a stimulus and a response.</p><p>(3) It walks through an analysis work flow that is fairly similar every time an analysis gets run (find, load, compute, display), and provides example code for running these procedures.</p><p>(4) It tries to build from simple matlab structures and syntax into more complex commands, including some advanced and hard to read statements that I nonetheless use constantly.</p><p>(5) It tries to answer a simple biological question that is important to me.</p><p>With these goals in mind, I have tried to make it as clear and simple a procedure as possible, but I hope that for beginners it's at least a little challenging.  I'm appreciative of any feedback, and I'm happy to help with any bugs or questions.</p><p>If you are interested, there are many possible ways to go with this script to experiment on your own and practice:</p><p>I have included more data from another cell that I recorded. That cell (to give away the punchline), has a different tuning curve, or frequency-response relationship. See if you can use the tools here to find that answer.</p><p>This script only analyzes the data acquired with the PiezoSine stimulus. Other protocols were run on the same cell.  With the tools here, you should be able to look at the other protocols, particularly the piezo protocols where the sgsmonitor is always a representation of the stimulus.</p><p>I tend to try to make my code more general, sometimes to its detriment, so that I can run the same code on more and different types of experiments, say with more values for a parameter.  Also, I take advantage of other matlab tools: functions, classes, or even using java data structures.  These are things that you can try here.  As a start, we went through several loops that called essentially the same code.  You could try to turn this code into a function that you can call within the loop.</p><p>For more fun and real world applications (apps, games, website), I would suggest checking out code.org.  That is a blast.</p><p>These are definitely languages, it takes patience.  Much success!</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013a</a><br></p></div><!--
+</pre><img vspace="5" hspace="5" src="CCB4_MATLAB_Analysis_Script_14.png" alt=""> <h2>Wrap up and future challenges<a name="72"></a></h2><p>This script attempts several things at once.</p><p>(1) It introduces the reader/programmer to the basic data directory structure that I have found useful for my experiments.</p><p>(2) It walks the reader through an example of the smallest data unit that I collect, which consist of simultaneous measurements over time of several quantities, usually representing a stimulus and a response.</p><p>(3) It walks through an analysis work flow that is fairly similar every time an analysis gets run (find, load, compute, display), and provides example code for running these procedures.</p><p>(4) It tries to build from simple matlab structures and syntax into more complex commands, including some advanced and hard to read statements that I nonetheless use constantly.</p><p>(5) It tries to answer a simple biological question that is important to me.</p><p>With these goals in mind, I have tried to make it as clear and simple a procedure as possible, but I hope that for beginners it's also challenging.  I'm appreciative of any feedback, and I'm happy to help with any bugs or questions.</p><p>If you are interested, there are several possible ways to extend this script to experiment on your own and practice:</p><p>I have included more data from another cell that I recorded. That cell (to give away the punchline), has a different tuning curve, or frequency-response relationship. See if you can use the tools here to find that answer.</p><p>This script only analyzes the data acquired with the PiezoSine stimulus. Other protocols were run on the same cell.  With the tools here, you should be able to look at the other protocols, particularly the piezo protocols where the sgsmonitor is always a representation of the stimulus.</p><p>I tend to try to make my code more general, sometimes to its detriment, so that I can run the same code on more and different types of experiments, say with more values for a parameter.  Also, I take advantage of other matlab tools: functions, classes, or even using java data structures.  These are things that you can try here.  As a start, we went through several loops that called essentially the same code.  You could try to turn that code into a function that you can call within the loop.</p><p>For more fun and real world applications (apps, games, website), I would suggest checking out code.org.  That is a blast.</p><p>These are definitely languages, it takes patience.  Much success!</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% Data Management in MATLAB
 % copyright: Anthony Azevedo, 2014
 
 %% Introduction
-% This script will explore electrophyiological recordings of cells in
+% This script will explore electrophysiological recordings of cells in
 % the auditory pathway of "the fly", Drosophila melanogaster.  Such
-% recordings will involve a stimulus - mechanical or electrical - and an
+% recordings usually involve a stimulus - mechanical or electrical - and an
 % electrical response of the cell.  The responses are measured using a
 % glass pipette filled with a saline solution that is connected by a silver
 % chloride wire to a sensitive patch clamp amplifier.  Mechanical stimuli
 % are delivered using a piezoelectric actuator that will push on the fly's
 % antenna.
 %
-% First, we will inspect the data managment scheme, how the raw_data is
+% First, we will inspect the data managment scheme, how the raw data is
 % stored and organized when it is recorded.   
 %
 % Then we will inspect some of these data individually.
@@ -1430,12 +1574,17 @@ legend(<span class="string">'toggle'</span>)
 % the data (4) display the results.
 
 %% Naming conventions and data management
-% Raw data is stored in this repository on my machine at 
-%   /Users/tony/Code/Modern-Data-Management/raw_data.
+% Raw data is stored in this repository on my mac machine at 
+%  /Users/tony/Code/Modern-Data-Management/raw_data.
+% and on my pc workstation at 
+%  C:\Users\Anthony Azevedo\Code\Modern-Data-Management
 % The fullfile function creates a string for the path to a directory.
 
 clear % clears the "workspace"
-raw_data_directory = fullfile('~','Code','Modern-Data-Management','raw_data'); 
+raw_data_directory = ...
+    fullfile('~','Code','Modern-Data-Management','raw_data'); 
+raw_data_directory = ...
+    fullfile('C:\Users\Anthony Azevedo','Code','Modern-Data-Management','raw_data');  
 cd(raw_data_directory)
 pwd
 
@@ -1500,7 +1649,7 @@ load('PiezoSine_Raw_131126_F2_C1_3.mat')
 % units of acquired data and represent a single presentation of a
 % particular stimulus.  
 %
-% Next comes the cell identifier
+% Next comes the cell identifier.
 %
 % Finally, the last number is the protocol trial number (3 of 45 in this
 % case)
@@ -1518,13 +1667,13 @@ whos  % displays the variables in the workspace
 name
 
 %%
-% A built-in data structure called a "Matlab structure" (help struct) which
+% A built-in data structure called a "Matlab structure" ( |help struct| ) which
 % has "fields" ("gain","mode", etc) and "values". You'll see how to use
 % this below.
 params
 
 %%
-% A built-in "cell array" (help cell) called tags that will hold any information about
+% A built-in "cell array" ( |help cell| ) called tags that will hold any information about
 % this particular trial that I may have entered while acquiring (e.g.
 % application of drugs, washout of drugs, etc)
 tags
@@ -1561,21 +1710,21 @@ params
 
 
 %%
-% the sampling rate of the stimulus command.  A digitial to analog
+% The sampling rate of the stimulus command.  A digitial to analog
 % converter will produce a continuous analog signal based on a digital
 % command from the computer
 params.samprateout  
 
 %%
-% seconds before the stimulus actually starts
+% Seconds before the stimulus actually starts
 params.preDurInSec
 
 %%
-% seconds that the stimulus will be presented
+% Seconds that the stimulus will be presented
 params.stimDurInSec
 
 %%
-% seconds after the stimulus before the trial ends
+% Seconds after the stimulus before the trial ends
 params.postDurInSec
 
 %%
@@ -1593,18 +1742,20 @@ time_stim = (0:number_of_samples);
 time_stim = time_stim/params.samprateout;
 % a time vector beginning at 0, ending at 1.7 sec.  
 time_stim(1)
-time_stim(end)  % Careful: end has two meanings, as you'll see below.
+time_stim(end)  
+% Careful: end has two meanings, as you'll see below (help end).
 
-diff(time_stim(1:2)) % "diff" finds the difference between entries in a vector
+diff(time_stim(1:2)) 
+% "diff" finds the difference between entries in a vector 
 % each entry is 2e-5 seconds apart, which would give you 50k samples per
 % second
 
 %%
-% Subtract off the pre period so the stimulus starts at time = 0
+% Subtract off the pre period so the stimulus starts at time = 0.
 time_stim = time_stim - params.preDurInSec;
 
 %%
-% Use logical operations to learn about the vector
+% Use logical operations to learn about the vector.
 sum(time_stim < 0)
 % 2000 samples before the stimulus starts
 sum(time_stim >= 0 & time_stim < params.stimDurInSec)
@@ -1616,7 +1767,7 @@ sum(time_stim > params.stimDurInSec)
 %%
 % Next I'll create the stimulus from the params structure. 
 % The PiezoSine Protocol defines a sine wave stimulus using the following
-% parameters
+% parameters.
 params.protocol
 
 
@@ -1636,21 +1787,22 @@ params.ramptime
 
 
 %%
-% You can safely skim the next section. This is code from the acquisition
+% You can safely skim the next section, down to the next 2 figures. This is
+% code from the acquisition 
 % routines and is somewhat separate.
-% The stimulus vector is first a vector of zeros the same size as time
+% The stimulus vector is first a vector of zeros the same size as time.
 stim = time_stim;
 stim(1,:) = 0;
 
 %%
-% Then I Find the elements in the stim array that will contain the stimulus
-% i.e. entries 20001, through 35000 (20001:35000)
+% Then I find the elements in the stim array that will contain the stimulus
+% i.e. entries 20001, through 35000 (20001:35000).
 stimpnts = round(params.samprateout*params.preDurInSec+1:...
     params.samprateout*(params.preDurInSec+params.stimDurInSec));
 
 %%
 % This creates a "window" that ramps at the begining and the end of the
-% stimlus, and put the window into an array where the stimulus will be.
+% stimlus, and I put the window into an array where the stimulus will be.
 % This uses fairly advanced syntax, you can figure out what it
 % does as an exercise.
 % Just take a look to see what we're working with.
@@ -1682,14 +1834,14 @@ hold on     % keep all the lines on the plot
 plot(time_stim,stim,'r') % plot in red
 
 
-%% Look at the Response
+%% Look at the response
 %
 % Several other parameters in the params structure are specific to respons
 % acquisition, some 
 % are for documentation only (gain, secondary_gain, Vm_id).
 %
-% The mode indicates whether we were looking at voltage or current of the
-% cell
+% The mode indicates whether we were looking at the voltage or current of
+% the cell.
 
 params.mode
 
@@ -1777,7 +1929,7 @@ xlabel('Time (sec)');
 % For each frequency, displacement pair, I have recorded three trials to be
 % able to get an average response.
 %
-% So the first goal in the analysis is to find the three trials with the same
+% The first goal in the analysis is to find the three trials with the same
 % frequency and displacement.  We can see the set of frequencies and
 % displacemts because I keep 
 % that information in the params matlab structure.
@@ -1793,11 +1945,11 @@ params.displacements
 
 
 %% Aside about data structures
-% "By data structure", I don't necessarily mean I will use matlab structure
+% By "data structure", I don't necessarily mean I will use matlab structure
 % like the params structure we have above, though I could.  
 % Data structure is just the general term for how data are
 % grouped together. Other data structures we have encountered so farREPLACE_WITH_DASH_DASH
-% besides "matlab" structures, an confusing nameREPLACE_WITH_DASH_DASH
+% besides "matlab" structures, a confusing nameREPLACE_WITH_DASH_DASH
 % include vectors, aka arrays (current, voltage, time)
 % and cell arrays (an empty one called tags).  Take a look at the variables
 % in the workspace.  Under the class column, you can see the data
@@ -1827,20 +1979,16 @@ whos
 % the cell array is a generic structure that can hold anything 
 % you want: numbers, strings, other cell arrays, anything.  It can also be
 % as many dimensions as you like. So it's a flexible data structure.  
-% It's just not good for holding numeric
-% data because you wouldn't be able to perform mathematical operations on
-% it, it's not built for that.
+% It's just not good for holding numeric data because you wouldn't be able
+% to perform mathematical operations on them, it's not built for that.
 %
 % For the data structure called a "MATLAB" structure, we have seen an
-% example 
-% of its advantage while we were using
-%   params
-% : We can 
+% example of its advantage while we were using |params| : We can 
 % get values out by just calling the field name.  This lets you group a
 % bunch of things under one variable, and it doens't matter whether they
 % are strings or numeric types or even cell arrays or other structures.
 %
-% So, choosing a matrix to hold my trial data is an example of the
+% Choosing a matrix to hold my trial data is an example of the
 % decisions I have to make when managing data.
 %
 % Anyways...
@@ -1862,20 +2010,20 @@ pwd % should be: '/Users/tony/raw_data/131126/131126_F2_C1'. If not, navigate th
 trials_25Hz_0_1 = [1 16 31]; % matlab doesn't take variable names with periods
 
 %%
-% This is the simplest way of finding data: knowing where it is.  But I
-% hate this method, chiefly
+% This is the simplest way of finding data: knowing where it is.  But I'm
+% bad at this method, chiefly
 % because this often involves looking back and forth from a note book or
-% file to my computer to enter numbers that start to confuse me.  I usually
-% try to be a little more programatic about it.  If you notice in the 
-%   params
-% structure, a variable called trial block indicates that a trial belongs
+% file to my computer to enter numbers that are subject to typos.  I
+% usually try to be a little more programatic about it.  If you notice in
+% the |params|
+% structure, a field called |trialBlock| indicates that a trial belongs
 % in a particular set.  I might also search through the files in this
 % directory, using code like below, and find trials that have identical
 % parameters (except for trial number). But you can do this however you
 % like.
 
 
-%% Loading Data
+%% Loading data
 % For each trial number in my set, I will create the file name for that
 % trial and load it into a new variable, called trial. For example
 trial_file_name = ...
@@ -1887,7 +2035,7 @@ trial = load(trial_file_name)
 
 %%
 % This is different than when I called "load" before. Now instead of having
-% several variables (name, params, voltage...), this imports the trial into
+% several variables (|name|, |params|, |voltage|...), this imports the trial into
 % a new matlab structure with field names for each variable.  Same data,
 % different structure!
 
@@ -1906,7 +2054,7 @@ size(voltage_matrix)
 
 %%
 % Now I'll loop over the different trials we need.  I'll use a counter,
-% trial_index, that will increase by one on each loop, from 1 to 3
+% |trial_index|, that will increase by one on each loop, from 1 to 3
 
 for trial_index = 1:length(trials_25Hz_0_1)
     disp(trial_index)
@@ -1934,7 +2082,7 @@ time = (0:1:trial.params.durSweep*trial.params.sampratein)/trial.params.samprate
 time = time-trial.params.preDurInSec;
 
 %%
-% And I take a look at what I have loaded.  When calling "plot", matlab
+% And I take a look at what I have loaded.  When calling |plot|, matlab
 % assumes the same time base for each y row. Again, not entirely
 % satisfying.
 figure
@@ -1947,7 +2095,7 @@ mean_voltage_trace = mean(voltage_matrix,1);
 
 %%
 % Plot what happened (using a syntax that lets me control the
-% color of the lines)
+% color of the lines).
 
 figure
 
@@ -1965,7 +2113,7 @@ plot(time,mean_voltage_trace,'color',[.7, 0 0]);
 % response during the stimulus period (between 0 and the stimulus
 % duration), minus the average voltage during the 
 % base line (time < 0).
-% Note, mean_voltage_trace is a 1D vector, so I'm not specifying the
+% Note, |mean_voltage_trace| is a 1D vector, so I'm not specifying the
 % dimension here
 baseline_average = mean(mean_voltage_trace(time < 0));
 baseline_average
@@ -1979,8 +2127,7 @@ amplitude_25Hz_0_1
 %%
 % As an exercise, consider that
 % I could instead take the average of the maximum amplitudes of each trial,
-% but 
-% that would give me a different answer
+% but that would give me a different answer.
 
 
 %% Broadening the analysis
@@ -2012,7 +2159,7 @@ repetitions = 3
 % I'm looking for the amplitude of the average response to each of these
 % stimuli, so I want to preallocate a matrix to hold those calculated
 % values, and for good measure, redefine 
-%   voltage_matrix.
+%   |voltage_matrix|.
 
 amplitudes = zeros(...
     length(trial.params.freqs),...
@@ -2023,9 +2170,9 @@ voltage_matrix = zeros(repetitions,length(trial.voltage));
 
 %%
 % Now I will create a loop that will use  
-%   first_trial_number
+%   |first_trial_number|
 % as a counter.  As this increases, it changes 
-%   trialnumbers
+%   |trialnumbers|
 % to give the trial numbers for the same stimulus trials. I will do the
 % same calculation as above, while moving
 % along the rows, then columns of the 
@@ -2043,14 +2190,14 @@ for ii = 1:length(trial.params.freqs)
             number_of_stimuli*repetitions);
         
         for trial_index = 1:length(trialnumbers)
-            disp(trial_index)
+            % disp(trial_index)
             
             % make the trial filename
             trial_file_name = ...
                 ['PiezoSine_Raw_131126_F2_C1_',...
                 num2str(trialnumbers(trial_index)),... % trial_index changes on each loop
-                '.mat'];
-            
+                '.mat']
+
             % load the trial
             trial = load(trial_file_name);
             
@@ -2081,10 +2228,10 @@ amplitudes
 % 
 % Looking at the amplitude matrix, we see that values tend
 % to increase across the columns.  In the loop above, 
-%   jj 
+%   |jj| 
 % was the index that
 % indicated the jj-th column in the ii-th row, and also that 
-%   jj 
+%   |jj| 
 % increases as
 % the displacements go up.  This would seem to make sense: make the
 % stimulus larger, and the response should go up.
@@ -2093,13 +2240,13 @@ trial.params.displacements(3)
 
 %% 
 % The values going down the row (index 
-%    ii 
+%    |ii| 
 % increases) seem to hit a peak and
 % then decrease 
 % again.  This would seem to indicate that a particular frequency would
 % produce the largest response.
 % Since this is 
-%   ii = 3
+%   |ii = 3|
 % , 100 Hz would seem like it should produce the
 % largest response
 trial.params.freqs(3)
@@ -2108,9 +2255,9 @@ trial.params.freqs(3)
 % OK!  Seemed to work, and it appears that this cell is most sensitive to
 % frequencies of 100 Hz, or that it's a band pass filter.
 
-%% Displaying Data
+%% Displaying data
 % That was kind of a let down.  It could be hocus pocus.  Or a bug.
-% We got the answer, I think, but we would also like to <show> that this is
+% We got the answer, I think, but we would also like to *show* that this is
 % the case by seeing the goods, plotting the data.
 %
 % Matlab gives you quite a bit of control over how to produce pretty plots,
@@ -2124,7 +2271,7 @@ trial.params.freqs(3)
 % I want to see what the averages looked like
 % from which the amplitudes were calculated.  I would like to see 
 % whether I can detect, by eye, either of the effects we see in the
-%   amplitudes
+%   |amplitudes|
 % matrix above. To do this, I'd like to also restrict our view
 % to the stimulus time period
 %
@@ -2260,10 +2407,10 @@ ylabel('mV')
 
 %%
 % That's more like it! The only thing that seems wierd is that the y scale
-% is different in each subplot.  Here I use my best graphics tricks
+% is different in each subplot.  Here I use my best figure tricks
 % for demonstration purposes only, 
 % but I could also just uncomment the 
-%   ylim([-45 -20]) 
+%   |ylim([-45 -20])|
 % line above and run that code again
 
 fignum = gcf; % the "get current figure" function
@@ -2289,7 +2436,7 @@ end
 % so maybe we would like to plot some of the panels in their own individual
 % figures to see what the dynamics of the response look like.
 % 
-% I'll take a look at largest 50 Hz stimulus.  That is panel 6, by the
+% I'll take a look at the largest 50 Hz stimulus.  That is panel 6, by the
 % subplot index convention, but it's the 2nd row, 3rd column of our
 % amplitude matrix.  Here I make use of the cell array of trialnumbers that
 % I made while looping through the stimuli.
@@ -2298,7 +2445,7 @@ trialnumbers_cellarray
 
 %%
 % If I use parentheses to index into this cell array, I get another cell
-% array, not the vector I might like
+% array, not the vector I might like:
 sub_cell_array = trialnumbers_cellarray(2,3)
 whos sub_cell_array % this is still a cell array
 
@@ -2379,7 +2526,7 @@ ylabel('Response (mV)');
 %% 
 % Now make a subplot for the sgs monitor.  Since this should all be the same
 % for every trial (you can check that as an exercise), I will just plot the
-% vector from the trial I have left from the loop above, trial 36
+% vector from the trial I have left from the loop above, trial 36.
 % 
 axes_handle = subplot(4,1,4);
 plot(axes_handle,time,trial.sgsmonitor,'color',[0 0 1]);
@@ -2422,7 +2569,7 @@ legend('0.1 V','0.2 V','0.4V')
 % and one other common convention when dealing with logarithmic values.
 % If you don't like it, just remake the figure.
 legend('toggle')
-set(gca,'xscale','log')
+set(gca,'xscale','log') % the get current axis function
 axis tight
 legend('toggle')
 
@@ -2451,11 +2598,11 @@ legend('toggle')
 % biological question that is important to me.
 %
 % With these goals in mind, I have tried to make it as clear and simple a
-% procedure as possible, but I hope that for beginners it's at least a
-% little challenging.  I'm appreciative of any feedback, and I'm happy to
+% procedure as possible, but I hope that for beginners it's also
+% challenging.  I'm appreciative of any feedback, and I'm happy to 
 % help with any bugs or questions.
 % 
-% If you are interested, there are many possible ways to go with this
+% If you are interested, there are several possible ways to extend this
 % script to experiment on your own and practice:  
 % 
 % I have included more data from another
@@ -2476,7 +2623,7 @@ legend('toggle')
 % a parameter.  Also, I take advantage of other matlab tools: functions,
 % classes, or even using java data structures.  These are things that
 % you can try here.  As a start, we went through several loops that called
-% essentially the same code.  You could try to turn this code into a
+% essentially the same code.  You could try to turn that code into a
 % function that you can call within the loop.
 %
 % For more fun and real world applications (apps, games, website), I would

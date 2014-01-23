@@ -2,16 +2,16 @@
 % copyright: Anthony Azevedo, 2014
 
 %% Introduction
-% This script will explore electrophyiological recordings of cells in
+% This script will explore electrophysiological recordings of cells in
 % the auditory pathway of "the fly", Drosophila melanogaster.  Such
-% recordings will involve a stimulus - mechanical or electrical - and an
+% recordings usually involve a stimulus - mechanical or electrical - and an
 % electrical response of the cell.  The responses are measured using a
 % glass pipette filled with a saline solution that is connected by a silver
 % chloride wire to a sensitive patch clamp amplifier.  Mechanical stimuli
 % are delivered using a piezoelectric actuator that will push on the fly's
 % antenna.
 %
-% First, we will inspect the data managment scheme, how the raw_data is
+% First, we will inspect the data managment scheme, how the raw data is
 % stored and organized when it is recorded.   
 %
 % Then we will inspect some of these data individually.
@@ -29,8 +29,10 @@
 % The fullfile function creates a string for the path to a directory.
 
 clear % clears the "workspace"
-raw_data_directory = fullfile('~','Code','Modern-Data-Management','raw_data'); 
-% raw_data_directory = fullfile('C:\Users\Anthony Azevedo','Code','Modern-Data-Management','raw_data'); 
+raw_data_directory = ...
+    fullfile('~','Code','Modern-Data-Management','raw_data'); 
+raw_data_directory = ...
+    fullfile('C:\Users\Anthony Azevedo','Code','Modern-Data-Management','raw_data');  
 cd(raw_data_directory)
 pwd
 
@@ -95,7 +97,7 @@ load('PiezoSine_Raw_131126_F2_C1_3.mat')
 % units of acquired data and represent a single presentation of a
 % particular stimulus.  
 %
-% Next comes the cell identifier
+% Next comes the cell identifier.
 %
 % Finally, the last number is the protocol trial number (3 of 45 in this
 % case)
@@ -113,13 +115,13 @@ whos  % displays the variables in the workspace
 name
 
 %%
-% A built-in data structure called a "Matlab structure" (help struct) which
+% A built-in data structure called a "Matlab structure" ( |help struct| ) which
 % has "fields" ("gain","mode", etc) and "values". You'll see how to use
 % this below.
 params
 
 %%
-% A built-in "cell array" (help cell) called tags that will hold any information about
+% A built-in "cell array" ( |help cell| ) called tags that will hold any information about
 % this particular trial that I may have entered while acquiring (e.g.
 % application of drugs, washout of drugs, etc)
 tags
@@ -156,21 +158,21 @@ params
 
 
 %%
-% the sampling rate of the stimulus command.  A digitial to analog
+% The sampling rate of the stimulus command.  A digitial to analog
 % converter will produce a continuous analog signal based on a digital
 % command from the computer
 params.samprateout  
 
 %%
-% seconds before the stimulus actually starts
+% Seconds before the stimulus actually starts
 params.preDurInSec
 
 %%
-% seconds that the stimulus will be presented
+% Seconds that the stimulus will be presented
 params.stimDurInSec
 
 %%
-% seconds after the stimulus before the trial ends
+% Seconds after the stimulus before the trial ends
 params.postDurInSec
 
 %%
@@ -188,18 +190,20 @@ time_stim = (0:number_of_samples);
 time_stim = time_stim/params.samprateout;
 % a time vector beginning at 0, ending at 1.7 sec.  
 time_stim(1)
-time_stim(end)  % Careful: end has two meanings, as you'll see below.
+time_stim(end)  
+% Careful: end has two meanings, as you'll see below (help end).
 
-diff(time_stim(1:2)) % "diff" finds the difference between entries in a vector
+diff(time_stim(1:2)) 
+% "diff" finds the difference between entries in a vector 
 % each entry is 2e-5 seconds apart, which would give you 50k samples per
 % second
 
 %%
-% Subtract off the pre period so the stimulus starts at time = 0
+% Subtract off the pre period so the stimulus starts at time = 0.
 time_stim = time_stim - params.preDurInSec;
 
 %%
-% Use logical operations to learn about the vector
+% Use logical operations to learn about the vector.
 sum(time_stim < 0)
 % 2000 samples before the stimulus starts
 sum(time_stim >= 0 & time_stim < params.stimDurInSec)
@@ -211,7 +215,7 @@ sum(time_stim > params.stimDurInSec)
 %%
 % Next I'll create the stimulus from the params structure. 
 % The PiezoSine Protocol defines a sine wave stimulus using the following
-% parameters
+% parameters.
 params.protocol
 
 
@@ -231,21 +235,22 @@ params.ramptime
 
 
 %%
-% You can safely skim the next section. This is code from the acquisition
+% You can safely skim the next section, down to the next 2 figures. This is
+% code from the acquisition 
 % routines and is somewhat separate.
-% The stimulus vector is first a vector of zeros the same size as time
+% The stimulus vector is first a vector of zeros the same size as time.
 stim = time_stim;
 stim(1,:) = 0;
 
 %%
-% Then I Find the elements in the stim array that will contain the stimulus
-% i.e. entries 20001, through 35000 (20001:35000)
+% Then I find the elements in the stim array that will contain the stimulus
+% i.e. entries 20001, through 35000 (20001:35000).
 stimpnts = round(params.samprateout*params.preDurInSec+1:...
     params.samprateout*(params.preDurInSec+params.stimDurInSec));
 
 %%
 % This creates a "window" that ramps at the begining and the end of the
-% stimlus, and put the window into an array where the stimulus will be.
+% stimlus, and I put the window into an array where the stimulus will be.
 % This uses fairly advanced syntax, you can figure out what it
 % does as an exercise.
 % Just take a look to see what we're working with.
@@ -277,14 +282,14 @@ hold on     % keep all the lines on the plot
 plot(time_stim,stim,'r') % plot in red
 
 
-%% Look at the Response
+%% Look at the response
 %
 % Several other parameters in the params structure are specific to respons
 % acquisition, some 
 % are for documentation only (gain, secondary_gain, Vm_id).
 %
-% The mode indicates whether we were looking at voltage or current of the
-% cell
+% The mode indicates whether we were looking at the voltage or current of
+% the cell.
 
 params.mode
 
@@ -372,7 +377,7 @@ xlabel('Time (sec)');
 % For each frequency, displacement pair, I have recorded three trials to be
 % able to get an average response.
 %
-% So the first goal in the analysis is to find the three trials with the same
+% The first goal in the analysis is to find the three trials with the same
 % frequency and displacement.  We can see the set of frequencies and
 % displacemts because I keep 
 % that information in the params matlab structure.
@@ -388,11 +393,11 @@ params.displacements
 
 
 %% Aside about data structures
-% "By data structure", I don't necessarily mean I will use matlab structure
+% By "data structure", I don't necessarily mean I will use matlab structure
 % like the params structure we have above, though I could.  
 % Data structure is just the general term for how data are
 % grouped together. Other data structures we have encountered so far--
-% besides "matlab" structures, an confusing name--
+% besides "matlab" structures, a confusing name--
 % include vectors, aka arrays (current, voltage, time)
 % and cell arrays (an empty one called tags).  Take a look at the variables
 % in the workspace.  Under the class column, you can see the data
@@ -422,20 +427,16 @@ whos
 % the cell array is a generic structure that can hold anything 
 % you want: numbers, strings, other cell arrays, anything.  It can also be
 % as many dimensions as you like. So it's a flexible data structure.  
-% It's just not good for holding numeric
-% data because you wouldn't be able to perform mathematical operations on
-% it, it's not built for that.
+% It's just not good for holding numeric data because you wouldn't be able
+% to perform mathematical operations on them, it's not built for that.
 %
 % For the data structure called a "MATLAB" structure, we have seen an
-% example 
-% of its advantage while we were using
-%   params
-% : We can 
+% example of its advantage while we were using |params| : We can 
 % get values out by just calling the field name.  This lets you group a
 % bunch of things under one variable, and it doens't matter whether they
 % are strings or numeric types or even cell arrays or other structures.
 %
-% So, choosing a matrix to hold my trial data is an example of the
+% Choosing a matrix to hold my trial data is an example of the
 % decisions I have to make when managing data.
 %
 % Anyways...
@@ -457,20 +458,20 @@ pwd % should be: '/Users/tony/raw_data/131126/131126_F2_C1'. If not, navigate th
 trials_25Hz_0_1 = [1 16 31]; % matlab doesn't take variable names with periods
 
 %%
-% This is the simplest way of finding data: knowing where it is.  But I
-% hate this method, chiefly
+% This is the simplest way of finding data: knowing where it is.  But I'm
+% bad at this method, chiefly
 % because this often involves looking back and forth from a note book or
-% file to my computer to enter numbers that start to confuse me.  I usually
-% try to be a little more programatic about it.  If you notice in the 
-%   params
-% structure, a variable called trial block indicates that a trial belongs
+% file to my computer to enter numbers that are subject to typos.  I
+% usually try to be a little more programatic about it.  If you notice in
+% the |params|
+% structure, a field called |trialBlock| indicates that a trial belongs
 % in a particular set.  I might also search through the files in this
 % directory, using code like below, and find trials that have identical
 % parameters (except for trial number). But you can do this however you
 % like.
 
 
-%% Loading Data
+%% Loading data
 % For each trial number in my set, I will create the file name for that
 % trial and load it into a new variable, called trial. For example
 trial_file_name = ...
@@ -482,7 +483,7 @@ trial = load(trial_file_name)
 
 %%
 % This is different than when I called "load" before. Now instead of having
-% several variables (name, params, voltage...), this imports the trial into
+% several variables (|name|, |params|, |voltage|...), this imports the trial into
 % a new matlab structure with field names for each variable.  Same data,
 % different structure!
 
@@ -501,7 +502,7 @@ size(voltage_matrix)
 
 %%
 % Now I'll loop over the different trials we need.  I'll use a counter,
-% trial_index, that will increase by one on each loop, from 1 to 3
+% |trial_index|, that will increase by one on each loop, from 1 to 3
 
 for trial_index = 1:length(trials_25Hz_0_1)
     disp(trial_index)
@@ -529,7 +530,7 @@ time = (0:1:trial.params.durSweep*trial.params.sampratein)/trial.params.samprate
 time = time-trial.params.preDurInSec;
 
 %%
-% And I take a look at what I have loaded.  When calling "plot", matlab
+% And I take a look at what I have loaded.  When calling |plot|, matlab
 % assumes the same time base for each y row. Again, not entirely
 % satisfying.
 figure
@@ -542,7 +543,7 @@ mean_voltage_trace = mean(voltage_matrix,1);
 
 %%
 % Plot what happened (using a syntax that lets me control the
-% color of the lines)
+% color of the lines).
 
 figure
 
@@ -560,7 +561,7 @@ plot(time,mean_voltage_trace,'color',[.7, 0 0]);
 % response during the stimulus period (between 0 and the stimulus
 % duration), minus the average voltage during the 
 % base line (time < 0).
-% Note, mean_voltage_trace is a 1D vector, so I'm not specifying the
+% Note, |mean_voltage_trace| is a 1D vector, so I'm not specifying the
 % dimension here
 baseline_average = mean(mean_voltage_trace(time < 0));
 baseline_average
@@ -574,8 +575,7 @@ amplitude_25Hz_0_1
 %%
 % As an exercise, consider that
 % I could instead take the average of the maximum amplitudes of each trial,
-% but 
-% that would give me a different answer
+% but that would give me a different answer.
 
 
 %% Broadening the analysis
@@ -607,7 +607,7 @@ repetitions = 3
 % I'm looking for the amplitude of the average response to each of these
 % stimuli, so I want to preallocate a matrix to hold those calculated
 % values, and for good measure, redefine 
-%   voltage_matrix.
+%   |voltage_matrix|.
 
 amplitudes = zeros(...
     length(trial.params.freqs),...
@@ -618,9 +618,9 @@ voltage_matrix = zeros(repetitions,length(trial.voltage));
 
 %%
 % Now I will create a loop that will use  
-%   first_trial_number
+%   |first_trial_number|
 % as a counter.  As this increases, it changes 
-%   trialnumbers
+%   |trialnumbers|
 % to give the trial numbers for the same stimulus trials. I will do the
 % same calculation as above, while moving
 % along the rows, then columns of the 
@@ -638,14 +638,14 @@ for ii = 1:length(trial.params.freqs)
             number_of_stimuli*repetitions);
         
         for trial_index = 1:length(trialnumbers)
-            disp(trial_index)
+            % disp(trial_index)
             
             % make the trial filename
             trial_file_name = ...
                 ['PiezoSine_Raw_131126_F2_C1_',...
                 num2str(trialnumbers(trial_index)),... % trial_index changes on each loop
-                '.mat'];
-            
+                '.mat']
+
             % load the trial
             trial = load(trial_file_name);
             
@@ -676,10 +676,10 @@ amplitudes
 % 
 % Looking at the amplitude matrix, we see that values tend
 % to increase across the columns.  In the loop above, 
-%   jj 
+%   |jj| 
 % was the index that
 % indicated the jj-th column in the ii-th row, and also that 
-%   jj 
+%   |jj| 
 % increases as
 % the displacements go up.  This would seem to make sense: make the
 % stimulus larger, and the response should go up.
@@ -688,13 +688,13 @@ trial.params.displacements(3)
 
 %% 
 % The values going down the row (index 
-%    ii 
+%    |ii| 
 % increases) seem to hit a peak and
 % then decrease 
 % again.  This would seem to indicate that a particular frequency would
 % produce the largest response.
 % Since this is 
-%   ii = 3
+%   |ii = 3|
 % , 100 Hz would seem like it should produce the
 % largest response
 trial.params.freqs(3)
@@ -703,9 +703,9 @@ trial.params.freqs(3)
 % OK!  Seemed to work, and it appears that this cell is most sensitive to
 % frequencies of 100 Hz, or that it's a band pass filter.
 
-%% Displaying Data
+%% Displaying data
 % That was kind of a let down.  It could be hocus pocus.  Or a bug.
-% We got the answer, I think, but we would also like to <show> that this is
+% We got the answer, I think, but we would also like to *show* that this is
 % the case by seeing the goods, plotting the data.
 %
 % Matlab gives you quite a bit of control over how to produce pretty plots,
@@ -719,7 +719,7 @@ trial.params.freqs(3)
 % I want to see what the averages looked like
 % from which the amplitudes were calculated.  I would like to see 
 % whether I can detect, by eye, either of the effects we see in the
-%   amplitudes
+%   |amplitudes|
 % matrix above. To do this, I'd like to also restrict our view
 % to the stimulus time period
 %
@@ -855,10 +855,10 @@ ylabel('mV')
 
 %%
 % That's more like it! The only thing that seems wierd is that the y scale
-% is different in each subplot.  Here I use my best graphics tricks
+% is different in each subplot.  Here I use my best figure tricks
 % for demonstration purposes only, 
 % but I could also just uncomment the 
-%   ylim([-45 -20]) 
+%   |ylim([-45 -20])|
 % line above and run that code again
 
 fignum = gcf; % the "get current figure" function
@@ -884,7 +884,7 @@ end
 % so maybe we would like to plot some of the panels in their own individual
 % figures to see what the dynamics of the response look like.
 % 
-% I'll take a look at largest 50 Hz stimulus.  That is panel 6, by the
+% I'll take a look at the largest 50 Hz stimulus.  That is panel 6, by the
 % subplot index convention, but it's the 2nd row, 3rd column of our
 % amplitude matrix.  Here I make use of the cell array of trialnumbers that
 % I made while looping through the stimuli.
@@ -893,7 +893,7 @@ trialnumbers_cellarray
 
 %%
 % If I use parentheses to index into this cell array, I get another cell
-% array, not the vector I might like
+% array, not the vector I might like:
 sub_cell_array = trialnumbers_cellarray(2,3)
 whos sub_cell_array % this is still a cell array
 
@@ -974,7 +974,7 @@ ylabel('Response (mV)');
 %% 
 % Now make a subplot for the sgs monitor.  Since this should all be the same
 % for every trial (you can check that as an exercise), I will just plot the
-% vector from the trial I have left from the loop above, trial 36
+% vector from the trial I have left from the loop above, trial 36.
 % 
 axes_handle = subplot(4,1,4);
 plot(axes_handle,time,trial.sgsmonitor,'color',[0 0 1]);
@@ -1017,7 +1017,7 @@ legend('0.1 V','0.2 V','0.4V')
 % and one other common convention when dealing with logarithmic values.
 % If you don't like it, just remake the figure.
 legend('toggle')
-set(gca,'xscale','log')
+set(gca,'xscale','log') % the get current axis function
 axis tight
 legend('toggle')
 
@@ -1046,11 +1046,11 @@ legend('toggle')
 % biological question that is important to me.
 %
 % With these goals in mind, I have tried to make it as clear and simple a
-% procedure as possible, but I hope that for beginners it's at least a
-% little challenging.  I'm appreciative of any feedback, and I'm happy to
+% procedure as possible, but I hope that for beginners it's also
+% challenging.  I'm appreciative of any feedback, and I'm happy to 
 % help with any bugs or questions.
 % 
-% If you are interested, there are many possible ways to go with this
+% If you are interested, there are several possible ways to extend this
 % script to experiment on your own and practice:  
 % 
 % I have included more data from another
@@ -1071,7 +1071,7 @@ legend('toggle')
 % a parameter.  Also, I take advantage of other matlab tools: functions,
 % classes, or even using java data structures.  These are things that
 % you can try here.  As a start, we went through several loops that called
-% essentially the same code.  You could try to turn this code into a
+% essentially the same code.  You could try to turn that code into a
 % function that you can call within the loop.
 %
 % For more fun and real world applications (apps, games, website), I would
