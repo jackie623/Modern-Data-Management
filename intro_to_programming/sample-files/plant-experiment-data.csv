@@ -1,0 +1,10 @@
+Name,Trial type,Day,Water (mL),Growth (cm)
+clementine,control,1,500,1.2 
+pothos,control,1,500,1.0
+snake plant,control,1,500,.9
+clementine,control,2,500,1.2 
+pothos,control,2,500,1.0
+snake plant,control,2,500,.9
+clementine,control,3,500,1.2 
+pothos,control,3,500,1.0
+snake plant,control,3,500,.9
