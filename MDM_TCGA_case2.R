@@ -61,11 +61,11 @@
 	dimnames(FooBar_Matrix) <- list(c("foo", "bar"),letters[1:20])
 		# name the rows and columns
 	fb_plot <- barplot(FooBar_Matrix, beside=T, col=c("red", "blue"), main="This is a barplot")
-	legend(x=2, y=-1.2, legend=c("foo", "bar"), fill=c("red", "blue"), bty="n", ncol=2, cex=0.6)
+	legend(x=25, y=-1.2, legend=c("foo", "bar"), fill=c("red", "blue"), bty="n", ncol=2)
 	
 	lines(fb_plot, z[1:40], lwd=4, lty=3, col="green")
 		# use the x coordinates from the barplot and add a line to the image
-	legend(x=2, y=-1.5, legend=c("random"), col=c("green"), bty="n",lwd=4, lty=3, cex=0.6)
+	legend(x=25, y=-1.5, legend=c("random"), col=c("green"), bty="n",lwd=4, lty=3)
 	
 ## Both in side by side panes
 
@@ -73,11 +73,6 @@
 	plot(x,y, pch=19, col="blue", xlab="foo", ylab="bar", main="Scatterplot")
 	fb_plot <- barplot(FooBar_Matrix, beside=T, col=c("red", "blue"), main="Barplot")
 
-  dev.off()
-  # close this device to refresh the par settings by creating a new device
-  # on next plot; useful in RStudio, can simply close window from R or terminal
-  
-  
 ################
 ## Copy image to File
 ##		save the current image to a specified file
@@ -118,8 +113,8 @@
 ################
 	library(rgl)
 
-	x <- rnorm(1000)		#generate 1000 random normal values with mean 0 sd 1
-	y <- rnorm(1000)
+	x <- rnorm(100)		#generate 100 random normal values with mean 0 sd 1
+	y <- rnorm(100)
 	z <- 0.2*x - 0.3*y + rnorm(1000, sd=0.3)
 	fit <- lm(z ~ x + y)	# evaluate the linear regression
 	plot3d(x,y,z, type="s", col="red", size=1)
@@ -151,15 +146,8 @@
 ##		set your working directory to a certain folder
 ################
 
-	
-	setwd("/Volumes/homes/Lisa/ModernDataManagement/TCGA")
-		# for home computer
-	setwd("/home/lmcferri/Lisa/ModernDataManagement/TCGA")
-		# for ssh
-	
-	getwd()
-		# verify you are now in that directory
-		
+	setwd("/Volumes/homes/Lisa/MDM/TCGA")
+
 ### Define Parameters ###
 
 	Date="2013-12-18"
@@ -171,8 +159,7 @@
 ################
 
 	foo <- read.delim(file="2013-12-18/TCGA_BRCA_exp_HiSeqV2-2013-12-18/genomicMatrix",  header=T,sep="\t", row.names=1, stringsAsFactors=F, check.names=F)
-	
-    # reads in the genomicMatrix file from the subfolders
+		# reads in the genomicMatrix file from the subfolders
 		# stores the first row and column as identifiers
 		# keeps strings as text instead of factors
 		# keeps column names as-is (e.g. doesn't convert dashes to dots)
@@ -250,7 +237,7 @@
 #	load("TCGA_TumorList_2013-12-18.RData")
 	#		TumorList
 
-	save(TumorNames, TumorList, GeneExpr, Gene_PCA, Tumor_PCA, Tumor_GeneSymbols, TumorVenn, file="MDM_TCGA_AllVariables_2014-1-23.RData")
+#	save(TumorNames, TumorList, GeneExpr, Gene_PCA, Tumor_PCA, Tumor_GeneSymbols, TumorVenn, file="MDM_TCGA_AllVariables_2014-1-23.RData")
 
 ####################################################
 ########### PRINCIPAL COMPONENT ANALYSIS ###########
@@ -386,49 +373,6 @@ Threshold <- 0.02
 	venn.diagram(Tumor_GeneSymbols, file="TCGA_PCAgeneSym_T02_VennDiagram.tiff", fill=c("blue", "yellow", "green", "red"), cat.fontface=2, cat.fontfamily="serif")
 		# make high quality, publication worthy venn diagrams
 	
-
-
-################
-## TCGA_addClinicalFeature
-##		attaches clinical information to linked data
-##
-##  FullData: data.frame or matrix with Patient IDs for rownames 
-##	Type: Tumor name ("LUNG", "BRCA", etc)
-##	Feature: column names from clinical data to extract
-##	ExpressType: type of data involved in linking (for folder identification)
-##	date: date stamp of data (for folder identification)
-################
-	TCGA_addClinicalFeature<- function(FullData, Type, Feature, ExpressType=c("exon", "gene"), date=c("2013-09-07", "2013-10-29")){
-
-		folder<- ""
-		if(ExpressType=="exon"){
-			folder<- paste("TCGA/TCGA_", Type, "_exp_HiSeqV2_exon-",date, sep="")
-		}else if(ExpressType=="gene"){
-			folder<- paste("TCGA/TCGA_", Type, "_exp_HiSeqV2-",date, sep="")
-		}
-		# define the location of the clinical data matrix
-		
-		Clinical <-  read.delim(file=paste(folder, "/", Type, "_clinicalMatrix", sep=""), header=T,sep="\t", row.names=1)
-		# definte the relative path to the file from the current working directory
-		# first line in file has column names, first row has row names, tab delimited file
-	
-		FeatureData<- as.data.frame(Clinical[rownames(FullData),Feature]); 
-		# sort Clinical data by rownames in the FullData set for proper linkage, NAs introduced if not correctly mapped
-		# grab column names from Clinical data that match those listed in Feature
-		
-		names(FeatureData)<- names(Feature); 		# assign column names to Feature table
-		FullData<- cbind(FeatureData, FullData)		# join tables by a column bind
-		
-		FullData
-	}
-
-##### Connect Molecular Data with certain clinical Features
-
-	Features <- c("egfr_mutation_result" "radiation_therapy", "vital_status", "diagnosis", "gender", "histological_type", "kras_mutation_found", "pathologic_stage")
-	LUNGdata <- TCGA_addClinicalFeature(TumorList$LUNG, Type="LUNG", Feature=Features, ExpressType="gene", date=Date)
-
-
-
 
 
 ##########################
